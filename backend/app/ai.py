@@ -19,10 +19,24 @@ ALLOWED_INTENTS = {
     "ncm_variations",
     "ncm_tax_rates",
     "tax_rate_filter",
+    "finance_receivables_overdue",
+    "finance_receivables_due_next",
+    "finance_receivables_by_customer",
 }
 
-PRODUCT_COLUMNS = ["Código", "Descrição", "Grupo", "NCM", "ICMS", "IPI", "PIS", "COFINS"]
+PRODUCT_COLUMNS = ["Codigo", "Descricao", "Grupo", "NCM", "ICMS", "IPI", "PIS", "COFINS"]
 NCM_COLUMNS = ["NCM", "ICMS", "IPI", "PIS", "COFINS"]
+FINANCE_RECEIVABLE_COLUMNS = [
+    "Boleto",
+    "Titulo",
+    "Contrato",
+    "Parcela",
+    "Cliente",
+    "Vencimento",
+    "Valor",
+    "Dias vencidos",
+    "Status",
+]
 RATE_FIELDS = {
     "icms": "icmsRate",
     "ipi": "ipiRate",
@@ -48,7 +62,7 @@ class AssistantIntent:
 class GroqIntentClassifier:
     def classify(self, question: str) -> AssistantIntent:
         if not settings.groq_api_key:
-            raise MissingGroqKeyError("GROQ_API_KEY não configurada para usar a IA.")
+            raise MissingGroqKeyError("GROQ_API_KEY nao configurada para usar a IA.")
 
         payload = {
             "model": settings.groq_model,
@@ -57,12 +71,15 @@ class GroqIntentClassifier:
                 {
                     "role": "system",
                     "content": (
-                        "Voce classifica pedidos de relatorios fiscais. "
+                        "Voce classifica pedidos de relatorios fiscais e financeiros. "
                         "Responda apenas JSON valido no formato "
                         '{"intent":"...","params":{...}}. '
                         "Intents permitidas: products_missing_ncm, products_by_group, "
-                        "products_by_ncm, ncm_variations, ncm_tax_rates, tax_rate_filter. "
-                        "Parametros aceitos: group, ncm, rateField, zeroOnly, minRate, maxRate. "
+                        "products_by_ncm, ncm_variations, ncm_tax_rates, tax_rate_filter, "
+                        "finance_receivables_overdue, finance_receivables_due_next, "
+                        "finance_receivables_by_customer. "
+                        "Parametros aceitos: group, ncm, rateField, zeroOnly, minRate, "
+                        "maxRate, customer. "
                         "rateField deve ser icms, ipi, pis ou cofins. "
                         "Se o pedido nao couber nas intents, use unsupported."
                     ),
@@ -103,7 +120,7 @@ class ReportAssistantService:
         self.fiscal_service.validate_company(company)
         assistant_intent = self.classifier.classify(question)
         if assistant_intent.intent not in ALLOWED_INTENTS:
-            raise UnsupportedIntentError("Pedido fora dos relatórios permitidos nesta versão.")
+            raise UnsupportedIntentError("Pedido fora dos relatorios permitidos nesta versao.")
 
         intent = assistant_intent.intent
         params = assistant_intent.params
@@ -152,7 +169,7 @@ class ReportAssistantService:
                 company=company,
                 intent=intent,
                 rows=rows,
-                answer=f"Encontrei {len(rows)} linhas fiscais em NCMs com variação.",
+                answer=f"Encontrei {len(rows)} linhas fiscais em NCMs com variacao.",
                 export_url=self._export_ncm_url(company, onlyVariation="true"),
             )
 
@@ -163,24 +180,72 @@ class ReportAssistantService:
                 company=company,
                 intent=intent,
                 rows=rows,
-                answer=f"Encontrei {len(rows)} combinações fiscais para a busca informada.",
+                answer=f"Encontrei {len(rows)} combinacoes fiscais para a busca informada.",
                 export_url=self._export_ncm_url(company, search=ncm),
             )
+
+        if intent.startswith("finance_receivables_"):
+            return self._finance_receivables_response_for_intent(company, intent, params)
 
         rows = self._filter_tax_rate_rows(company, params)
         return self._ncm_response(
             company=company,
             intent=intent,
             rows=rows,
-            answer=f"Encontrei {len(rows)} linhas fiscais no filtro de alíquota.",
+            answer=f"Encontrei {len(rows)} linhas fiscais no filtro de aliquota.",
             export_url=None,
+        )
+
+    def _finance_receivables_response_for_intent(
+        self,
+        company: str,
+        intent: str,
+        params: dict[str, Any],
+    ) -> ReportAssistantResponse:
+        if intent == "finance_receivables_overdue":
+            report = self.fiscal_service.get_finance_receivables_report(
+                company,
+                only_overdue=True,
+            )
+            return self._finance_receivables_response(
+                company=company,
+                intent=intent,
+                rows=report.rows,
+                answer=f"Encontrei {len(report.rows)} boletos vencidos em aberto.",
+                export_url=self._export_finance_receivables_url(company, onlyOverdue="true"),
+            )
+
+        if intent == "finance_receivables_due_next":
+            report = self.fiscal_service.get_finance_receivables_report(company)
+            return self._finance_receivables_response(
+                company=company,
+                intent=intent,
+                rows=report.rows,
+                answer=(
+                    f"Encontrei {len(report.rows)} boletos em aberto vencidos ou a vencer "
+                    "no recorte padrao."
+                ),
+                export_url=self._export_finance_receivables_url(company),
+            )
+
+        customer = str(params.get("customer", "") or params.get("search", "")).strip()
+        report = self.fiscal_service.get_finance_receivables_report(
+            company,
+            search=customer,
+        )
+        return self._finance_receivables_response(
+            company=company,
+            intent=intent,
+            rows=report.rows,
+            answer=f"Encontrei {len(report.rows)} boletos em aberto para a busca de cliente informada.",
+            export_url=self._export_finance_receivables_url(company, search=customer),
         )
 
     def _filter_tax_rate_rows(self, company: str, params: dict[str, Any]):
         report = self.fiscal_service.get_ncm_tax_rates_report(company)
         rate_field = RATE_FIELDS.get(str(params.get("rateField", "")).lower())
         if not rate_field:
-            raise UnsupportedIntentError("Filtro de alíquota sem campo permitido.")
+            raise UnsupportedIntentError("Filtro de aliquota sem campo permitido.")
 
         zero_only = bool(params.get("zeroOnly"))
         min_rate = self._optional_float(params.get("minRate"))
@@ -236,11 +301,32 @@ class ReportAssistantService:
             exportUrl=export_url,
         )
 
+    def _finance_receivables_response(
+        self,
+        company: str,
+        intent: str,
+        rows: list[Any],
+        answer: str,
+        export_url: str | None,
+    ) -> ReportAssistantResponse:
+        return ReportAssistantResponse(
+            company=company,
+            intent=intent,
+            answer=answer,
+            columns=FINANCE_RECEIVABLE_COLUMNS,
+            rows=[finance_receivable_to_preview(row) for row in rows[:50]],
+            totalRows=len(rows),
+            exportUrl=export_url,
+        )
+
     def _export_products_url(self, company: str, **params: str) -> str:
         return build_export_url("/api/reports/products-finished/export.xlsx", company, params)
 
     def _export_ncm_url(self, company: str, **params: str) -> str:
         return build_export_url("/api/reports/ncm-tax-rates/export.xlsx", company, params)
+
+    def _export_finance_receivables_url(self, company: str, **params: str) -> str:
+        return build_export_url("/api/finance/receivables/export.xlsx", company, params)
 
     def _optional_float(self, value: Any) -> float | None:
         if value in (None, ""):
@@ -259,8 +345,8 @@ def build_export_url(path: str, company: str, params: dict[str, str]) -> str:
 
 def product_to_preview(row: Any) -> dict[str, Any]:
     return {
-        "Código": row.code,
-        "Descrição": row.description,
+        "Codigo": row.code,
+        "Descricao": row.description,
         "Grupo": row.group or "",
         "NCM": row.ncm or "",
         "ICMS": row.icmsRate,
@@ -277,4 +363,18 @@ def ncm_to_preview(row: Any) -> dict[str, Any]:
         "IPI": row.ipiRate,
         "PIS": row.pisRate,
         "COFINS": row.cofinsRate,
+    }
+
+
+def finance_receivable_to_preview(row: Any) -> dict[str, Any]:
+    return {
+        "Boleto": row.boletoCode,
+        "Titulo": row.titleCode or "",
+        "Contrato": row.contract or "",
+        "Parcela": row.installment or "",
+        "Cliente": row.personName,
+        "Vencimento": row.dueDate.isoformat() if row.dueDate else "",
+        "Valor": row.amount,
+        "Dias vencidos": row.daysOverdue,
+        "Status": row.statusLabel,
     }

@@ -1,6 +1,6 @@
 # Arquimedes BI
 
-MVP interno para visualizar indicadores fiscais do Arquimedes com API FastAPI, frontend React/Vite e relatorios assistidos por IA.
+MVP interno para visualizar indicadores BI do Arquimedes com API FastAPI, frontend React/Vite e relatorios assistidos por IA.
 
 ## Estrutura
 
@@ -12,6 +12,8 @@ MVP interno para visualizar indicadores fiscais do Arquimedes com API FastAPI, f
 ## Funcionalidades
 
 - `Dashboard`: rota inicial com mapa geral separado por area: Comercial, Financeiro, Estoque, Fiscal, Producao, RH/Folha, Contabil, Academico, Base Compartilhada, Servicos/Projetos e Confeccao.
+- `Financeiro`: dashboard separado por caixa, fluxo de caixa, contas a pagar, contas a receber, DRE simplificado, despesas, receitas, inadimplencia, projecoes, indicadores e alertas.
+- `Contas a Receber`: detalhe operacional dentro do financeiro, com boletos em aberto, vencidos, proximos 30 dias, top inadimplentes e export Excel.
 - `Fiscal em foco`: primeiro modulo detalhado, com indicadores de produto, NCM, aliquotas e pendencias cadastrais.
 - `Produtos Acabados`: lista produto, descricao, grupo, NCM e aliquotas ICMS/IPI/PIS/COFINS pela classificacao fiscal do produto.
 - `NCM e Aliquotas`: lista combinacoes distintas de NCM + aliquotas e destaca NCMs com variacao.
@@ -51,11 +53,28 @@ Endpoints principais:
 - `GET /api/companies`
 - `GET /api/dashboard/overview?company=emp0001`
 - `GET /api/dashboard/fiscal?company=emp0001`
+- `GET /api/finance/dashboard?company=emp0001`
+- `GET /api/finance/receivables?company=emp0001`
+- `GET /api/finance/receivables/export.xlsx?company=emp0001`
 - `GET /api/reports/products-finished?company=emp0001`
 - `GET /api/reports/ncm-tax-rates?company=emp0001`
 - `GET /api/reports/products-finished/export.xlsx?company=emp0001`
 - `GET /api/reports/ncm-tax-rates/export.xlsx?company=emp0001`
 - `POST /api/ai/report-assistant`
+
+Regras atuais do dashboard financeiro:
+
+- Caixa e projecao: `FNFCLANC`.
+- Contas a pagar: `FNTITUL` com `TI_TIPO = 'P'` e `TI_PAGTO` vazio.
+- Contas a receber: `FNBOLETO` com `BO_PG_ST = 1`.
+- DRE: `FNDRE`; se o mes atual estiver zerado, usa o ultimo mes com movimento e marca `isFallbackMonth=true`.
+
+Prompts ja suportados pela IA assistida:
+
+- `liste produtos sem NCM`
+- `mostre NCMs com variacao`
+- `liste boletos financeiros vencidos`
+- `contas a receber do cliente C.M.C.`
 
 ## Rodando o frontend
 

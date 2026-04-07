@@ -54,10 +54,10 @@ export function DataTable<T extends object>({
                         )}
                         <span>
                           {header.column.getIsSorted() === 'asc'
-                            ? '↑'
+                            ? '^'
                             : header.column.getIsSorted() === 'desc'
-                              ? '↓'
-                              : '↕'}
+                              ? 'v'
+                              : '<>'}
                         </span>
                       </button>
                     ) : (

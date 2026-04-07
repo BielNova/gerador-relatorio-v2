@@ -53,7 +53,7 @@ export function Layout() {
               <h1 className="brand-title">BI operacional separado por areas.</h1>
               <p className="brand-subtitle">
                 Dashboard geral, modulos por dominio da empresa e relatorios seguros com IA
-                em cima de dados permitidos. Fiscal e o primeiro modulo detalhado.
+                em cima de dados permitidos. Financeiro e Fiscal ja possuem modulos detalhados.
               </p>
             </div>
 
@@ -72,6 +72,9 @@ export function Layout() {
             <nav className="nav-tabs" aria-label="Modulos do BI">
               <NavLink to="/dashboard" className={getNavClassName}>
                 Dashboard
+              </NavLink>
+              <NavLink to="/finance" className={getNavClassName}>
+                Financeiro
               </NavLink>
               <NavLink to="/products" className={getNavClassName}>
                 Produtos Acabados

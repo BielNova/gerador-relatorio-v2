@@ -100,6 +100,155 @@ export interface FiscalDashboardResponse {
   groupIssues: FiscalDashboardGroupIssue[]
 }
 
+export interface FinanceReceivableRow {
+  boletoCode: string
+  titleCode: string | null
+  contract: string | null
+  installment: string | null
+  personCode: string
+  personName: string
+  paymentMethod: string | null
+  dueDate: string | null
+  amount: number
+  daysOverdue: number
+  bankDocument: string | null
+  statusCode: number
+  statusLabel: string
+}
+
+export interface FinanceTopDebtor {
+  personCode: string
+  personName: string
+  overdueRows: number
+  overdueAmount: number
+}
+
+export interface FinanceReceivablesResponse {
+  company: string
+  filters: {
+    search: string
+    onlyOverdue: boolean
+    dueEnd: string
+  }
+  summary: {
+    totalOpenRows: number
+    totalOpenAmount: number
+    overdueRows: number
+    overdueAmount: number
+    dueNextRows: number
+    dueNextAmount: number
+    receivedMonthRows: number
+    receivedMonthAmount: number
+    filteredRows: number
+    filteredAmount: number
+  }
+  topDebtors: FinanceTopDebtor[]
+  rows: FinanceReceivableRow[]
+}
+
+export interface FinanceAmountMetric {
+  rows: number
+  amount: number
+}
+
+export interface FinanceCashSummary {
+  sourceDate: string | null
+  currentCash: number
+  consolidatedBalance: number
+  availableCash: number
+  committedCash: number
+}
+
+export interface FinanceFlowMetric {
+  label: string
+  startDate: string
+  endDate: string
+  inflow: number
+  outflow: number
+  net: number
+}
+
+export interface FinanceProjectionPoint {
+  days: number
+  date: string
+  projectedBalance: number
+  expectedReceivables: number
+  expectedPayables: number
+  projectedResult: number
+}
+
+export interface FinanceCategoryMetric {
+  category: string
+  amount: number
+  sharePercent: number
+}
+
+export interface FinanceDreEvolutionPoint {
+  year: number
+  month: number
+  revenue: number
+  expenses: number
+  netProfit: number
+}
+
+export interface FinanceDreSummary {
+  year: number
+  month: number
+  isFallbackMonth: boolean
+  revenueTotal: number
+  costs: number
+  expenses: number
+  grossProfit: number
+  netProfit: number
+  revenuePreviousMonth: number
+  expensesPreviousMonth: number
+  revenueChangePercent: number | null
+  expensesChangePercent: number | null
+  expenseCategories: FinanceCategoryMetric[]
+  revenueCategories: FinanceCategoryMetric[]
+  revenueEvolution: FinanceDreEvolutionPoint[]
+}
+
+export interface FinanceDashboardResponse {
+  company: string
+  referenceDate: string
+  cash: FinanceCashSummary
+  cashFlow: FinanceFlowMetric[]
+  projections: FinanceProjectionPoint[]
+  payables: {
+    open: FinanceAmountMetric
+    overdue: FinanceAmountMetric
+    dueToday: FinanceAmountMetric
+    next7Days: FinanceAmountMetric
+    next15Days: FinanceAmountMetric
+    next30Days: FinanceAmountMetric
+    byCategory: FinanceCategoryMetric[]
+  }
+  receivables: {
+    open: FinanceAmountMetric
+    overdue: FinanceAmountMetric
+    receivedToday: FinanceAmountMetric
+    expected7Days: FinanceAmountMetric
+    expected15Days: FinanceAmountMetric
+    expected30Days: FinanceAmountMetric
+  }
+  dre: FinanceDreSummary
+  indicators: {
+    averageTicket: number | null
+    fixedMonthlyCost: number
+    breakEvenPoint: number | null
+    profitabilityPercent: number | null
+  }
+  topDebtors: FinanceTopDebtor[]
+  alerts: Array<{
+    level: string
+    title: string
+    detail: string
+    amount: number | null
+  }>
+  dataQualityNotes: string[]
+}
+
 export interface ReportAssistantResponse {
   company: string
   intent: string

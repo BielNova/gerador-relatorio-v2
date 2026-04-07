@@ -46,6 +46,7 @@ def test_company_overview_separates_business_areas() -> None:
     assert areas["comercial"]["label"] == "Comercial"
     assert areas["comercial"]["totalRows"] == 4076536
     assert areas["financeiro"]["totalRows"] == 1201127
+    assert areas["financeiro"]["entryPath"] == "/finance"
     assert areas["producao"]["totalRows"] == 3289232
     assert areas["fiscal"]["entryPath"] == "/ncm-tax-rates"
     assert areas["estoque"]["entryPath"] == "/products"
@@ -195,6 +196,106 @@ def test_fiscal_dashboard_rejects_invalid_company() -> None:
     assert response.status_code == 400
 
 
+def test_finance_receivables_report_matches_current_database_snapshot() -> None:
+    response = client.get("/api/finance/receivables", params={"company": "emp0001"})
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["company"] == "emp0001"
+    assert payload["summary"]["totalOpenRows"] == 3871
+    assert payload["summary"]["overdueRows"] == 2064
+    assert payload["summary"]["filteredRows"] == 3449
+    assert payload["rows"][0]["boletoCode"] == "0000000191"
+    assert payload["rows"][0]["personName"] == "CONSUMIDOR"
+    assert payload["rows"][0]["statusLabel"] == "Em aberto"
+    assert payload["topDebtors"][0]["personName"] == "C.M.C. PRODUTOS QUIMICOS LTDA"
+
+
+def test_finance_dashboard_matches_current_database_snapshot() -> None:
+    response = client.get("/api/finance/dashboard", params={"company": "emp0001"})
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["company"] == "emp0001"
+    assert payload["referenceDate"] == "2026-04-07"
+    assert payload["cash"] == {
+        "sourceDate": "2026-04-07",
+        "currentCash": -164807.07,
+        "consolidatedBalance": -6036877.88,
+        "availableCash": -3426539.96,
+        "committedCash": 3261732.89,
+    }
+    assert payload["payables"]["open"] == {"rows": 2202, "amount": 11051306.87}
+    assert payload["payables"]["overdue"] == {"rows": 191, "amount": 821165.79}
+    assert payload["payables"]["dueToday"] == {"rows": 57, "amount": 130183.05}
+    assert payload["receivables"]["open"] == {"rows": 3871, "amount": 5179236.06}
+    assert payload["receivables"]["overdue"] == {"rows": 2064, "amount": 2276509.14}
+    assert payload["dre"]["year"] == 2026
+    assert payload["dre"]["month"] == 2
+    assert payload["dre"]["isFallbackMonth"] is True
+    assert payload["dre"]["revenueTotal"] == 1929985.75
+    assert payload["dre"]["netProfit"] == -162416.36
+    assert payload["indicators"]["profitabilityPercent"] == -8.42
+    assert payload["topDebtors"][0]["personName"] == "C.M.C. PRODUTOS QUIMICOS LTDA"
+    assert payload["alerts"][0]["title"] == "Contas vencidas"
+
+
+def test_finance_dashboard_rejects_invalid_company() -> None:
+    response = client.get("/api/finance/dashboard", params={"company": "public"})
+
+    assert response.status_code == 400
+
+
+def test_finance_receivables_report_filters_overdue_and_customer() -> None:
+    response = client.get(
+        "/api/finance/receivables",
+        params={
+            "company": "emp0001",
+            "onlyOverdue": "true",
+            "search": "C.M.C. PRODUTOS",
+        },
+    )
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["filters"]["onlyOverdue"] is True
+    assert payload["summary"]["filteredRows"] == 279
+    assert payload["rows"][0]["personName"] == "C.M.C. PRODUTOS QUIMICOS LTDA"
+    assert all(row["daysOverdue"] > 0 for row in payload["rows"])
+
+
+def test_finance_receivables_report_rejects_invalid_company() -> None:
+    response = client.get("/api/finance/receivables", params={"company": "public"})
+
+    assert response.status_code == 400
+
+
+def test_finance_receivables_export_downloads_xlsx() -> None:
+    response = client.get(
+        "/api/finance/receivables/export.xlsx",
+        params={"company": "emp0001", "onlyOverdue": "true", "search": "C.M.C. PRODUTOS"},
+    )
+
+    assert response.status_code == 200
+    workbook = load_workbook(BytesIO(response.content), read_only=True)
+    worksheet = workbook.active
+    headers = [cell.value for cell in next(worksheet.iter_rows(max_row=1))]
+    first_row = [cell.value for cell in next(worksheet.iter_rows(min_row=2, max_row=2))]
+
+    assert headers[:6] == [
+        "Boleto",
+        "Titulo",
+        "Contrato",
+        "Parcela",
+        "Codigo Pessoa",
+        "Cliente",
+    ]
+    assert first_row[5] == "C.M.C. PRODUTOS QUIMICOS LTDA"
+    assert 'filename="arquimedes-contas-a-receber-emp0001.xlsx"' in response.headers[
+        "content-disposition"
+    ]
+
+
 def test_report_assistant_runs_allowed_intent_with_mocked_classifier() -> None:
     original_classifier = assistant_service.classifier
     assistant_service.classifier = StaticClassifier(
@@ -216,6 +317,37 @@ def test_report_assistant_runs_allowed_intent_with_mocked_classifier() -> None:
     assert payload["columns"][0].startswith("C")
     assert payload["columns"][1].startswith("Descri")
     assert "export.xlsx" in payload["exportUrl"]
+
+
+def test_report_assistant_runs_finance_intent_with_mocked_classifier() -> None:
+    original_classifier = assistant_service.classifier
+    assistant_service.classifier = StaticClassifier(
+        AssistantIntent(intent="finance_receivables_by_customer", params={"customer": "C.M.C."})
+    )
+    try:
+        response = client.post(
+            "/api/ai/report-assistant",
+            json={"company": "emp0001", "question": "boletos vencidos do cliente C.M.C."},
+        )
+    finally:
+        assistant_service.classifier = original_classifier
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["intent"] == "finance_receivables_by_customer"
+    assert payload["totalRows"] > 0
+    assert payload["columns"] == [
+        "Boleto",
+        "Titulo",
+        "Contrato",
+        "Parcela",
+        "Cliente",
+        "Vencimento",
+        "Valor",
+        "Dias vencidos",
+        "Status",
+    ]
+    assert "/api/finance/receivables/export.xlsx" in payload["exportUrl"]
 
 
 def test_report_assistant_rejects_unsupported_intent() -> None:

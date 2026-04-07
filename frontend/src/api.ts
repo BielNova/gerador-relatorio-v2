@@ -1,6 +1,8 @@
 import type {
   CompanyOverviewResponse,
   CompanyOption,
+  FinanceDashboardResponse,
+  FinanceReceivablesResponse,
   FiscalDashboardResponse,
   NcmTaxRateResponse,
   ProductsFinishedResponse,
@@ -48,9 +50,33 @@ export function fetchFiscalDashboard(company: string): Promise<FiscalDashboardRe
   )
 }
 
+export function fetchFinanceDashboard(company: string): Promise<FinanceDashboardResponse> {
+  return readJson<FinanceDashboardResponse>(
+    `/api/finance/dashboard?company=${encodeURIComponent(company)}`,
+  )
+}
+
 export function fetchNcmTaxRates(company: string): Promise<NcmTaxRateResponse> {
   return readJson<NcmTaxRateResponse>(
     `/api/reports/ncm-tax-rates?company=${encodeURIComponent(company)}`,
+  )
+}
+
+export function fetchFinanceReceivables(
+  company: string,
+  filters: {
+    search?: string
+    onlyOverdue?: boolean
+    dueEnd?: string
+  } = {},
+): Promise<FinanceReceivablesResponse> {
+  return readJson<FinanceReceivablesResponse>(
+    buildApiPath('/api/finance/receivables', {
+      company,
+      search: filters.search ?? '',
+      onlyOverdue: String(Boolean(filters.onlyOverdue)),
+      dueEnd: filters.dueEnd ?? '',
+    }),
   )
 }
 
@@ -81,6 +107,22 @@ export function buildNcmTaxRatesExportUrl(
     company,
     search: filters.search,
     onlyVariation: String(filters.onlyVariation),
+  })
+}
+
+export function buildFinanceReceivablesExportUrl(
+  company: string,
+  filters: {
+    search: string
+    onlyOverdue: boolean
+    dueEnd: string
+  },
+): string {
+  return buildApiUrl('/api/finance/receivables/export.xlsx', {
+    company,
+    search: filters.search,
+    onlyOverdue: String(filters.onlyOverdue),
+    dueEnd: filters.dueEnd,
   })
 }
 
@@ -118,11 +160,15 @@ export function toApiHref(path: string): string {
 }
 
 function buildApiUrl(path: string, params: Record<string, string>): string {
+  return `${API_BASE_URL}${buildApiPath(path, params)}`
+}
+
+function buildApiPath(path: string, params: Record<string, string>): string {
   const searchParams = new URLSearchParams()
   for (const [key, value] of Object.entries(params)) {
     if (value) {
       searchParams.set(key, value)
     }
   }
-  return `${API_BASE_URL}${path}?${searchParams.toString()}`
+  return `${path}?${searchParams.toString()}`
 }

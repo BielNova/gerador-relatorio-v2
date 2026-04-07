@@ -9,10 +9,11 @@ import { formatDecimal } from '../utils'
 
 const quickPrompts = [
   'Liste produtos sem NCM',
-  'Mostre NCMs com variação de alíquotas',
+  'Mostre NCMs com variacao de aliquotas',
   'Produtos do grupo ESSENCIA PURA',
-  'Alíquotas do NCM 38099190',
-  'Liste NCMs com IPI zero',
+  'Aliquotas do NCM 38099190',
+  'Liste boletos financeiros vencidos',
+  'Contas a receber do cliente C.M.C.',
 ]
 
 export function ReportAssistantPage() {
@@ -45,10 +46,10 @@ export function ReportAssistantPage() {
     <section className="panel">
       <header className="panel-header">
         <div>
-          <h2 className="panel-title">Relatórios com IA</h2>
+          <h2 className="panel-title">Relatorios com IA</h2>
           <p className="panel-copy">
-            IA assistida: ela interpreta o pedido, mas o backend só executa relatórios
-            fiscais permitidos e filtros determinísticos.
+            IA assistida: ela interpreta o pedido, mas o backend so executa relatorios
+            permitidos e filtros deterministicos. Fiscal e Financeiro ja entram nesta camada.
           </p>
         </div>
         <span className="badge">Sem SQL livre</span>
@@ -56,17 +57,17 @@ export function ReportAssistantPage() {
 
       <form className="ai-form" onSubmit={handleSubmit}>
         <div className="field-stack">
-          <label htmlFor="ai-question">Pedido do relatório</label>
+          <label htmlFor="ai-question">Pedido do relatorio</label>
           <textarea
             id="ai-question"
             value={question}
             onChange={(event) => setQuestion(event.target.value)}
-            placeholder="Ex.: liste produtos sem NCM por grupo"
+            placeholder="Ex.: liste boletos financeiros vencidos"
             rows={4}
           />
         </div>
         <button type="submit" className="action-button" disabled={isLoading}>
-          Gerar prévia
+          Gerar previa
         </button>
       </form>
 
@@ -78,18 +79,18 @@ export function ReportAssistantPage() {
         ))}
       </div>
 
-      {isLoading ? <LoadingBlock title="Consultando IA" copy="Classificando o pedido com segurança." /> : null}
+      {isLoading ? <LoadingBlock title="Consultando IA" copy="Classificando o pedido com seguranca." /> : null}
       {error ? (
         <section className="error-state">
-          <h3 className="error-title">Não foi possível gerar o relatório</h3>
+          <h3 className="error-title">Nao foi possivel gerar o relatorio</h3>
           <p className="error-copy">{error}</p>
         </section>
       ) : null}
 
       {!isLoading && !error && !result ? (
         <EmptyState
-          title="Faça uma pergunta fiscal"
-          copy="Use um prompt rápido ou descreva uma lista baseada em produtos, NCMs e alíquotas."
+          title="Faca uma pergunta operacional"
+          copy="Use um prompt rapido ou descreva uma lista baseada em produtos, NCMs, aliquotas e contas a receber."
         />
       ) : null}
 
@@ -99,7 +100,7 @@ export function ReportAssistantPage() {
             <div>
               <span className="eyebrow">Intent: {result.intent}</span>
               <h3>{result.answer}</h3>
-              <p>Prévia de até 50 linhas. Total encontrado: {formatDecimal(result.totalRows)}.</p>
+              <p>Previa de ate 50 linhas. Total encontrado: {formatDecimal(result.totalRows)}.</p>
             </div>
             {result.exportUrl ? (
               <a className="action-link" href={toApiHref(result.exportUrl)}>

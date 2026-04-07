@@ -24,6 +24,7 @@ BUSINESS_AREAS: tuple[BusinessAreaConfig, ...] = (
         label="Financeiro",
         description="Titulos, boletos, recebimentos, pagamentos e caixa/bancos.",
         tables=("fntitul", "fnreceb", "fnpagam", "fnpagto", "fnboleto"),
+        entryPath="/finance",
     ),
     BusinessAreaConfig(
         id="estoque",

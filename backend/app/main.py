@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from datetime import date
 from io import BytesIO
 
 from fastapi import FastAPI, HTTPException, Query
@@ -11,6 +12,8 @@ from .excel import build_workbook
 from .models import (
     CompanyOption,
     CompanyOverviewResponse,
+    FinanceDashboardResponse,
+    FinanceReceivablesResponse,
     FiscalDashboardResponse,
     NcmTaxRateResponse,
     ProductsFinishedResponse,
@@ -68,6 +71,16 @@ def fiscal_dashboard(
         raise HTTPException(status_code=400, detail=str(exc)) from exc
 
 
+@app.get("/api/finance/dashboard", response_model=FinanceDashboardResponse)
+def finance_dashboard(
+    company: str = Query(..., description="Schema da empresa, como emp0001.")
+) -> FinanceDashboardResponse:
+    try:
+        return service.get_finance_dashboard(company)
+    except InvalidCompanyError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+
 @app.get("/api/reports/products-finished", response_model=ProductsFinishedResponse)
 def products_finished_report(
     company: str = Query(..., description="Schema da empresa, como emp0001.")
@@ -84,6 +97,24 @@ def ncm_tax_rates_report(
 ) -> NcmTaxRateResponse:
     try:
         return service.get_ncm_tax_rates_report(company)
+    except InvalidCompanyError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+
+@app.get("/api/finance/receivables", response_model=FinanceReceivablesResponse)
+def finance_receivables_report(
+    company: str = Query(..., description="Schema da empresa, como emp0001."),
+    search: str = Query("", description="Busca por boleto, titulo, contrato, cliente ou documento."),
+    onlyOverdue: bool = Query(False, description="Listar apenas boletos vencidos em aberto."),
+    dueEnd: date | None = Query(None, description="Data final de vencimento em YYYY-MM-DD."),
+) -> FinanceReceivablesResponse:
+    try:
+        return service.get_finance_receivables_report(
+            company=company,
+            search=search,
+            only_overdue=onlyOverdue,
+            due_end=dueEnd,
+        )
     except InvalidCompanyError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
 
@@ -176,6 +207,60 @@ def export_ncm_tax_rates_report(
         ),
     )
     return excel_response(workbook, f"arquimedes-ncm-aliquotas-{company}.xlsx")
+
+
+@app.get("/api/finance/receivables/export.xlsx")
+def export_finance_receivables_report(
+    company: str = Query(..., description="Schema da empresa, como emp0001."),
+    search: str = Query("", description="Busca por boleto, titulo, contrato, cliente ou documento."),
+    onlyOverdue: bool = Query(False, description="Exportar apenas boletos vencidos em aberto."),
+    dueEnd: date | None = Query(None, description="Data final de vencimento em YYYY-MM-DD."),
+) -> StreamingResponse:
+    try:
+        report = service.get_finance_receivables_report(
+            company=company,
+            search=search,
+            only_overdue=onlyOverdue,
+            due_end=dueEnd,
+        )
+    except InvalidCompanyError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+    workbook = build_workbook(
+        sheet_name="Contas a Receber",
+        headers=(
+            "Boleto",
+            "Titulo",
+            "Contrato",
+            "Parcela",
+            "Codigo Pessoa",
+            "Cliente",
+            "Forma de Recebimento",
+            "Vencimento",
+            "Valor",
+            "Dias Vencidos",
+            "Nosso Numero",
+            "Status",
+        ),
+        rows=(
+            (
+                row.boletoCode,
+                row.titleCode or "",
+                row.contract or "",
+                row.installment or "",
+                row.personCode,
+                row.personName,
+                row.paymentMethod or "",
+                row.dueDate.isoformat() if row.dueDate else "",
+                row.amount,
+                row.daysOverdue,
+                row.bankDocument or "",
+                row.statusLabel,
+            )
+            for row in report.rows
+        ),
+    )
+    return excel_response(workbook, f"arquimedes-contas-a-receber-{company}.xlsx")
 
 
 def excel_response(workbook: BytesIO, filename: str) -> StreamingResponse:

@@ -187,10 +187,10 @@ export function DashboardPage() {
             </article>
 
             <article className="insight-card accent">
-              <h3>Proxima frente</h3>
+              <h3>Frentes ativas</h3>
               <p>
-                A base ja esta segmentada por dominio. O proximo passo e escolher qual area
-                vira modulo detalhado depois do Fiscal: Comercial, Financeiro ou Estoque.
+                Financeiro e Fiscal ja possuem modulos detalhados. As proximas areas podem
+                entrar no mesmo padrao: Comercial, Estoque, Producao, RH ou Contabil.
               </p>
               <Link className="action-link" to="/ai-reports">
                 Abrir Relatorios com IA
