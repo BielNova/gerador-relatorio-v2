@@ -1,0 +1,4177 @@
+
+<TABLE CELLSPACING=0 BORDER=1 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+<P ALIGN="CENTER"><B><FONT FACE="Arial" COLOR="#0000ff">VISUALIZAÇÕES NO BANCO DE DADOS - D:\AMR\AMR\DBFS\RCF.DBC</P></B></FONT>
+</TD></TR>
+</TABLE>
+<BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR01</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cfpilot.pl_codigo, Cfpilot.pl_nome FROM dcf!cfpilot ORDER BY Cfpilot.pl_nome<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PL_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilot.pl_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PL_NOME</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilot.pl_nome</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR02</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cfpiloto.pi_codigo, Cfpiloto.pi_refer, Cfpiloto.pi_nr_vd, Cfpiloto.pi_descr, Cfpiloto.pi_sala, Cfpiloto.pi_data, Cfpiloto.pi_peso, Cfpiloto.pi_bn_obs, Cfpiloto.pi_tamanho, Cfpiloto.pi_qtde, Cfpiloto.pi_dt_apr, Cfpiloto.pi_pr_fin, Esprod.pr_descr, Cfpeca.pc_compos, Cfpeca.pc_largur, Cfpeca.pc_compr, Cfpeca.pc_qtde, Cfpeca.pc_peso, Cfpeca.pc_rend, Cfpeca.pc_valor, Stpess.pe_nome, Cfpilot.pl_nome FROM  dcf!cfpiloto  LEFT OUTER JOIN dcf!cfpeca  ON  Cfpiloto.pi_codigo = Cfpeca.pc_piloto  INNER JOIN dcv!cvclifor  ON  Cfpiloto.pi_cliente = Cvclifor.cf_codigo  INNER JOIN dst!stpess  ON  Cvclifor.cf_pess = Stpess.pe_codigo  LEFT OUTER JOIN des!esprod  ON  Cfpeca.pc_prod = Esprod.pr_codigo  LEFT OUTER JOIN dcf!cfpilot  ON  Cfpilot.pl_codigo = Cfpiloto.pi_pilot WHERE  Cfpiloto.pi_refer = ( ?SQLRefer ) AND  Cfpiloto.pi_nr_vd = ( ?SQLNrvd )<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_REFER</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_refer</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_NR_VD</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_nr_vd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DESCR</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_SALA</TD>
+<TD VALIGN="CENTER">C(25)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_sala</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_data</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_PESO</TD>
+<TD VALIGN="CENTER">N(9,3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_peso</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_BN_OBS</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_bn_obs</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_TAMANHO</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_tamanho</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_QTDE</TD>
+<TD VALIGN="CENTER">N(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_qtde</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_APR</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_apr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_PR_FIN</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_pr_fin</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PC_COMPOS</TD>
+<TD VALIGN="CENTER">C(25)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpeca.pc_compos</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PC_LARGUR</TD>
+<TD VALIGN="CENTER">N(9,3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpeca.pc_largur</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PC_COMPR</TD>
+<TD VALIGN="CENTER">N(9,3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpeca.pc_compr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PC_QTDE</TD>
+<TD VALIGN="CENTER">N(9,3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpeca.pc_qtde</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PC_PESO</TD>
+<TD VALIGN="CENTER">N(9,3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpeca.pc_peso</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PC_REND</TD>
+<TD VALIGN="CENTER">N(9,3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpeca.pc_rend</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PC_VALOR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpeca.pc_valor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PL_NOME</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilot.pl_nome</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR03</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cfpiloto.pi_refer, Cfpiloto.pi_sala, Cfpiloto.pi_nr_vd, Cfpiloto.pi_descr, Cfpiloto.pi_data, Cfpiloto.pi_dt_apr, Cfpiloto.pi_pr_fin, Stpess.pe_nome FROM  dcf!cfpiloto  INNER JOIN dcv!cvclifor  ON  Cfpiloto.pi_cliente = Cvclifor.cf_codigo  INNER JOIN dst!stpess  ON  Cvclifor.cf_pess = Stpess.pe_codigo ORDER BY Cfpiloto.pi_refer, Cfpiloto.pi_nr_vd<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_REFER</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_refer</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_SALA</TD>
+<TD VALIGN="CENTER">C(25)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_sala</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_NR_VD</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_nr_vd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DESCR</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_data</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_APR</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_apr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_PR_FIN</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_pr_fin</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR04</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cfoficin.of_codigo, Stpess.pe_nome, Stpess.pe_tel_cel, Stpess.pe_email, Stpess.pe_rg_num, Stpess.pe_rg_emi, Stpess.pe_rg_dte, Stpess.pe_cpf, Stpess.pe_cnpj, Stpess.pe_ie, Stpess.pe_tipo, SUBSTR(ALLTRIM(Stender.ed_lograd)+", "+ALLTRIM(Stender.ed_numero)+IIF(.NOT.EMPTY(Stender.ed_compl)," - "+Stender.ed_compl,"")+SPACE(56),1,56) AS ed_lograd, Stender.ed_bairro, Stender.ed_cidade, Stender.ed_cep, Stender.ed_tel_loc, Stender.ed_tel_rec, Stestado.es_sigla FROM  dcf!cfoficin  INNER JOIN dst!stpess  ON  Cfoficin.of_pess = Stpess.pe_codigo  INNER JOIN dst!stender  ON  Stender.ed_codigo = Stpess.pe_ender  INNER JOIN dst!stestado  ON  Stestado.es_codigo = Stender.ed_estado WHERE  Cfoficin.of_codigo <> space(8) ORDER BY Stpess.pe_nome<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OF_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfoficin.of_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_TEL_CEL</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_tel_cel</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_EMAIL</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_email</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_RG_NUM</TD>
+<TD VALIGN="CENTER">C(15)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_rg_num</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_RG_EMI</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_rg_emi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_RG_DTE</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_rg_dte</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_CPF</TD>
+<TD VALIGN="CENTER">C(15)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_cpf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_CNPJ</TD>
+<TD VALIGN="CENTER">C(15)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_cnpj</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_IE</TD>
+<TD VALIGN="CENTER">C(18)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_ie</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_TIPO</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_LOGRAD</TD>
+<TD VALIGN="CENTER">C(56)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_BAIRRO</TD>
+<TD VALIGN="CENTER">C(25)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_bairro</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_CIDADE</TD>
+<TD VALIGN="CENTER">C(25)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_cidade</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_CEP</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_cep</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_TEL_LOC</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_tel_loc</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_TEL_REC</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_tel_rec</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_SIGLA</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stestado.es_sigla</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR05A</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cfpiloto.pi_codigo, Cfpiloto.pi_refer, Cfpiloto.pi_nr_vd, Cfpiloto.pi_nr_pr, Cfpiloto.pi_descr, Cfpiloto.pi_modelo, Cfpiloto.pi_ag_dt, Cfpiloto.pi_en_ini, Cfpiloto.pi_ag_hr, Stpess.pe_nome, Cfpilgr.gr_grade, Cfpilgr.gr_qtd_pak, Cfpiloto.pi_obs, Cfpilgr.gr_qtd_tt, "1" AS pi_tipo FROM  dcf!cfpiloto  INNER JOIN dcv!cvclifor  ON  Cfpiloto.pi_cliente = Cvclifor.cf_codigo  INNER JOIN dst!stpess  ON  Cvclifor.cf_pess = Stpess.pe_codigo  INNER JOIN dcf!cfpilgr  ON  Cfpiloto.pi_codigo = Cfpilgr.gr_piloto WHERE  Cfpiloto.pi_ag_dt BETWEEN ?SQLDtIni AND ?SQLDtFim ORDER BY Cfpiloto.pi_ag_dt, Cfpiloto.pi_nr_pr<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_REFER</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_refer</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_NR_VD</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_nr_vd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_NR_PR</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_nr_pr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DESCR</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_MODELO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_modelo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_AG_DT</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_ag_dt</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_EN_INI</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_en_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_AG_HR</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_ag_hr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_GRADE</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_grade</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_PAK</TD>
+<TD VALIGN="CENTER">N(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_pak</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_OBS</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_obs</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_TT</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_tt</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_TIPO</TD>
+<TD VALIGN="CENTER">C(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">"1"</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR05B</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cfpiloto.pi_codigo, Cfpiloto.pi_refer, Cfpiloto.pi_nr_vd, Cfpiloto.pi_nr_pr, Cfpiloto.pi_descr, Cfpiloto.pi_modelo, Cfpiloto.pi_ag_dt, Cfpiloto.pi_en_ini, Cfpiloto.pi_ag_hr, Stpess.pe_nome, Cfpilgr.gr_grade, Cfpilgr.gr_qtd_pak, Cfpiloto.pi_obs, Cfpilgr.gr_qtd_tt, "2" AS pi_tipo FROM  dcf!cfpiloto  INNER JOIN dcv!cvclifor  ON  Cfpiloto.pi_cliente = Cvclifor.cf_codigo  INNER JOIN dst!stpess  ON  Cvclifor.cf_pess = Stpess.pe_codigo  INNER JOIN dcf!cfpilgr  ON  Cfpiloto.pi_codigo = Cfpilgr.gr_piloto WHERE  Cfpiloto.pi_en_ini BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Cfpiloto.pi_ag_dt = ( {} ) ORDER BY Cfpiloto.pi_en_ini, Cfpiloto.pi_nr_pr<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_REFER</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_refer</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_NR_VD</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_nr_vd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_NR_PR</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_nr_pr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DESCR</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_MODELO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_modelo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_AG_DT</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_ag_dt</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_EN_INI</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_en_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_AG_HR</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_ag_hr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_GRADE</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_grade</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_PAK</TD>
+<TD VALIGN="CENTER">N(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_pak</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_OBS</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_obs</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_TT</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_tt</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_TIPO</TD>
+<TD VALIGN="CENTER">C(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">"2"</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR06</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cfpiloto.pi_codigo, Cfpiloto.pi_refer, Cfpiloto.pi_nr_vd, Cfpiloto.pi_nr_pr, Cfpiloto.pi_pedido, Cfpiloto.pi_descr, Cfpiloto.pi_data, Cfpiloto.pi_pedcli, Cfpiloto.pi_en_ini, Cfpiloto.pi_en_fim, Cfpiloto.pi_tecido, Cfpiloto.pi_qtde, Cfpiloto.pi_sala, Cfpiloto.pi_qt_fat, Cfpiloto.pi_qt_cor, Stpess.pe_nome, Cfpilgr.gr_grade, Cfpilgr.gr_lab_01, Cfpilgr.gr_lab_02, Cfpilgr.gr_lab_03, Cfpilgr.gr_lab_04, Cfpilgr.gr_lab_05, Cfpilgr.gr_lab_06, Cfpilgr.gr_lab_07, Cfpilgr.gr_lab_08, Cfpilgr.gr_cor_01, Cfpilgr.gr_cor_02, Cfpilgr.gr_cor_03, Cfpilgr.gr_cor_04, Cfpilgr.gr_cor_05, Cfpilgr.gr_qtd_pak, Cfpilgr.gr_qtd_11, Cfpilgr.gr_qtd_12, Cfpilgr.gr_qtd_13, Cfpilgr.gr_qtd_14, Cfpilgr.gr_qtd_15, Cfpilgr.gr_qtd_16, Cfpilgr.gr_qtd_17, Cfpilgr.gr_qtd_18, Cfpilgr.gr_qtd_21, Cfpilgr.gr_qtd_22, Cfpilgr.gr_qtd_23, Cfpilgr.gr_qtd_24, Cfpilgr.gr_qtd_25, Cfpilgr.gr_qtd_26, Cfpilgr.gr_qtd_27, Cfpilgr.gr_qtd_28, Cfpilgr.gr_qtd_31, Cfpilgr.gr_qtd_32, Cfpilgr.gr_qtd_33, Cfpilgr.gr_qtd_34, Cfpilgr.gr_qtd_35, Cfpilgr.gr_qtd_36, Cfpilgr.gr_qtd_37, Cfpilgr.gr_qtd_38, Cfpilgr.gr_qtd_41, Cfpilgr.gr_qtd_42, Cfpilgr.gr_qtd_43, Cfpilgr.gr_qtd_44, Cfpilgr.gr_qtd_45, Cfpilgr.gr_qtd_46, Cfpilgr.gr_qtd_47, Cfpilgr.gr_qtd_48, Cfpilgr.gr_qtd_51, Cfpilgr.gr_qtd_52, Cfpilgr.gr_qtd_53, Cfpilgr.gr_qtd_54, Cfpilgr.gr_qtd_55, Cfpilgr.gr_qtd_56, Cfpilgr.gr_qtd_57, Cfpilgr.gr_qtd_58, Cfpilgr.gr_qtd_tt, Cfpeca.pc_compos, 999999 AS qtd_11, 999999 AS qtd_12, 999999 AS qtd_13, 999999 AS qtd_14, 999999 AS qtd_15, 999999 AS qtd_16, 999999 AS qtd_17, 999999 AS qtd_18, 999999 AS qtd_21, 999999 AS qtd_22, 999999 AS qtd_23, 999999 AS qtd_24, 999999 AS qtd_25, 999999 AS qtd_26, 999999 AS qtd_27, 999999 AS qtd_28, 999999 AS qtd_31, 999999 AS qtd_32, 999999 AS qtd_33, 999999 AS qtd_34, 999999 AS qtd_35, 999999 AS qtd_36, 999999 AS qtd_37, 999999 AS qtd_38, 999999 AS qtd_39, 999999 AS qtd_40, 999999 AS qtd_41, 999999 AS qtd_42, 999999 AS qtd_43, 999999 AS qtd_44, 999999 AS qtd_45, 999999 AS qtd_46, 999999 AS qtd_47, 999999 AS qtd_48, 999999 AS qtd_51, 999999 AS qtd_52, 999999 AS qtd_53, 999999 AS qtd_54, 999999 AS qtd_55, 999999 AS qtd_56, 999999 AS qtd_57, 999999 AS qtd_58 FROM  dcf!cfpiloto  INNER JOIN dcv!cvclifor  ON  Cfpiloto.pi_cliente = Cvclifor.cf_codigo  INNER JOIN dcf!cfpilgr  ON  Cfpiloto.pi_codigo = Cfpilgr.gr_piloto  LEFT OUTER JOIN dcf!cfpeca  ON  Cfpiloto.pi_codigo = Cfpeca.pc_piloto  LEFT OUTER JOIN dst!stpess  ON  Cvclifor.cf_pess = Stpess.pe_codigo WHERE (  Cfpiloto.pi_refer = ( ?SQLRefer ) AND  Cfpiloto.pi_nr_vd = ( ?SQLNrVd ) ) AND  Cfpilgr.gr_grade = ( ?SQLGrade )<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_REFER</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_refer</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_NR_VD</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_nr_vd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_NR_PR</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_nr_pr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_PEDIDO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_pedido</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DESCR</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_data</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_PEDCLI</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_pedcli</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_EN_INI</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_en_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_EN_FIM</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_en_fim</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_TECIDO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_tecido</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_QTDE</TD>
+<TD VALIGN="CENTER">N(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_qtde</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_SALA</TD>
+<TD VALIGN="CENTER">C(25)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_sala</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_QT_FAT</TD>
+<TD VALIGN="CENTER">N(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_qt_fat</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_QT_COR</TD>
+<TD VALIGN="CENTER">N(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_qt_cor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_GRADE</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_grade</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_LAB_01</TD>
+<TD VALIGN="CENTER">C(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_lab_01</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_LAB_02</TD>
+<TD VALIGN="CENTER">C(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_lab_02</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_LAB_03</TD>
+<TD VALIGN="CENTER">C(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_lab_03</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_LAB_04</TD>
+<TD VALIGN="CENTER">C(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_lab_04</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_LAB_05</TD>
+<TD VALIGN="CENTER">C(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_lab_05</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_LAB_06</TD>
+<TD VALIGN="CENTER">C(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_lab_06</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_LAB_07</TD>
+<TD VALIGN="CENTER">C(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_lab_07</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_LAB_08</TD>
+<TD VALIGN="CENTER">C(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_lab_08</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_COR_01</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_cor_01</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_COR_02</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_cor_02</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_COR_03</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_cor_03</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_COR_04</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_cor_04</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_COR_05</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_cor_05</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_PAK</TD>
+<TD VALIGN="CENTER">N(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_pak</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_11</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_11</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_12</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_12</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_13</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_13</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_14</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_14</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_15</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_15</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_16</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_16</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_17</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_17</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_18</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_18</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_21</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_21</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_22</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_22</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_23</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_23</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_24</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_24</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_25</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_25</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_26</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_26</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_27</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_27</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_28</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_28</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_31</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_31</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_32</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_32</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_33</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_33</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_34</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_34</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_35</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_35</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_36</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_36</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_37</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_37</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_38</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_38</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_41</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_41</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_42</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_42</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_43</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_43</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_44</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_44</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_45</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_45</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_46</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_46</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_47</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_47</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_48</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_48</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_51</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_51</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_52</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_52</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_53</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_53</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_54</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_54</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_55</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_55</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_56</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_56</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_57</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_57</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_58</TD>
+<TD VALIGN="CENTER">N(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_58</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_TT</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilgr.gr_qtd_tt</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PC_COMPOS</TD>
+<TD VALIGN="CENTER">C(25)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpeca.pc_compos</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_11</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_12</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_13</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_14</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_15</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_16</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_17</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_18</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_21</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_22</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_23</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_24</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_25</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_26</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_27</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_28</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_31</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_32</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_33</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_34</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_35</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_36</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_37</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_38</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_39</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_40</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_41</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_42</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_43</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_44</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_45</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_46</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_47</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_48</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_51</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_52</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_53</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_54</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_55</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_56</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_57</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">QTD_58</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999999</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR07</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cfpiloto.pi_codigo, Cfpiloto.pi_refer, Cfpiloto.pi_nr_vd, Cfpiloto.pi_nr_pr, Cfpiloto.pi_pedido, Cfpiloto.pi_descr, Cfpiloto.pi_sala, Cfpiloto.pi_dt_cor, Cfpiloto.pi_dt_sco, Cfpiloto.pi_codfab, Cfpilofi.po_valor, Cfpilofi.po_qt_36, Cfpilofi.po_qt_38, Cfpilofi.po_qt_40, Cfpilofi.po_qt_42, Cfpilofi.po_qt_44, Cfpilofi.po_qt_46, Cfpilofi.po_qt_48, Cfpilofi.po_qt_50, Cfpilofi.po_qt_52, Cfpilofi.po_qt_pp, Cfpilofi.po_qt_p, Cfpilofi.po_qt_m, Cfpilofi.po_qt_g, Cfpilofi.po_qt_gg, Cfpilofi.po_qt_eg, Cfpilofi.po_qt_tt, Cfpilofi.po_dt_peo, Stpess_a.pe_nome FROM  dcf!cfpiloto  INNER JOIN dcf!cfpilofi  ON  Cfpiloto.pi_codigo = Cfpilofi.po_piloto  INNER JOIN dcf!cfoficin  ON  Cfpilofi.po_oficin = Cfoficin.of_codigo  INNER JOIN dst!stpess Stpess_a  ON  Cfoficin.of_pess = Stpess_a.pe_codigo WHERE  Cfpiloto.pi_refer = ( ?SQLRefer ) AND  (  Cfpiloto.pi_nr_vd = ( ?SQLNrVd ) AND  Cfpilofi.po_oficin = ( ?SQLOficin ) ) ORDER BY Stpess_a.pe_nome<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_REFER</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_refer</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_NR_VD</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_nr_vd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_NR_PR</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_nr_pr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_PEDIDO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_pedido</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DESCR</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_SALA</TD>
+<TD VALIGN="CENTER">C(25)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_sala</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_COR</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_cor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_SCO</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_sco</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_CODFAB</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_codfab</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_VALOR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_valor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_QT_36</TD>
+<TD VALIGN="CENTER">N(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_qt_36</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_QT_38</TD>
+<TD VALIGN="CENTER">N(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_qt_38</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_QT_40</TD>
+<TD VALIGN="CENTER">N(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_qt_40</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_QT_42</TD>
+<TD VALIGN="CENTER">N(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_qt_42</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_QT_44</TD>
+<TD VALIGN="CENTER">N(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_qt_44</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_QT_46</TD>
+<TD VALIGN="CENTER">N(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_qt_46</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_QT_48</TD>
+<TD VALIGN="CENTER">N(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_qt_48</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_QT_50</TD>
+<TD VALIGN="CENTER">N(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_qt_50</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_QT_52</TD>
+<TD VALIGN="CENTER">N(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_qt_52</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_QT_PP</TD>
+<TD VALIGN="CENTER">N(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_qt_pp</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_QT_P</TD>
+<TD VALIGN="CENTER">N(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_qt_p</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_QT_M</TD>
+<TD VALIGN="CENTER">N(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_qt_m</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_QT_G</TD>
+<TD VALIGN="CENTER">N(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_qt_g</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_QT_GG</TD>
+<TD VALIGN="CENTER">N(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_qt_gg</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_QT_EG</TD>
+<TD VALIGN="CENTER">N(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_qt_eg</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_QT_TT</TD>
+<TD VALIGN="CENTER">N(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_qt_tt</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_DT_PEO</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_dt_peo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR08</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cfpomov.mv_pilofi, Cfpomov.mv_data, Cfpomov.mv_tipo, Cfpomov.mv_cons, Cfpomov.mv_quant, Cfpomov.mv_valor, Cfpilofi.po_qt_tt, Cfpilofi.po_dt_peo FROM  dcf!cfpomov  LEFT OUTER JOIN dfn!fntitul  ON  Fntitul.ti_id = ( "CF"+Cfpomov.mv_codigo )  INNER JOIN dcf!cfpilofi  ON  Cfpilofi.po_codigo = Cfpomov.mv_pilofi WHERE  Cfpomov.mv_pilofi = ( ?SQLPilofi ) AND  ( (  Cfpomov.mv_tipo = ( "E" ) AND  Cfpomov.mv_cons  ) OR  Fntitul.ti_pagto = SPACE(10) ) ORDER BY Cfpomov.mv_codigo<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_PILOFI</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_pilofi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_DATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_data</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_TIPO</TD>
+<TD VALIGN="CENTER">C(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_CONS</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_cons</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_QUANT</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_quant</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_VALOR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_valor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_QT_TT</TD>
+<TD VALIGN="CENTER">N(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_qt_tt</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_DT_PEO</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_dt_peo</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR09A</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cfpilofi.po_qt_tt, Cfpilofi.po_dt_peo, Cfpiloto.pi_refer, Cfpiloto.pi_nr_pr, Cfpiloto.pi_dt_sco, Cfpiloto.pi_dt_pec, Cfpiloto.pi_ag_dt, Stpess.pe_nome, Cfpomov.mv_codigo, Cfpomov.mv_pilofi, Cfpomov.mv_data, Cfpomov.mv_tipo, Cfpomov.mv_cons, Cfpomov.mv_quant, Cfpomov.mv_valor, Cfpomov.mv_tamanho, Cfpomov.mv_local, Cfpomov.mv_obs FROM  dcf!cfpilofi  LEFT OUTER JOIN dcf!cfpomov  ON  Cfpilofi.po_codigo = Cfpomov.mv_pilofi  INNER JOIN dcf!cfpiloto  ON  Cfpiloto.pi_codigo = Cfpilofi.po_piloto  INNER JOIN dcf!cfoficin  ON  Cfpilofi.po_oficin = Cfoficin.of_codigo  INNER JOIN dst!stpess  ON  Cfoficin.of_pess = Stpess.pe_codigo WHERE  Cfpilofi.po_oficin = ( ?SQLCode ) AND  Cfpiloto.pi_situac = ( 3 ) ORDER BY Cfpomov.mv_pilofi, Cfpomov.mv_data, Cfpomov.mv_codigo<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_QT_TT</TD>
+<TD VALIGN="CENTER">N(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_qt_tt</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_DT_PEO</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_dt_peo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_REFER</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_refer</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_NR_PR</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_nr_pr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_SCO</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_sco</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_PEC</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_pec</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_AG_DT</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_ag_dt</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_PILOFI</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_pilofi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_DATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_data</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_TIPO</TD>
+<TD VALIGN="CENTER">C(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_CONS</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_cons</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_QUANT</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_quant</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_VALOR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_valor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_TAMANHO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_tamanho</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_LOCAL</TD>
+<TD VALIGN="CENTER">C(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_local</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_OBS</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_obs</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR09B</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cfpilofi.po_qt_tt, Cfpilofi.po_dt_peo, Cfpiloto.pi_refer, Cfpiloto.pi_nr_pr, Cfpiloto.pi_dt_sco, Cfpiloto.pi_dt_pec, Cfpiloto.pi_ag_dt, Stpess.pe_nome, Cfpomov.mv_codigo, Cfpomov.mv_pilofi, Cfpomov.mv_data, Cfpomov.mv_tipo, Cfpomov.mv_cons, Cfpomov.mv_quant, Cfpomov.mv_valor, Cfpomov.mv_tamanho, Cfpomov.mv_local, Cfpomov.mv_obs FROM  dcf!cfpilofi  LEFT OUTER JOIN dcf!cfpomov  ON  Cfpilofi.po_codigo = Cfpomov.mv_pilofi  INNER JOIN dcf!cfpiloto  ON  Cfpiloto.pi_codigo = Cfpilofi.po_piloto  INNER JOIN dcf!cfoficin  ON  Cfpilofi.po_oficin = Cfoficin.of_codigo  INNER JOIN dst!stpess  ON  Cfoficin.of_pess = Stpess.pe_codigo WHERE  Cfpilofi.po_oficin <> SPACE(8) AND  Cfpiloto.pi_situac = ( 3 ) ORDER BY Cfpomov.mv_pilofi, Cfpomov.mv_data, Cfpomov.mv_codigo<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_QT_TT</TD>
+<TD VALIGN="CENTER">N(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_qt_tt</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_DT_PEO</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_dt_peo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_REFER</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_refer</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_NR_PR</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_nr_pr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_SCO</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_sco</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_PEC</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_pec</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_AG_DT</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_ag_dt</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_PILOFI</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_pilofi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_DATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_data</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_TIPO</TD>
+<TD VALIGN="CENTER">C(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_CONS</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_cons</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_QUANT</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_quant</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_VALOR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_valor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_TAMANHO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_tamanho</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_LOCAL</TD>
+<TD VALIGN="CENTER">C(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_local</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_OBS</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_obs</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR10A</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cfpilofi.po_qt_tt, Cfpilofi.po_dt_peo, Cfpiloto.pi_refer, Cfpiloto.pi_nr_pr, Cfpiloto.pi_sala, Cfpiloto.pi_dt_sco, Cfpiloto.pi_dt_pec, Cfpiloto.pi_ag_dt, Cfpomov.mv_codigo, Cfpomov.mv_pilofi, Cfpomov.mv_data, Cfpomov.mv_tipo, Cfpomov.mv_cons, Cfpomov.mv_quant, Cfpomov.mv_valor, Cfpomov.mv_tamanho, Cfpomov.mv_local, Cfpomov.mv_obs, Stpess.pe_nome AS pe_oficin, Stpess_a.pe_nome FROM  dcf!cfpilofi  LEFT OUTER JOIN dcf!cfpomov  ON  Cfpilofi.po_codigo = Cfpomov.mv_pilofi  INNER JOIN dcf!cfpiloto  ON  Cfpiloto.pi_codigo = Cfpilofi.po_piloto  INNER JOIN dcv!cvclifor  ON  Cfpiloto.pi_cliente = Cvclifor.cf_codigo  INNER JOIN dst!stpess Stpess_a  ON  Cvclifor.cf_pess = Stpess_a.pe_codigo  INNER JOIN dcf!cfoficin  ON  Cfpilofi.po_oficin = Cfoficin.of_codigo  INNER JOIN dst!stpess  ON  Cfoficin.of_pess = Stpess.pe_codigo WHERE  Cfpiloto.pi_cliente = ( ?SQLCode ) AND  Cfpiloto.pi_situac = ( 3 ) ORDER BY Cfpomov.mv_pilofi, Cfpomov.mv_data, Cfpomov.mv_codigo<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_QT_TT</TD>
+<TD VALIGN="CENTER">N(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_qt_tt</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_DT_PEO</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_dt_peo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_REFER</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_refer</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_NR_PR</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_nr_pr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_SALA</TD>
+<TD VALIGN="CENTER">C(25)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_sala</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_SCO</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_sco</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_PEC</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_pec</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_AG_DT</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_ag_dt</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_PILOFI</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_pilofi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_DATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_data</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_TIPO</TD>
+<TD VALIGN="CENTER">C(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_CONS</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_cons</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_QUANT</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_quant</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_VALOR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_valor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_TAMANHO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_tamanho</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_LOCAL</TD>
+<TD VALIGN="CENTER">C(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_local</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_OBS</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_obs</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_OFICIN</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR10B</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cfpilofi.po_qt_tt, Cfpilofi.po_dt_peo, Cfpiloto.pi_refer, Cfpiloto.pi_nr_pr, Cfpiloto.pi_sala, Cfpiloto.pi_dt_sco, Cfpiloto.pi_dt_pec, Cfpiloto.pi_ag_dt, Cfpomov.mv_codigo, Cfpomov.mv_pilofi, Cfpomov.mv_data, Cfpomov.mv_tipo, Cfpomov.mv_cons, Cfpomov.mv_quant, Cfpomov.mv_valor, Cfpomov.mv_tamanho, Cfpomov.mv_local, Cfpomov.mv_obs, Stpess.pe_nome AS pe_oficin, Stpess_a.pe_nome FROM  dcf!cfpilofi  LEFT OUTER JOIN dcf!cfpomov  ON  Cfpilofi.po_codigo = Cfpomov.mv_pilofi  INNER JOIN dcf!cfpiloto  ON  Cfpiloto.pi_codigo = Cfpilofi.po_piloto  INNER JOIN dcv!cvclifor  ON  Cfpiloto.pi_cliente = Cvclifor.cf_codigo  INNER JOIN dst!stpess Stpess_a  ON  Cvclifor.cf_pess = Stpess_a.pe_codigo  INNER JOIN dcf!cfoficin  ON  Cfpilofi.po_oficin = Cfoficin.of_codigo  INNER JOIN dst!stpess  ON  Cfoficin.of_pess = Stpess.pe_codigo WHERE  Cfpiloto.pi_cliente <> SPACE(8) AND  Cfpiloto.pi_situac = ( 3 ) ORDER BY Cfpomov.mv_pilofi, Cfpomov.mv_data, Cfpomov.mv_codigo<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_QT_TT</TD>
+<TD VALIGN="CENTER">N(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_qt_tt</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_DT_PEO</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpilofi.po_dt_peo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_REFER</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_refer</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_NR_PR</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_nr_pr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_SALA</TD>
+<TD VALIGN="CENTER">C(25)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_sala</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_SCO</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_sco</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_PEC</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_pec</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_AG_DT</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_ag_dt</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_PILOFI</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_pilofi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_DATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_data</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_TIPO</TD>
+<TD VALIGN="CENTER">C(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_CONS</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_cons</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_QUANT</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_quant</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_VALOR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_valor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_TAMANHO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_tamanho</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_LOCAL</TD>
+<TD VALIGN="CENTER">C(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_local</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_OBS</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpomov.mv_obs</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_OFICIN</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR11</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cfpiloto.pi_codigo, Cfpiloto.pi_refer, Cfpiloto.pi_pedcli, Cfpiloto.pi_dt_pco, Cfpiloto.pi_dt_cor, Cfpiloto.pi_dt_pec, Cfpiloto.pi_ac_mot, Cfpiloto.pi_ac_acao, Stpess.pe_nome FROM  dcf!cfpiloto  INNER JOIN dcv!cvclifor  ON  Cfpiloto.pi_cliente = Cvclifor.cf_codigo  INNER JOIN dst!stpess  ON  Cvclifor.cf_pess = Stpess.pe_codigo WHERE  Cfpiloto.pi_dt_pec BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Cfpiloto.pi_situac IN (1,2,3) ORDER BY Cfpiloto.pi_pedcli<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_REFER</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_refer</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_PEDCLI</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_pedcli</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_PCO</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_pco</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_COR</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_cor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_PEC</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_pec</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_AC_MOT</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_ac_mot</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_AC_ACAO</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_ac_acao</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR12</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cfpiloto.pi_refer, Cfpiloto.pi_nr_pr, Cfpiloto.pi_descr, Cfpiloto.pi_sala, Cfpiloto.pi_pp_sit, Cfpiloto.pi_pp_obs, Cfpiloto.pi_qt_tot, Cfpiloto.pi_qt_fat, Stpess.pe_nome, 99999 AS pi_pp_qte FROM  dcf!cfpiloto  INNER JOIN dcv!cvclifor  ON  Cfpiloto.pi_cliente = Cvclifor.cf_codigo  INNER JOIN dst!stpess  ON  Cvclifor.cf_pess = Stpess.pe_codigo WHERE  Cfpiloto.pi_situac = ( 3 ) ORDER BY Stpess.pe_nome, Cfpiloto.pi_nr_pr<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_REFER</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_refer</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_NR_PR</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_nr_pr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DESCR</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_SALA</TD>
+<TD VALIGN="CENTER">C(25)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_sala</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_PP_SIT</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_pp_sit</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_PP_OBS</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_pp_obs</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_QT_TOT</TD>
+<TD VALIGN="CENTER">N(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_qt_tot</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_QT_FAT</TD>
+<TD VALIGN="CENTER">N(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_qt_fat</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_PP_QTE</TD>
+<TD VALIGN="CENTER">N(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">99999</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR13A</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cvfatura.ft_codigo, Cvfatura.ft_fatura, Cvfatura.ft_numfat, Cvfatura.ft_data, Cvfatura.ft_valort, Cvfatura.ft_vl_icms, Cvfatura.ft_situac, Cvfatura.ft_tipo, Cvfatura.ft_quantt, Cvcfop.cp_cfop1, Cvcfop.cp_cfop2, Cvcfop.cp_cfop3 FROM  dcv!cvfatura  INNER JOIN dcv!cvtpcv  ON  Cvfatura.ft_tpcv = Cvtpcv.tp_codigo  INNER JOIN dcv!cvcfop  ON  Cvtpcv.tp_cfop = Cvcfop.cp_codigo WHERE  Cvfatura.ft_data BETWEEN ?SQLDtIni AND ?SQLDtFim AND  (  Cvfatura.ft_tipo = ( "FT" ) AND  Cvfatura.ft_situac IN (IIF(?SQLSit1,1,99),IIF(?SQLSit2,2,99),IIF(?SQLSit3,3,99),IIF(?SQLSit4,4,99)) ) ORDER BY Cvfatura.ft_data<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_FATURA</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_fatura</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_NUMFAT</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_numfat</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_DATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_data</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_VALORT</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_valort</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_VL_ICMS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_vl_icms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_SITUAC</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_situac</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_TIPO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_QUANTT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_quantt</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CP_CFOP1</TD>
+<TD VALIGN="CENTER">C(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvcfop.cp_cfop1</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CP_CFOP2</TD>
+<TD VALIGN="CENTER">C(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvcfop.cp_cfop2</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CP_CFOP3</TD>
+<TD VALIGN="CENTER">C(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvcfop.cp_cfop3</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR13B</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cvfatura.ft_codigo, Cvfatura.ft_fatura, Cvfatura.ft_numfat, Cvfatura.ft_data, Cvfatura.ft_valort, Cvfatura.ft_vl_icms, Cvfatura.ft_situac, Cvfatura.ft_tipo, Cvfatura.ft_quantt, Cvcfop.cp_cfop1, Cvcfop.cp_cfop2, Cvcfop.cp_cfop3 FROM  dcv!cvfatura  INNER JOIN dcv!cvtpcv  ON  Cvfatura.ft_tpcv = Cvtpcv.tp_codigo  INNER JOIN dcv!cvcfop  ON  Cvtpcv.tp_cfop = Cvcfop.cp_codigo WHERE  Cvfatura.ft_data BETWEEN ?SQLDtIni AND ?SQLDtFim AND  (  Cvfatura.ft_tipo = ( "EM" ) AND  Cvfatura.ft_situac IN (IIF(?SQLSit1,1,99),IIF(?SQLSit2,2,99),IIF(?SQLSit3,3,99),IIF(?SQLSit4,4,99)) ) ORDER BY Cvfatura.ft_data<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_FATURA</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_fatura</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_NUMFAT</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_numfat</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_DATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_data</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_VALORT</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_valort</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_VL_ICMS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_vl_icms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_SITUAC</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_situac</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_TIPO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_QUANTT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_quantt</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CP_CFOP1</TD>
+<TD VALIGN="CENTER">C(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvcfop.cp_cfop1</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CP_CFOP2</TD>
+<TD VALIGN="CENTER">C(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvcfop.cp_cfop2</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CP_CFOP3</TD>
+<TD VALIGN="CENTER">C(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvcfop.cp_cfop3</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR13C</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cvfatit.fi_codigo, Cvfatit.fi_fatura, Cvfatit.fi_prodim FROM dcv!cvfatit WHERE  Cvfatit.fi_fatura = ?SQLCode<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FI_CODIGO</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvfatit.fi_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FI_FATURA</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvfatit.fi_fatura</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FI_PRODIM</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvfatit.fi_prodim</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR13D</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cvpedit.pi_codigo, Cvpedit.pi_pedido, Cvpedit.pi_preco FROM  dcv!cvpedit WHERE  Cvpedit.pi_codigo = ( ?SQLCode )<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_CODIGO</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvpedit.pi_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_PEDIDO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvpedit.pi_pedido</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_PRECO</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvpedit.pi_preco</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR13E</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT IIF(ISNULL(Cfpiloto.pi_ag_dt).OR.EMPTY(Cfpiloto.pi_ag_dt),Cfpiloto.pi_en_ini,Cfpiloto.pi_ag_dt) AS pi_ag_dt, SUM(Cfpilgr.gr_qtd_tt) AS gr_qtd_tt, SUM(Cfpiloto.pi_pr_fin*Cfpilgr.gr_qtd_tt) AS vl_total FROM  dcf!cfpiloto  INNER JOIN dcf!cfpilgr  ON  Cfpiloto.pi_codigo = Cfpilgr.gr_piloto WHERE  Cfpiloto.pi_ag_dt BETWEEN ?SQLDtIni AND ?SQLDtFim OR  Cfpiloto.pi_en_ini BETWEEN ?SQLDtIni AND ?SQLDtFim GROUP BY 1 ORDER BY 1<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_AG_DT</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_QTD_TT</TD>
+<TD VALIGN="CENTER">N(16)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">VL_TOTAL</TD>
+<TD VALIGN="CENTER">N(19,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR14</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cfpiloto.pi_refer, Cfpiloto.pi_nr_vd, Cfpiloto.pi_nr_pr, Cfpiloto.pi_tec_tp, Cfpiloto.pi_dt_sco, Cfpiloto.pi_dt_pec, Cfpiloto.pi_qt_cor, Cfpiloto.pi_qt_tot FROM  dcf!cfpiloto WHERE  Cfpiloto.pi_dt_pec BETWEEN ?SQLDtIni AND ?SQLDtFim ORDER BY Cfpiloto.pi_dt_pec, Cfpiloto.pi_tec_tp<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_REFER</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_refer</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_NR_VD</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_nr_vd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_NR_PR</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_nr_pr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_TEC_TP</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_tec_tp</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_SCO</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_sco</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_PEC</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_pec</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_QT_COR</TD>
+<TD VALIGN="CENTER">N(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_qt_cor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_QT_TOT</TD>
+<TD VALIGN="CENTER">N(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_qt_tot</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR15</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Stpess.pe_nome, Cfpiloto.pi_refer, Cfpiloto.pi_nr_vd, Cfpiloto.pi_nr_pr, Cfpiloto.pi_qt_tot, Cfpiloto.pi_pr_fin, Cfpiloto.pi_en_ini, Cfpiloto.pi_en_fim, Cfpiloto.pi_situac, Cvfatura.ft_fatura, Cvfatura.ft_quantt, Cvfatura_a.ft_fatura AS rt_fatura, Cvfatura_a.ft_quantt AS rt_quantt FROM  dcf!cfpiloto  INNER JOIN dcv!cvpedido  ON  Cfpiloto.pi_pedido = Cvpedido.pe_pedido  INNER JOIN dcv!cvclifor  ON  Cfpiloto.pi_cliente = Cvclifor.cf_codigo  INNER JOIN dst!stpess  ON  Cvclifor.cf_pess = Stpess.pe_codigo  LEFT OUTER JOIN dcv!cvfatura  ON  Cvpedido.pe_codigo = Cvfatura.ft_pedido AND  Cvpedido.pe_codigo <> SPACE(8)  LEFT OUTER JOIN dcv!cvfatura Cvfatura_a  ON  Cvfatura.ft_fatura = Cvfatura_a.ft_numfat WHERE  Cfpiloto.pi_en_fim BETWEEN ?SQLDtIni AND ?SQLDtFim AND  (  Cfpiloto.pi_situac = ( 3 ) OR  (  Cfpiloto.pi_situac = ( 4 ) AND  (  Cvfatura.ft_codigo IS NULL OR  Cvfatura_a.ft_codigo IS NOT NULL ) ) ) GROUP BY Stpess.pe_nome, Cfpiloto.pi_refer, Cfpiloto.pi_nr_vd, Cfpiloto.pi_nr_pr, Cfpiloto.pi_qt_tot, Cfpiloto.pi_pr_fin, Cfpiloto.pi_en_ini, Cfpiloto.pi_en_fim, Cfpiloto.pi_situac, Cvpedido.pe_pedido, Cvfatura.ft_fatura, Cvfatura.ft_quantt, Cvfatura_a.ft_fatura, Cvfatura_a.ft_quantt<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_REFER</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_refer</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_NR_VD</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_nr_vd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_NR_PR</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_nr_pr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_QT_TOT</TD>
+<TD VALIGN="CENTER">N(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_qt_tot</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_PR_FIN</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_pr_fin</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_EN_INI</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_en_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_EN_FIM</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_en_fim</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_SITUAC</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_situac</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_FATURA</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_fatura</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_QUANTT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_quantt</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RT_FATURA</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_fatura</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RT_QUANTT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_quantt</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR16</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cfpiloto.pi_codigo, Cfpiloto.pi_refer, Cfpiloto.pi_nr_vd, Cfpiloto.pi_nr_pr, Stpess.pe_nome, Cfpiloto.pi_dt_ped, Cfpiloto.pi_dt_tec, Cfpiloto.pi_dt_pco, Cfpiloto.pi_dt_cor, Cfpiloto.pi_dt_sco, Cfpiloto.pi_dt_pec, Cfpiloto.pi_ag_dt, {} AS po_dt_peo FROM  dcf!cfpiloto  INNER JOIN dcv!cvclifor  ON  Cfpiloto.pi_cliente = Cvclifor.cf_codigo  INNER JOIN dst!stpess  ON  Cvclifor.cf_pess = Stpess.pe_codigo WHERE  Cfpiloto.pi_ag_dt BETWEEN ?SQLDtIni AND ?SQLDtFim ORDER BY Stpess.pe_nome, Cfpiloto.pi_nr_pr<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_REFER</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_refer</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_NR_VD</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_nr_vd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_NR_PR</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_nr_pr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_PED</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_ped</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_TEC</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_tec</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_PCO</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_pco</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_COR</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_cor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_SCO</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_sco</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DT_PEC</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_dt_pec</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_AG_DT</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_ag_dt</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PO_DT_PEO</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR17</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cfpiloto.pi_refer, Cfpiloto.pi_codfab, Cfinvent.iv_prod, Cfinvent.iv_quant, Cfinvent.iv_obs, Esprod.pr_descr, Esmovim.mv_docto, Esmovim.mv_data, Esmovim.mv_quant, Estpmov.tm_tipo FROM  dcf!cfpiloto  INNER JOIN dcf!cfinvent  ON  Cfpiloto.pi_codigo = Cfinvent.iv_piloto  INNER JOIN des!esprod  ON  Cfinvent.iv_prod = Esprod.pr_codigo  LEFT OUTER JOIN des!esestoq  ON  Cfinvent.iv_prod = Esestoq.es_prod AND  Cfinvent.iv_local = Esestoq.es_local  LEFT OUTER JOIN des!esmovim  ON  Esestoq.es_codigo = Esmovim.mv_estoq  LEFT OUTER JOIN des!estpmov  ON  Estpmov.tm_codigo = Esmovim.mv_tpmov WHERE (  Cfpiloto.pi_refer = ( ?SQLRefer ) AND  Cfinvent.iv_data = ( ?SQLData ) ) AND  Cfinvent.iv_local = ( ?SQLLocal ) ORDER BY Cfpiloto.pi_refer, Cfpiloto.pi_codfab, Cfinvent.iv_prod, Esmovim.mv_data, Esmovim.mv_docto<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_REFER</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_refer</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_CODFAB</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfpiloto.pi_codfab</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">IV_PROD</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfinvent.iv_prod</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">IV_QUANT</TD>
+<TD VALIGN="CENTER">N(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfinvent.iv_quant</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">IV_OBS</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfinvent.iv_obs</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_DOCTO</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esmovim.mv_docto</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_DATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esmovim.mv_data</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">MV_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esmovim.mv_quant</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">TM_TIPO</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!estpmov.tm_tipo</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR31A</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Stpess.pe_nome, Cvfatura.ft_fatura, Cvpedido.pe_pedido, Cvfatura.ft_numped, IIF(ISNULL(Cvfatura.ft_data),Cfpiloto.pi_en_ini,Cvfatura.ft_data) AS ft_data, Cfpiloto.pi_pr_fin*Cfpiloto.pi_qt_tot AS pi_valort, Cvfatura.ft_valort, Cvfatura.ft_situac FROM  dcv!cvclifor  LEFT OUTER JOIN dcv!cvclimf  ON  Cvclifor.cf_codigo = Cvclimf.mf_filial  INNER JOIN dcf!cfpiloto  ON  Cvclifor.cf_codigo = Cfpiloto.pi_cliente  LEFT OUTER JOIN dcv!cvpedido  ON  Cfpiloto.pi_pedido = Cvpedido.pe_pedido AND  Cfpiloto.pi_pedido <> SPACE(8)  LEFT OUTER JOIN dcv!cvfatura  ON  Cvpedido.pe_codigo = Cvfatura.ft_pedido AND  Cvpedido.pe_codigo <> SPACE(8)  INNER JOIN dst!stpess  ON  Cvclifor.cf_pess = Stpess.pe_codigo WHERE (  Cvclifor.cf_codigo = ( ?SQLFilial ) OR  Cvclimf.mf_matriz = ( ?SQLMatriz ) ) AND  Cfpiloto.pi_en_ini BETWEEN ?SQLDtIni AND ?SQLDtFim ORDER BY Cvfatura.ft_fatura, Cvpedido.pe_pedido<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_FATURA</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_fatura</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_PEDIDO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvpedido.pe_pedido</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_NUMPED</TD>
+<TD VALIGN="CENTER">C(15)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_numped</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_DATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_data</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_VALORT</TD>
+<TD VALIGN="CENTER">N(18,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_VALORT</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_valort</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_SITUAC</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_situac</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFCR31B</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Stpess.pe_nome, Cvfatura.ft_fatura, Cvpedido.pe_pedido, Cvfatura.ft_numped, Cvfatura.ft_data, 0 AS pi_valort, Cvfatura.ft_valort, Cvfatura.ft_situac FROM  dcv!cvclifor  LEFT OUTER JOIN dcv!cvclimf  ON  Cvclifor.cf_codigo = Cvclimf.mf_filial  INNER JOIN dcv!cvfatura  ON  Cvclifor.cf_pess = Cvfatura.ft_dest  INNER JOIN dcv!cvpedido  ON  Cvpedido.pe_codigo = Cvfatura.ft_pedido  INNER JOIN dst!stpess  ON  Cvclifor.cf_pess = Stpess.pe_codigo WHERE (  Cvclifor.cf_codigo = ( ?SQLFilial ) OR  Cvclimf.mf_matriz = ( ?SQLMatriz ) ) AND  ( (  Cvfatura.ft_data BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Cvfatura.ft_tipo = ( "FT" ) ) AND  (  Cvfatura.ft_pedido = SPACE(8) AND  Cvfatura.ft_situac <> ( 4 ) ) ) ORDER BY Cvfatura.ft_data<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_FATURA</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_fatura</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_PEDIDO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvpedido.pe_pedido</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_NUMPED</TD>
+<TD VALIGN="CENTER">C(15)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_numped</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_DATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_data</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_VALORT</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">0</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_VALORT</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_valort</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_SITUAC</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcv!cvfatura.ft_situac</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+CFGR01</B></FONT>
+<FONT FACE="Arial"> (Campos: 27)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cfctpag.ct_codigo, Cfctpag.ct_pess, Cfctpag.ct_aviso, Cfctpag.ct_fatura, Cfctpag.ct_data, Cfctpag.ct_valor, Cfctpag.ct_vcto, Cfctpag.ct_pgto, Cfctpag.ct_bonif, Cfctpag.ct_logis, Cfctpag.ct_aniv, Cfctpag.ct_inaug, Cfctpag.ct_reinaug, Cfctpag.ct_public, Cfctpag.ct_situac, Cfctpag.ct_descar, Cfctpag.ct_indev, Cfctpag.ct_outdes, Cfctpag.ct_total, Cfctpag.ct_obs FROM  dcf!cfctpag WHERE  Cfctpag.ct_pess = ( ?SQLPess ) AND  Cfctpag.ct_data BETWEEN ?SQLDtIni AND ?SQLDtFim ORDER BY Cfctpag.ct_data, Cfctpag.ct_fatura<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CT_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcf!cfctpag.ct_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CT_PESS</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfctpag.ct_pess</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CT_AVISO</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfctpag.ct_aviso</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CT_FATURA</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfctpag.ct_fatura</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CT_DATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfctpag.ct_data</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CT_VALOR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfctpag.ct_valor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CT_VCTO</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfctpag.ct_vcto</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CT_PGTO</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfctpag.ct_pgto</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CT_BONIF</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfctpag.ct_bonif</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CT_LOGIS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfctpag.ct_logis</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CT_ANIV</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfctpag.ct_aniv</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CT_INAUG</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfctpag.ct_inaug</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CT_REINAUG</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfctpag.ct_reinaug</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CT_PUBLIC</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfctpag.ct_public</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CT_SITUAC</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfctpag.ct_situac</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CT_DESCAR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfctpag.ct_descar</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CT_INDEV</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfctpag.ct_indev</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CT_OUTDES</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfctpag.ct_outdes</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CT_TOTAL</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfctpag.ct_total</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CT_OBS</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dcf!cfctpag.ct_obs</TD>
+</TR>
+</TABLE>
+<BR><BR>
+</BODY>
+</HTML>

@@ -1,0 +1,2673 @@
+
+<TABLE CELLSPACING=0 BORDER=1 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+<P ALIGN="CENTER"><B><FONT FACE="Arial" COLOR="#0000ff">VISUALIZAÇÕES NO BANCO DE DADOS - D:\AMR\AMR\DBFS\REF.DBC</P></B></FONT>
+</TD></TR>
+</TABLE>
+<BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+EFLR01A</B></FONT>
+<FONT FACE="Arial"> (Campos: 12)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT IIF(Effatura.ft_tipo="EC",SPACE(8),Effatura.ft_fatura) AS ft_fatura, MIN(Effatura.ft_fatura) AS ft_fatini, MAX(Effatura.ft_fatura) AS ft_fatfim, Effatura.ft_tipo, Effatura.ft_especie, Effatura.ft_modelo, Effatura.ft_serie, Effatura.ft_subser, Effatura.ft_dtapur, SUM(Effatif.ff_valor) AS ff_valor, Effatura.ft_situac, Effatif.ff_cfop, Effatif.ff_cso_icms, SUM(Effatif.ff_bc_icms) AS ff_bc_icms, Effatif.ff_al_icms, SUM(IIF(ft_situac=3.OR.ft_situac=4,ff_vl_icms-ff_vl_icms,IIF(ft_tipo="EC",ff_valor*(ff_al_icms/100),ff_vl_icms))) AS ff_vl_icms, SUM(Effatif.ff_is_icms) AS ff_is_icms, SUM(Effatif.ff_ou_icms) AS ff_ou_icms, SUM(Effatif.ff_bc_icst) AS ff_bc_icst, MAX(Effatif.ff_al_icst) AS ff_al_icst, MAX(Effatif.ff_ai_icst) AS ff_ai_icst, SUM(Effatif.ff_vl_icst) AS ff_vl_icst, SUM(Effatif.ff_bc_ipi) AS ff_bc_ipi, MAX(Effatif.ff_al_ipi) AS ff_al_ipi, SUM(Effatif.ff_vl_ipi) AS ff_vl_ipi, SUM(Effatif.ff_is_ipi) AS ff_is_ipi, SUM(Effatif.ff_ou_ipi) AS ff_ou_ipi, Stestado.es_sigla, Stpess.pe_nome, Stpess.pe_cnpj FROM  def!effatura  LEFT OUTER JOIN def!effatif  ON  Effatura.ft_codigo = Effatif.ff_fatura  INNER JOIN dst!stpess  ON  Effatura.ft_pess = Stpess.pe_codigo  INNER JOIN dst!stender  ON  Stender.ed_codigo = Stpess.pe_ender  INNER JOIN dst!stestado  ON  Stestado.es_codigo = Stender.ed_estado WHERE  Effatura.ft_dtapur BETWEEN ?SQLDtIni AND ?SQLDtFim AND  (  Effatura.ft_nota = ( ?SQLNota ) AND  Effatura.ft_tipo IN ("FT","CS","EC","SV") ) GROUP BY 1, Effatura.ft_tipo, Effatura.ft_especie, Effatura.ft_modelo, Effatura.ft_serie, Effatura.ft_subser, Effatura.ft_dtapur, Effatura.ft_situac, Effatif.ff_cfop, Effatif.ff_cso_icms, Effatif.ff_al_icms, Stestado.es_sigla, Stpess.pe_nome, Stpess.pe_cnpj ORDER BY Effatura.ft_dtapur, Effatura.ft_especie, Effatura.ft_modelo, 2, Effatif.ff_al_icms<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_FATURA</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_FATINI</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_FATFIM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_TIPO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_ESPECIE</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_especie</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_MODELO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_modelo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_SERIE</TD>
+<TD VALIGN="CENTER">C(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_serie</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_SUBSER</TD>
+<TD VALIGN="CENTER">C(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_subser</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_DTAPUR</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_dtapur</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_VALOR</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_valor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_SITUAC</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_situac</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_CFOP</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_cfop</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_CSO_ICMS</TD>
+<TD VALIGN="CENTER">C(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_cso_icms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_BC_ICMS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_bc_icms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_AL_ICMS</TD>
+<TD VALIGN="CENTER">N(8,4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_al_icms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_VL_ICMS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_vl_icms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_IS_ICMS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_is_icms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_OU_ICMS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_ou_icms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_BC_ICST</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_bc_icst</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_AL_ICST</TD>
+<TD VALIGN="CENTER">N(8,4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_al_icst</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_AI_ICST</TD>
+<TD VALIGN="CENTER">N(8,4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_ai_icst</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_VL_ICST</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_vl_icst</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_BC_IPI</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_bc_ipi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_AL_IPI</TD>
+<TD VALIGN="CENTER">N(8,4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_al_ipi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_VL_IPI</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_vl_ipi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_IS_IPI</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_is_ipi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_OU_IPI</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_ou_ipi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_SIGLA</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stestado.es_sigla</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_CNPJ</TD>
+<TD VALIGN="CENTER">C(15)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_cnpj</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+EFLR01B</B></FONT>
+<FONT FACE="Arial"> (Campos: 12)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Effatura.ft_fatura, Effatura.ft_fatura AS ft_fatini, Effatura.ft_fatura AS ft_fatfim, Effatura.ft_tipo, Effatura.ft_especie, Effatura.ft_modelo, Effatura.ft_serie, Effatura.ft_subser, Effatura.ft_dtapur, Effatif.ff_valor, Effatura.ft_situac, Effatif.ff_cfop, Effatif.ff_cso_icms, SUM(Effatif.ff_bc_icms) AS ff_bc_icms, Effatif.ff_al_icms, SUM(Effatif.ff_vl_icms) AS ff_vl_icms, SUM(Effatif.ff_is_icms) AS ff_is_icms, SUM(Effatif.ff_ou_icms) AS ff_ou_icms, SUM(Effatif.ff_bc_icst) AS ff_bc_icst, MAX(Effatif.ff_al_icst) AS ff_al_icst, MAX(Effatif.ff_ai_icst) AS ff_ai_icst, SUM(Effatif.ff_vl_icst) AS ff_vl_icst, SUM(Effatif.ff_bc_ipi) AS ff_bc_ipi, MAX(Effatif.ff_al_ipi) AS ff_al_ipi, SUM(Effatif.ff_vl_ipi) AS ff_vl_ipi, SUM(Effatif.ff_is_ipi) AS ff_is_ipi, SUM(Effatif.ff_ou_ipi) AS ff_ou_ipi, Stestado.es_sigla, Stpess.pe_nome FROM  def!effatura  INNER JOIN def!effatif  ON  Effatura.ft_codigo = Effatif.ff_fatura  INNER JOIN def!efreduz  ON  Efreduz.rz_codigo = Effatura.ft_reduz  INNER JOIN def!efecf  ON  Efecf.ec_codigo = Efreduz.rz_ecf  INNER JOIN dst!stpess  ON  Effatura.ft_pess = Stpess.pe_codigo  INNER JOIN dst!stender  ON  Stender.ed_codigo = Stpess.pe_ender  INNER JOIN dst!stestado  ON  Stestado.es_codigo = Stender.ed_estado WHERE  Effatura.ft_dtapur BETWEEN ?SQLDtIni AND ?SQLDtFim AND  (  Effatura.ft_nota = ( ?SQLNota ) AND  (  Efecf.ec_caixa = ( ?SQLECF ) AND  Effatura.ft_tipo = ( "EC" ) ) ) GROUP BY Effatura.ft_fatura, Effatura.ft_tipo, Effatura.ft_especie, Effatura.ft_modelo, Effatura.ft_serie, Effatura.ft_subser, Effatura.ft_dtapur, Effatif.ff_valor, Effatura.ft_situac, Effatif.ff_cfop, Effatif.ff_cso_icms, Effatif.ff_al_icms, Stestado.es_sigla, Stpess.pe_nome ORDER BY Effatura.ft_dtapur, Effatura.ft_especie, Effatura.ft_modelo, Effatura.ft_fatura, Effatif.ff_al_icms<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_FATURA</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_fatura</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_FATINI</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!effatura.ft_fatura</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_FATFIM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!effatura.ft_fatura</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_TIPO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_ESPECIE</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_especie</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_MODELO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_modelo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_SERIE</TD>
+<TD VALIGN="CENTER">C(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_serie</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_SUBSER</TD>
+<TD VALIGN="CENTER">C(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_subser</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_DTAPUR</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_dtapur</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_VALOR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!effatif.ff_valor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_SITUAC</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_situac</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_CFOP</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_cfop</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_CSO_ICMS</TD>
+<TD VALIGN="CENTER">C(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_cso_icms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_BC_ICMS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_bc_icms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_AL_ICMS</TD>
+<TD VALIGN="CENTER">N(8,4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_al_icms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_VL_ICMS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_vl_icms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_IS_ICMS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_is_icms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_OU_ICMS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_ou_icms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_BC_ICST</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_bc_icst</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_AL_ICST</TD>
+<TD VALIGN="CENTER">N(8,4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_al_icst</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_AI_ICST</TD>
+<TD VALIGN="CENTER">N(8,4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_ai_icst</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_VL_ICST</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_vl_icst</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_BC_IPI</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_bc_ipi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_AL_IPI</TD>
+<TD VALIGN="CENTER">N(8,4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_al_ipi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_VL_IPI</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_vl_ipi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_IS_IPI</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_is_ipi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_OU_IPI</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_ou_ipi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_SIGLA</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stestado.es_sigla</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+EFLR02A</B></FONT>
+<FONT FACE="Arial"> (Campos: 12)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Effatura.ft_fatura, Effatura.ft_tipo, Effatura.ft_especie, Effatura.ft_modelo, Effatura.ft_serie, Effatura.ft_subser, Effatura.ft_dtapur, Effatif.ff_valor, Effatura.ft_situac, Effatif.ff_cfop, Effatif.ff_cso_icms, SUM(Effatif.ff_bc_icms) AS ff_bc_icms, Effatif.ff_al_icms, SUM(Effatif.ff_vl_icms) AS ff_vl_icms, SUM(Effatif.ff_is_icms) AS ff_is_icms, SUM(Effatif.ff_ou_icms) AS ff_ou_icms, SUM(Effatif.ff_bc_icst) AS ff_bc_icst, MAX(Effatif.ff_al_icst) AS ff_al_icst, MAX(Effatif.ff_ai_icst) AS ff_ai_icst, SUM(Effatif.ff_vl_icst) AS ff_vl_icst, SUM(Effatif.ff_bc_ipi) AS ff_bc_ipi, MAX(Effatif.ff_al_ipi) AS ff_al_ipi, SUM(Effatif.ff_vl_ipi) AS ff_vl_ipi, SUM(Effatif.ff_is_ipi) AS ff_is_ipi, SUM(Effatif.ff_ou_ipi) AS ff_ou_ipi, Stestado.es_sigla, Stpess.pe_nome, Stpess.pe_cpf, Stpess.pe_cnpj, Stpess.pe_ie FROM  def!effatura  INNER JOIN def!effatif  ON  Effatura.ft_codigo = Effatif.ff_fatura  INNER JOIN dst!stpess  ON  Effatura.ft_pess = Stpess.pe_codigo  INNER JOIN dst!stender  ON  Stender.ed_codigo = Stpess.pe_ender  INNER JOIN dst!stestado  ON  Stestado.es_codigo = Stender.ed_estado WHERE  Effatura.ft_dtapur BETWEEN ?SQLDtIni AND ?SQLDtFim AND  (  Effatura.ft_tipo = ( "EM" ) OR  Effatura.ft_tipo = ( "CE" ) ) GROUP BY Effatura.ft_fatura, Effatura.ft_tipo, Effatura.ft_especie, Effatura.ft_modelo, Effatura.ft_serie, Effatura.ft_subser, Effatura.ft_dtapur, Effatif.ff_valor, Effatura.ft_situac, Effatif.ff_cfop, Effatif.ff_cso_icms, Effatif.ff_al_icms, Stestado.es_sigla, Stpess.pe_nome, Stpess.pe_cpf, Stpess.pe_cnpj, Stpess.pe_ie ORDER BY Effatura.ft_dtapur, Effatura.ft_especie, Effatura.ft_modelo, Effatura.ft_fatura, Effatif.ff_al_icms<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_FATURA</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_fatura</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_TIPO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_ESPECIE</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_especie</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_MODELO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_modelo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_SERIE</TD>
+<TD VALIGN="CENTER">C(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_serie</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_SUBSER</TD>
+<TD VALIGN="CENTER">C(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_subser</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_DTAPUR</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_dtapur</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_VALOR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!effatif.ff_valor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FT_SITUAC</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatura.ft_situac</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_CFOP</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_cfop</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_CSO_ICMS</TD>
+<TD VALIGN="CENTER">C(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_cso_icms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_BC_ICMS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_bc_icms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_AL_ICMS</TD>
+<TD VALIGN="CENTER">N(8,4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_al_icms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_VL_ICMS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_vl_icms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_IS_ICMS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_is_icms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_OU_ICMS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_ou_icms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_BC_ICST</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_bc_icst</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_AL_ICST</TD>
+<TD VALIGN="CENTER">N(8,4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_al_icst</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_AI_ICST</TD>
+<TD VALIGN="CENTER">N(8,4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_ai_icst</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_VL_ICST</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_vl_icst</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_BC_IPI</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_bc_ipi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_AL_IPI</TD>
+<TD VALIGN="CENTER">N(8,4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_al_ipi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_VL_IPI</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_vl_ipi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_IS_IPI</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_is_ipi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_OU_IPI</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_ou_ipi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_SIGLA</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stestado.es_sigla</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_CPF</TD>
+<TD VALIGN="CENTER">C(15)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_cpf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_CNPJ</TD>
+<TD VALIGN="CENTER">C(15)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_cnpj</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_IE</TD>
+<TD VALIGN="CENTER">C(18)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_ie</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+EFLR02B</B></FONT>
+<FONT FACE="Arial"> (Campos: 12)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Effatif.ff_cfop, Effatif.ff_al_icms, SUM(Effatif.ff_valor) AS ff_valor, SUM(Effatif.ff_bc_icms) AS ff_bc_icms, SUM(Effatif.ff_vl_icms) AS ff_vl_icms, SUM(Effatif.ff_is_icms) AS ff_is_icms, SUM(Effatif.ff_ou_icms) AS ff_ou_icms, SUM(Effatif.ff_bc_icst) AS ff_bc_icst, SUM(Effatif.ff_vl_icst) AS ff_vl_icst, SUM(Effatif.ff_bc_ipi) AS ff_bc_ipi, SUM(Effatif.ff_vl_ipi) AS ff_vl_ipi, SUM(Effatif.ff_is_ipi) AS ff_is_ipi, SUM(Effatif.ff_ou_ipi) AS ff_ou_ipi FROM  def!effatura  INNER JOIN def!effatif  ON  Effatura.ft_codigo = Effatif.ff_fatura WHERE  Effatura.ft_dtapur BETWEEN ?SQLDtIni AND ?SQLDtFim AND  (  Effatura.ft_situac NOT IN (3,4) AND  (  Effatura.ft_tipo = ( "EM" ) OR  Effatura.ft_tipo = ( "CE" ) ) ) GROUP BY Effatif.ff_cfop, Effatif.ff_al_icms ORDER BY Effatif.ff_cfop, Effatif.ff_al_icms<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_CFOP</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_cfop</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_AL_ICMS</TD>
+<TD VALIGN="CENTER">N(8,4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_al_icms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_VALOR</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_BC_ICMS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_VL_ICMS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_IS_ICMS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_OU_ICMS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_BC_ICST</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_VL_ICST</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_BC_IPI</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_VL_IPI</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_IS_IPI</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_OU_IPI</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+EFLR03A</B></FONT>
+<FONT FACE="Arial"> (Campos: 12)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT IIF(ff_cfop<"5000","Entradas","Saídas   ") AS ff_tipo, Effatif.ff_cfop, SUM(Effatif.ff_valor) AS ff_valor, SUM(Effatif.ff_bc_icms) AS ff_bc_icms, SUM(IIF(ft_situac=3.OR.ft_situac=4,0,IIF(ft_tipo="EC",ff_valor*(ff_al_icms/100),ff_vl_icms))) AS ff_vl_icms, SUM(Effatif.ff_is_icms) AS ff_is_icms, SUM(Effatif.ff_ou_icms) AS ff_ou_icms FROM  def!effatura  INNER JOIN def!effatif  ON  Effatura.ft_codigo = Effatif.ff_fatura  INNER JOIN dst!stpess  ON  Effatura.ft_pess = Stpess.pe_codigo  INNER JOIN dst!stender  ON  Stender.ed_codigo = Stpess.pe_ender  INNER JOIN dst!stestado  ON  Stestado.es_codigo = Stender.ed_estado WHERE (  Effatura.ft_dtapur BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Effatura.ft_nota = ( ?SQLNota ) ) AND  Effatura.ft_situac NOT IN (3,4) GROUP BY Effatif.ff_cfop ORDER BY Effatif.ff_cfop<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_TIPO</TD>
+<TD VALIGN="CENTER">C(9)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_CFOP</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_cfop</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_VALOR</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_BC_ICMS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_VL_ICMS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_IS_ICMS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_OU_ICMS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+EFLR03B</B></FONT>
+<FONT FACE="Arial"> (Campos: 12)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Efapur.ap_codigo, Efapur.ap_mesano, Efapur.ap_mov, Efapur.ap_ic_tdeb, Efapur.ap_ic_ajdb, Efapur.ap_ic_tadb, Efapur.ap_ic_escr, Efapur.ap_ic_escm, Efapur.ap_ic_tcrd, Efapur.ap_ic_ajcr, Efapur.ap_ic_tacr, Efapur.ap_ic_esdb, Efapur.ap_ic_esdm, Efapur.ap_ic_scra, Efapur.ap_ic_slap, Efapur.ap_ic_tded, Efapur.ap_ic_slrc, Efapur.ap_ic_sltr, Efapur.ap_ic_rcap FROM  def!efapur WHERE  Efapur.ap_mesano = ( ?SQLMesAno ) AND  Efapur.ap_nota = ?SQLNota ORDER BY Efapur.ap_mesano<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!efapur.ap_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_MESANO</TD>
+<TD VALIGN="CENTER">C(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_mesano</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_MOV</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_mov</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IC_TDEB</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ic_tdeb</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IC_AJDB</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ic_ajdb</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IC_TADB</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ic_tadb</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IC_ESCR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ic_escr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IC_ESCM</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ic_escm</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IC_TCRD</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ic_tcrd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IC_AJCR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ic_ajcr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IC_TACR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ic_tacr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IC_ESDB</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ic_esdb</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IC_ESDM</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ic_esdm</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IC_SCRA</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ic_scra</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IC_SLAP</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ic_slap</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IC_TDED</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ic_tded</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IC_SLRC</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ic_slrc</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IC_SLTR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ic_sltr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IC_RCAP</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ic_rcap</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+EFLR04A</B></FONT>
+<FONT FACE="Arial"> (Campos: 12)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT IIF(ff_cfop<"5000","Entradas","Saídas   ") AS ff_tipo, Effatif.ff_cfop, SUM(Effatif.ff_valor) AS ff_valor, SUM(Effatif.ff_bc_ipi) AS ff_bc_ipi, SUM(IIF(ft_situac=3.OR.ft_situac=4,0,IIF(ft_tipo="EC",ff_valor*(ff_al_ipi/100),ff_vl_ipi))) AS ff_vl_ipi, SUM(Effatif.ff_is_ipi) AS ff_is_ipi, SUM(Effatif.ff_ou_ipi) AS ff_ou_ipi FROM  def!effatura  INNER JOIN def!effatif  ON  Effatura.ft_codigo = Effatif.ff_fatura  INNER JOIN dst!stpess  ON  Effatura.ft_pess = Stpess.pe_codigo  INNER JOIN dst!stender  ON  Stender.ed_codigo = Stpess.pe_ender  INNER JOIN dst!stestado  ON  Stestado.es_codigo = Stender.ed_estado WHERE (  Effatura.ft_dtapur BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Effatura.ft_nota = ( ?SQLNota ) ) AND  Effatura.ft_situac NOT IN (3,4) GROUP BY Effatif.ff_cfop ORDER BY Effatif.ff_cfop<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_TIPO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_CFOP</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!effatif.ff_cfop</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_VALOR</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_BC_IPI</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_VL_IPI</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_IS_IPI</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FF_OU_IPI</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+EFLR04B</B></FONT>
+<FONT FACE="Arial"> (Campos: 12)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Efapur.ap_codigo, Efapur.ap_mesano, Efapur.ap_mov, Efapur.ap_ip_tdeb, Efapur.ap_ip_odeb, Efapur.ap_ip_odem, Efapur.ap_ip_tcrd, Efapur.ap_ip_ocrd, Efapur.ap_ic_esdm, Efapur.ap_ip_scra, Efapur.ap_ip_slrc, Efapur.ap_ip_sltr, Efapur.ap_ip_ocrm FROM  def!efapur WHERE  Efapur.ap_mesano = ( ?SQLMesAno ) AND  Efapur.ap_nota = ( ?SQLNota ) ORDER BY Efapur.ap_mesano<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!efapur.ap_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_MESANO</TD>
+<TD VALIGN="CENTER">C(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_mesano</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_MOV</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_mov</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IP_TDEB</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ip_tdeb</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IP_ODEB</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ip_odeb</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IP_ODEM</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ip_odem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IP_TCRD</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ip_tcrd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IP_OCRD</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ip_ocrd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IC_ESDM</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ic_esdm</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IP_SCRA</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ip_scra</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IP_SLRC</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ip_slrc</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IP_SLTR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ip_sltr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IP_OCRM</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ip_ocrm</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+EFLR05</B></FONT>
+<FONT FACE="Arial"> (Campos: 12)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Efapur.ap_codigo, Efapur.ap_mesano, Efapur.ap_nota, Efapur.ap_mov, Efapur.ap_ft_fatu, Efapur.ap_ft_bcps, Efapur.ap_ft_opis, Efapur.ap_ft_deps, Efapur.ap_ft_isps, Efapur.ap_ft_pirf, Efapur.ap_ft_vrps, Efapur.ap_ft_rpmm, Efapur.ap_ft_bccf, Efapur.ap_ft_ocof, Efapur.ap_ft_ddcf, Efapur.ap_ft_iscf, Efapur.ap_ft_cfrf, Efapur.ap_ft_tdev, Efapur.ap_ft_tipi, Efapur.ap_ft_pspg, Efapur.ap_ft_sprt, Efapur.ap_ft_psdv, Efapur.ap_ft_spra, Efapur.ap_ft_psrf, Efapur.ap_ft_rpsa, Efapur.ap_ft_rscm, Efapur.ap_ft_cfpg, Efapur.ap_ft_vcff, Efapur.ap_ft_rscf, Efapur.ap_ft_scfr, Efapur.ap_ft_cfrd, Efapur.ap_ft_cfdv, Efapur.ap_ft_scfa, Efapur.ap_ft_texp, Efapur.ap_ft_tvas FROM  def!efapur WHERE  Efapur.ap_mesano = ( ?SQLMesAno ) AND  Efapur.ap_nota = ( ?SQLNota ) ORDER BY Efapur.ap_mesano<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!efapur.ap_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_MESANO</TD>
+<TD VALIGN="CENTER">C(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_mesano</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_NOTA</TD>
+<TD VALIGN="CENTER">C(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_nota</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_MOV</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_mov</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_FATU</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_fatu</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_BCPS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_bcps</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_OPIS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_opis</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_DEPS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_deps</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_ISPS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_isps</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_PIRF</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_pirf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_VRPS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_vrps</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_RPMM</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_rpmm</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_BCCF</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_bccf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_OCOF</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_ocof</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_DDCF</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_ddcf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_ISCF</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_iscf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_CFRF</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_cfrf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_TDEV</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_tdev</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_TIPI</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_tipi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_PSPG</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_pspg</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_SPRT</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_sprt</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_PSDV</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_psdv</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_SPRA</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_spra</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_PSRF</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_psrf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_RPSA</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_rpsa</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_RSCM</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_rscm</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_CFPG</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_cfpg</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_VCFF</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_vcff</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_RSCF</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_rscf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_SCFR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_scfr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_CFRD</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_cfrd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_CFDV</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_cfdv</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_SCFA</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_scfa</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_TEXP</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_texp</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_TVAS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_tvas</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+EFLR06</B></FONT>
+<FONT FACE="Arial"> (Campos: 12)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Efapur.ap_codigo, Efapur.ap_mesano, Efapur.ap_nota, Efapur.ap_mov, Efapur.ap_ft_rc16, Efapur.ap_ft_rc08, Efapur.ap_ft_rc32, Efapur.ap_ft_sv08, Efapur.ap_ft_sv16, Efapur.ap_ft_sv32, Efapur.ap_ft_cs12, Efapur.ap_ft_cs32, Efapur.ap_ft_gncp, Efapur.ap_ft_orec, Efapur.ap_ft_opis, Efapur.ap_ft_ocof, Efapur.ap_ft_ocsl, Efapur.ap_ft_rnvr, Efapur.ap_ft_luin, Efapur.ap_ft_alli, Efapur.ap_ft_poup, Efapur.ap_ft_irrb, Efapur.ap_ft_irrf, Efapur.ap_ft_deir, Efapur.ap_ft_coir, Efapur.ap_ft_coai, Efapur.ap_ft_de08, Efapur.ap_ft_de32, Efapur.ap_ft_as08, Efapur.ap_ft_as16, Efapur.ap_ft_as32, Efapur.ap_ft_ccsc, Efapur.ap_ft_csrf, Efapur.ap_ft_an12, Efapur.ap_ft_an32, Efapur.ap_ft_deps, Efapur.ap_ft_isps, Efapur.ap_ft_pirf, Efapur.ap_ft_ddcf, Efapur.ap_ft_iscf, Efapur.ap_ft_cfrf, Efapur.ap_ft_comp, Efapur.ap_ft_fatu, Efapur.ap_ft_lcpr, Efapur.ap_ft_bsir, Efapur.ap_ft_vrir, Efapur.ap_ft_virr, Efapur.ap_ft_decp, Efapur.ap_ft_sair, Efapur.ap_ft_irdv, Efapur.ap_ft_sait, Efapur.ap_ft_reir, Efapur.ap_ft_reit, Efapur.ap_ft_irpg, Efapur.ap_ft_irtr, Efapur.ap_ft_cssf, Efapur.ap_ft_bcsc, Efapur.ap_ft_vcsc, Efapur.ap_ft_csrc, Efapur.ap_ft_scsr, Efapur.ap_ft_cscd, Efapur.ap_ft_scsc, Efapur.ap_ft_rcsa, Efapur.ap_ft_rcst, Efapur.ap_ft_cspg, Efapur.ap_ft_cstr, Efapur.ap_ft_bcps, Efapur.ap_ft_vrps, Efapur.ap_ft_psrf, Efapur.ap_ft_spra, Efapur.ap_ft_psdv, Efapur.ap_ft_sprt, Efapur.ap_ft_rpsa, Efapur.ap_ft_rpmm, Efapur.ap_ft_pspg, Efapur.ap_ft_bccf, Efapur.ap_ft_vcff, Efapur.ap_ft_cfrd, Efapur.ap_ft_scfr, Efapur.ap_ft_cfdv, Efapur.ap_ft_scfa, Efapur.ap_ft_rscf, Efapur.ap_ft_rscm, Efapur.ap_ft_cfpg, Efapur.ap_ft_lcms, Efapur.ap_ft_ex20, Efapur.ap_ft_adir, Efapur.ap_ft_lctr, Efapur.ap_ft_ex60, Efapur.ap_ft_adit, Efapur.ap_ft_irrv, Efapur.ap_ft_irev, Efapur.ap_ft_virv, Efapur.ap_ft_irvt, Efapur.ap_ft_irin, Efapur.ap_ft_irit, Efapur.ap_ft_lcso FROM  def!efapur WHERE  Efapur.ap_mesano = ( ?SQLMesAno ) AND  Efapur.ap_nota = ( ?SQLNota ) ORDER BY Efapur.ap_mesano<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!efapur.ap_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_MESANO</TD>
+<TD VALIGN="CENTER">C(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_mesano</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_NOTA</TD>
+<TD VALIGN="CENTER">C(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_nota</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_MOV</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_mov</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_RC16</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_rc16</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_RC08</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_rc08</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_RC32</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_rc32</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_SV08</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_sv08</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_SV16</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_sv16</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_SV32</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_sv32</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_CS12</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_cs12</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_CS32</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_cs32</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_GNCP</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_gncp</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_OREC</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_orec</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_OPIS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_opis</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_OCOF</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_ocof</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_OCSL</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_ocsl</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_RNVR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_rnvr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_LUIN</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_luin</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_ALLI</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_alli</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_POUP</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_poup</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_IRRB</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_irrb</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_IRRF</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_irrf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_DEIR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_deir</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_COIR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_coir</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_COAI</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_coai</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_DE08</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_de08</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_DE32</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_de32</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_AS08</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_as08</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_AS16</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_as16</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_AS32</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_as32</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_CCSC</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_ccsc</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_CSRF</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_csrf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_AN12</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_an12</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_AN32</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_an32</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_DEPS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_deps</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_ISPS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_isps</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_PIRF</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_pirf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_DDCF</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_ddcf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_ISCF</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_iscf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_CFRF</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_cfrf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_COMP</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_comp</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_FATU</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_fatu</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_LCPR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_lcpr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_BSIR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_bsir</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_VRIR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_vrir</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_VIRR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_virr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_DECP</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_decp</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_SAIR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_sair</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_IRDV</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_irdv</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_SAIT</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_sait</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_REIR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_reir</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_REIT</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_reit</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_IRPG</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_irpg</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_IRTR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_irtr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_CSSF</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_cssf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_BCSC</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_bcsc</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_VCSC</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_vcsc</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_CSRC</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_csrc</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_SCSR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_scsr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_CSCD</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_cscd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_SCSC</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_scsc</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_RCSA</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_rcsa</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_RCST</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_rcst</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_CSPG</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_cspg</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_CSTR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_cstr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_BCPS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_bcps</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_VRPS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_vrps</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_PSRF</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_psrf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_SPRA</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_spra</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_PSDV</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_psdv</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_SPRT</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_sprt</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_RPSA</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_rpsa</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_RPMM</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_rpmm</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_PSPG</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_pspg</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_BCCF</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_bccf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_VCFF</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_vcff</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_CFRD</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_cfrd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_SCFR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_scfr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_CFDV</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_cfdv</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_SCFA</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_scfa</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_RSCF</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_rscf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_RSCM</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_rscm</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_CFPG</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_cfpg</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_LCMS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_lcms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_EX20</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_ex20</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_ADIR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_adir</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_LCTR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_lctr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_EX60</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_ex60</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_ADIT</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_adit</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_IRRV</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_irrv</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_IREV</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_irev</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_VIRV</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_virv</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_IRVT</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_irvt</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_IRIN</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_irin</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_IRIT</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_irit</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_FT_LCSO</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ft_lcso</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+EFLR07</B></FONT>
+<FONT FACE="Arial"> (Campos: 12)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Esclassf.cl_cl_fisc, Stcfop.cf_codigo, SUM(ROUND(Effatit.fi_valor*Effatit.fi_quant,2)) AS fi_valort, SUM(Effatit.fi_vl_ipi) AS fi_vl_ipi FROM  def!effatura  INNER JOIN def!effatit  ON  Effatura.ft_codigo = Effatit.fi_fatura  INNER JOIN dst!stcfop  ON  Effatit.fi_cfop = Stcfop.cf_codigo  INNER JOIN des!esprod  ON  Effatit.fi_prod = Esprod.pr_codigo  INNER JOIN des!esclassf  ON  Esclassf.cl_codigo = Esprod.pr_classf AND  Stcfop.cf_venda  WHERE  Effatura.ft_dtapur BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Effatura.ft_situac IN (1,2,7,8,9) GROUP BY Esclassf.cl_cl_fisc, Stcfop.cf_codigo ORDER BY Stcfop.cf_codigo<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CL_CL_FISC</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esclassf.cl_cl_fisc</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CF_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stcfop.cf_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FI_VALORT</TD>
+<TD VALIGN="CENTER">N(20,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">FI_VL_IPI</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+EFLR08</B></FONT>
+<FONT FACE="Arial"> (Campos: 12)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Efapur.ap_codigo, Efapur.ap_mesano, Efapur.ap_mov, Efapur.ap_ip_tdeb, Efapur.ap_ip_odeb, Efapur.ap_ip_odem, Efapur.ap_ip_tcrd, Efapur.ap_ip_ocrd, Efapur.ap_ic_esdm, Efapur.ap_ip_scra, Efapur.ap_ip_slrc, Efapur.ap_ip_sltr, Efapur.ap_ip_ocrm FROM  def!efapur WHERE  Efapur.ap_mesano = (?System.ActiveReferency ) AND  Efapur.ap_nota = ( "A" ) ORDER BY Efapur.ap_mesano<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">def!efapur.ap_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_MESANO</TD>
+<TD VALIGN="CENTER">C(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_mesano</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_MOV</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_mov</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IP_TDEB</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ip_tdeb</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IP_ODEB</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ip_odeb</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IP_ODEM</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ip_odem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IP_TCRD</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ip_tcrd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IP_OCRD</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ip_ocrd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IC_ESDM</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ic_esdm</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IP_SCRA</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ip_scra</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IP_SLRC</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ip_slrc</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IP_SLTR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ip_sltr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AP_IP_OCRM</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">def!efapur.ap_ip_ocrm</TD>
+</TR>
+</TABLE>
+<BR><BR>
+</BODY>
+</HTML>

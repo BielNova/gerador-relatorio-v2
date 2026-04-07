@@ -1,0 +1,1441 @@
+
+<TABLE CELLSPACING=0 BORDER=1 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+<P ALIGN="CENTER"><B><FONT FACE="Arial" COLOR="#0000ff">VISUALIZAÇÕES NO BANCO DE DADOS - D:\AMR\AMR\DBFS\RFO.DBC</P></B></FONT>
+</TD></TR>
+</TABLE>
+<BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+FOCR01</B></FONT>
+<FONT FACE="Arial"> (Campos: 16)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Foauton.aunome, Foauton.aucpf, Foauton.aupis, Foauton.auinss, Foauton.auareaat FROM  dfo!foauton ORDER BY Foauton.aunome<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUNOME</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!foauton.aunome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUCPF</TD>
+<TD VALIGN="CENTER">C(16)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!foauton.aucpf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUPIS</TD>
+<TD VALIGN="CENTER">C(17)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!foauton.aupis</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUINSS</TD>
+<TD VALIGN="CENTER">C(19)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!foauton.auinss</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUAREAAT</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!foauton.auareaat</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+FOCR02</B></FONT>
+<FONT FACE="Arial"> (Campos: 16)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Foauton.aucodigo, Foauton.aunome, Foauton.auender, Foauton.auemail, Foauton.audtnasc, Foauton.aurg, Foauton.aucpf, Foauton.aupis, Foauton.auinss, Foauton.auccm, Foauton.auccmano, Foauton.auareaat, Foauton.auue, Foauton.auue1, Foauton.aucbo, Foauton.aubcpgto, Foauton.auagpgto, Foauton.auccpgto, Foauton.aubcad, Foauton.auagad, Foauton.auccad, Foauton.audepen, Foauton.audata, Foauton.auiss, Foauton.auanoinss, Foauton.aufntinss, Stender.ed_lograd, Foauton.auvlinss, Stender.ed_numero, Stender.ed_compl, Stender.ed_bairro, Stender.ed_cidade, Stender.ed_estado, Stender.ed_cep, Stender.ed_tel_loc, Stender.ed_tel_rec, Stestado.es_sigla FROM  dfo!foauton  INNER JOIN dst!stender  ON  Foauton.auender = Stender.ed_codigo  INNER JOIN dst!stestado  ON  Stestado.es_codigo = Stender.ed_estado WHERE  Foauton.aucodigo = ( ?SQLCod ) ORDER BY Foauton.aucodigo<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUCODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.aucodigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUNOME</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.aunome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUENDER</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.auender</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUEMAIL</TD>
+<TD VALIGN="CENTER">C(32)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!foauton.auemail</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUDTNASC</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.audtnasc</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AURG</TD>
+<TD VALIGN="CENTER">C(15)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.aurg</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUCPF</TD>
+<TD VALIGN="CENTER">C(16)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.aucpf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUPIS</TD>
+<TD VALIGN="CENTER">C(17)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.aupis</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUINSS</TD>
+<TD VALIGN="CENTER">C(19)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.auinss</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUCCM</TD>
+<TD VALIGN="CENTER">C(14)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.auccm</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUCCMANO</TD>
+<TD VALIGN="CENTER">C(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!foauton.auccmano</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUAREAAT</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.auareaat</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUUE</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.auue</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUUE1</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.auue1</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUCBO</TD>
+<TD VALIGN="CENTER">C(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.aucbo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUBCPGTO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.aubcpgto</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUAGPGTO</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.auagpgto</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUCCPGTO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.auccpgto</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUBCAD</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.aubcad</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUAGAD</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.auagad</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUCCAD</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.auccad</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUDEPEN</TD>
+<TD VALIGN="CENTER">N(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.audepen</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUDATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.audata</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUISS</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.auiss</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUANOINSS</TD>
+<TD VALIGN="CENTER">C(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!foauton.auanoinss</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUFNTINSS</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!foauton.aufntinss</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_LOGRAD</TD>
+<TD VALIGN="CENTER">C(52)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_lograd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUVLINSS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!foauton.auvlinss</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_NUMERO</TD>
+<TD VALIGN="CENTER">C(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_numero</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_COMPL</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_compl</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_BAIRRO</TD>
+<TD VALIGN="CENTER">C(25)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_bairro</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_CIDADE</TD>
+<TD VALIGN="CENTER">C(25)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_cidade</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_ESTADO</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_estado</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_CEP</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_cep</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_TEL_LOC</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_tel_loc</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_TEL_REC</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_tel_rec</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_SIGLA</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stestado.es_sigla</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+FOCR03A</B></FONT>
+<FONT FACE="Arial"> (Campos: 16)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Foproj.prdescr, Foauton.aunome, Forpa.rpdata, Forpa.rpvalor, Forpa.rpinss, Forpa.rpiss, Forpa.rpir, Forpa.rpvalorl FROM  dfo!focontr  INNER JOIN dfo!forpa  ON  Focontr.ctcodigo = Forpa.rpcontr  INNER JOIN dfo!foproj  ON  Foproj.prcodigo = Focontr.ctproj  INNER JOIN dfo!foauton  ON  Foauton.aucodigo = Focontr.ctauton WHERE  Forpa.rpdata BETWEEN ?SQLDtInicio AND ?SQLDtFim ORDER BY Foproj.prdescr, Foauton.aunome, Forpa.rpdata<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PRDESCR</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!foproj.prdescr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUNOME</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.aunome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPDATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpdata</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPVALOR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpvalor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPINSS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpinss</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPISS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpiss</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPIR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpir</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPVALORL</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpvalorl</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+FOCR03B</B></FONT>
+<FONT FACE="Arial"> (Campos: 16)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Foauton.aunome, Forpa.rpdata, Forpa.rpvalor, Forpa.rpinss, Forpa.rpiss, Forpa.rpir, Forpa.rpvalorl FROM  dfo!focontr  INNER JOIN dfo!forpa  ON  Focontr.ctcodigo = Forpa.rpcontr  INNER JOIN dfo!foauton  ON  Foauton.aucodigo = Focontr.ctauton WHERE  Focontr.ctproj = ( ?SQLProj ) AND  Forpa.rpdata BETWEEN ?SQLDtInicio AND ?SQLDtFim ORDER BY Foauton.aunome, Forpa.rpdata<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUNOME</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.aunome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPDATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpdata</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPVALOR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpvalor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPINSS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpinss</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPISS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpiss</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPIR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpir</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPVALORL</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpvalorl</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+FOCR04A</B></FONT>
+<FONT FACE="Arial"> (Campos: 16)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Focontr.ctauton, Foauton.aunome, Foproj.prdescr, Forpa.rpdata, Forpa.rpvalor, Forpa.rpinss, Forpa.rpiss, Forpa.rpir, Forpa.rpvalorl FROM  dfo!focontr  INNER JOIN dfo!forpa  ON  Focontr.ctcodigo = Forpa.rpcontr  INNER JOIN dfo!foauton  ON  Foauton.aucodigo = Focontr.ctauton  INNER JOIN dfo!foproj  ON  Foproj.prcodigo = Focontr.ctproj WHERE  Forpa.rpdata BETWEEN ?SQLDtInicio AND ?SQLDtFim ORDER BY Foauton.aunome, Foproj.prdescr, Forpa.rpdata<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CTAUTON</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!focontr.ctauton</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUNOME</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!foauton.aunome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PRDESCR</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!foproj.prdescr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPDATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpdata</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPVALOR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpvalor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPINSS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpinss</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPISS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpiss</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPIR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpir</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPVALORL</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpvalorl</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+FOCR04B</B></FONT>
+<FONT FACE="Arial"> (Campos: 16)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Focontr.ctauton, Foproj.prdescr, Forpa.rpdata, Forpa.rpvalor, Forpa.rpinss, Forpa.rpiss, Forpa.rpir, Forpa.rpvalorl FROM  dfo!focontr  INNER JOIN dfo!forpa  ON  Focontr.ctcodigo = Forpa.rpcontr  INNER JOIN dfo!foproj  ON  Foproj.prcodigo = Focontr.ctproj WHERE  Focontr.ctauton = ( ?SQLAut ) AND  Forpa.rpdata BETWEEN ?SQLDtInicio AND ?SQLDtFim ORDER BY Foproj.prdescr, Forpa.rpdata<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CTAUTON</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!focontr.ctauton</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PRDESCR</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!foproj.prdescr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPDATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpdata</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPVALOR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpvalor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPINSS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpinss</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPISS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpiss</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPIR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpir</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPVALORL</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpvalorl</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+FOCR05</B></FONT>
+<FONT FACE="Arial"> (Campos: 16)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Forpa.rpcodigo, Forpa.rpvalor, Forpa.rpir, Forpa.rpstdarf, Foproj.prcodigo FROM  dfo!focontr  INNER JOIN dfo!forpa  ON  Focontr.ctcodigo = Forpa.rpcontr  INNER JOIN dfo!foproj  ON  Foproj.prcodigo = Focontr.ctproj WHERE  Foproj.prcodigo = ( ?SQLProj ) AND  Forpa.rpdata BETWEEN ?SQLDtInicio AND ?SQLDtFim<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Sim<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPCODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpcodigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPVALOR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpvalor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPIR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpir</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPSTDARF</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpstdarf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PRCODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!foproj.prcodigo</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+FOCR06</B></FONT>
+<FONT FACE="Arial"> (Campos: 16)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Foproj.prcodigo, Foproj.prdescr, SUM(Forpa.rpvalor) AS rpvalor, SUM(Forpa.rpinss) AS rpinss, (SUM(Forpa.rpvalor)*0.20)+SUM(Forpa.rpinss) AS rpgps FROM  dfo!focontr  INNER JOIN dfo!forpa  ON  Focontr.ctcodigo = Forpa.rpcontr  INNER JOIN dfo!foproj  ON  Foproj.prcodigo = Focontr.ctproj WHERE  Foproj.prcodigo = ( ?SQLProj ) AND  Forpa.rpdata BETWEEN ?SQLDtInicio AND ?SQLDtFim GROUP BY Foproj.prcodigo, Foproj.prdescr<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PRCODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foproj.prcodigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PRDESCR</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foproj.prdescr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPVALOR</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPINSS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPGPS</TD>
+<TD VALIGN="CENTER">N(18,4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+FOCR07</B></FONT>
+<FONT FACE="Arial"> (Campos: 16)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Foproj.prdescr, Foproj.probs, Foproj.prbanco, Foproj.pragenc, Foproj.prconta FROM dfo!foproj ORDER BY Foproj.prdescr<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PRDESCR</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foproj.prdescr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PROBS</TD>
+<TD VALIGN="CENTER">C(200)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foproj.probs</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PRBANCO</TD>
+<TD VALIGN="CENTER">C(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foproj.prbanco</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PRAGENC</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foproj.pragenc</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PRCONTA</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foproj.prconta</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+FOCR08</B></FONT>
+<FONT FACE="Arial"> (Campos: 16)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Foproj.prcodigo, Foproj.prdescr, SUM(Forpa.rpvalor) AS rpvalor, SUM(Forpa.rpiss) AS rpiss FROM  dfo!focontr  INNER JOIN dfo!forpa  ON  Focontr.ctcodigo = Forpa.rpcontr  INNER JOIN dfo!foproj  ON  Foproj.prcodigo = Focontr.ctproj WHERE  Foproj.prcodigo = ( ?SQLProj ) AND  Forpa.rpdata BETWEEN ?SQLDtInicio AND ?SQLDtFim GROUP BY Foproj.prcodigo, Foproj.prdescr<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PRCODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foproj.prcodigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PRDESCR</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foproj.prdescr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPVALOR</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPISS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+FOCR09</B></FONT>
+<FONT FACE="Arial"> (Campos: 16)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Foauton.aunome, Foauton.aucpf, SUM(Forpa.rpvalor) AS rpvalor, SUM(Forpa.rpdepen) AS rpdep, SUM(Forpa.rpinss) AS rpinss, SUM(Forpa.rpir) AS rpir FROM  dfo!focontr  INNER JOIN dfo!forpa  ON  Focontr.ctcodigo = Forpa.rpcontr  INNER JOIN dfo!foauton  ON  Foauton.aucodigo = Focontr.ctauton WHERE  YEAR(Forpa.rpdata) = ( ?SQLAno ) GROUP BY Foauton.aunome, Foauton.aucpf ORDER BY Foauton.aucpf<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUNOME</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.aunome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUCPF</TD>
+<TD VALIGN="CENTER">C(16)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.aucpf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPVALOR</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPDEP</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPINSS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPIR</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+FOCR10</B></FONT>
+<FONT FACE="Arial"> (Campos: 16)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Foauton.aunome, Foauton.aucpf, Forefer.rfinss, SUM(Forpa.rpvalor) AS rpvalor, SUM(Forpa.rpdepen) AS rpdep, SUM(Forpa.rpinss) AS rpinss, SUM(Forpa.rpir) AS rpir FROM  dfo!focontr  INNER JOIN dfo!forpa  ON  Focontr.ctcodigo = Forpa.rpcontr  INNER JOIN dfo!foauton  ON  Foauton.aucodigo = Focontr.ctauton  INNER JOIN dfo!forefer  ON  Focontr.ctauton = Forefer.rfauton WHERE  Forpa.rpdata BETWEEN ?SQLMAIni AND ?SQLMAFim AND  Forefer.rfrefer = ( ?SQLMesAno ) GROUP BY Foauton.aunome, Foauton.aucpf, Forefer.rfinss ORDER BY Foauton.aucpf<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUNOME</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.aunome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUCPF</TD>
+<TD VALIGN="CENTER">C(16)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.aucpf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RFINSS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forefer.rfinss</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPVALOR</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPDEP</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPINSS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPIR</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+FOCR11</B></FONT>
+<FONT FACE="Arial"> (Campos: 16)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Foauton.aunome, Foauton.aupis, SUM(Forpa.rpvalor) AS rpvalor, SUM(Forpa.rpinss) AS rpinss, SUBSTR(Foauton.aucbo,1,5) AS aucbo, Forefer.rfinss FROM  dfo!focontr  INNER JOIN dfo!forpa  ON  Focontr.ctcodigo = Forpa.rpcontr  INNER JOIN dfo!foauton  ON  Foauton.aucodigo = Focontr.ctauton  INNER JOIN dfo!forefer  ON  Focontr.ctauton = Forefer.rfauton WHERE  Forpa.rpdata BETWEEN ?SQLMAIni AND ?SQLMAFim AND  Forefer.rfrefer = ( ?SQLMesAno ) GROUP BY Foauton.aunome, Foauton.aupis, 5, Forefer.rfinss ORDER BY Foauton.aupis<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUNOME</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!foauton.aunome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUPIS</TD>
+<TD VALIGN="CENTER">C(17)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!foauton.aupis</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPVALOR</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPINSS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUCBO</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RFINSS</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!forefer.rfinss</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+FOCR12</B></FONT>
+<FONT FACE="Arial"> (Campos: 16)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Foauton.aucodigo, Foauton.aunome, SUM(Forpa.rpvalor) AS rpvalor, round(SUM(Forpa.rpvalor)*0.20,2) AS rpval20, SUM(Forpa.rpinss) AS rpinss, SUM(Forpa.rpiss) AS rpiss, SUM(Forpa.rpir) AS rpir FROM  dfo!focontr  INNER JOIN dfo!forpa  ON  Focontr.ctcodigo = Forpa.rpcontr  INNER JOIN dfo!foauton  ON  Foauton.aucodigo = Focontr.ctauton WHERE  Forpa.rpdata BETWEEN ?SQLDtInicio AND ?SQLDtFim GROUP BY Foauton.aucodigo, Foauton.aunome ORDER BY Foauton.aunome<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUCODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!foauton.aucodigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUNOME</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.aunome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPVALOR</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPVAL20</TD>
+<TD VALIGN="CENTER">N(18,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPINSS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPISS</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPIR</TD>
+<TD VALIGN="CENTER">N(16,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+FOCR13</B></FONT>
+<FONT FACE="Arial"> (Campos: 16)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Foauton.aucodigo, Foauton.aunome, Foauton.aupis, Foauton.aurg, Foauton.aucpf, Foauton.auareaat FROM  dfo!focontr  INNER JOIN dfo!forpa  ON  Focontr.ctcodigo = Forpa.rpcontr  INNER JOIN dfo!foauton  ON  Foauton.aucodigo = Focontr.ctauton WHERE  Forpa.rpdata BETWEEN ?SQLDtInicio AND ?SQLDtFim GROUP BY Foauton.aucodigo, Foauton.aunome, Foauton.aupis, Foauton.aucpf, Foauton.aurg, Foauton.auareaat ORDER BY Foauton.aunome<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUCODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.aucodigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUNOME</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.aunome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUPIS</TD>
+<TD VALIGN="CENTER">C(17)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.aupis</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AURG</TD>
+<TD VALIGN="CENTER">C(15)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.aurg</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUCPF</TD>
+<TD VALIGN="CENTER">C(16)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.aucpf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUAREAAT</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.auareaat</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+FOCR14</B></FONT>
+<FONT FACE="Arial"> (Campos: 16)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Forpa.rpcodigo, Forpa.rpdata, Forpa.rpvalor, Forpa.rpdataint, Foauton.aunome, Foproj.prdescr FROM  dfo!forpa  INNER JOIN dfo!focontr  ON  Forpa.rpcontr = Focontr.ctcodigo  INNER JOIN dfo!foproj  ON  Foproj.prcodigo = Focontr.ctproj  INNER JOIN dfo!foauton  ON  Foauton.aucodigo = Focontr.ctauton WHERE  Forpa.rpdata BETWEEN ?SQLDtInicio AND ?SQLDtFim AND  Forpa.rpdataint = space(16) ORDER BY Foproj.prdescr, Forpa.rpdata<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Sim<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPCODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpcodigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPDATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpdata</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPVALOR</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpvalor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RPDATAINT</TD>
+<TD VALIGN="CENTER">C(16)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dfo!forpa.rpdataint</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">AUNOME</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foauton.aunome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PRDESCR</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dfo!foproj.prdescr</TD>
+</TR>
+</TABLE>
+<BR><BR>
+</BODY>
+</HTML>

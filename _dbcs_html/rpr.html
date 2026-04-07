@@ -1,0 +1,4673 @@
+
+<TABLE CELLSPACING=0 BORDER=1 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+<P ALIGN="CENTER"><B><FONT FACE="Arial" COLOR="#0000ff">VISUALIZAÇÕES NO BANCO DE DADOS - D:\AMR\AMR\DBFS\RPR.DBC</P></B></FONT>
+</TD></TR>
+</TABLE>
+<BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR01A</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Prordem.or_codigo, Prordem.or_ordem, Prordem.or_tppr, Prordem.or_dt_ini, Prordem.or_hr_ini, Prordem.or_dt_fim, Prordem.or_hr_fim, Prordem.or_situac, Prtppr.tp_descr FROM  dpr!prordem  INNER JOIN dpr!prtppr  ON  Prtppr.tp_codigo = Prordem.or_tppr WHERE  Prordem.or_ordem = ( ?SQLCode ) AND  Prordem.or_tipo = ( "OR" )<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_TPPR</TD>
+<TD VALIGN="CENTER">C(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_tppr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_INI</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_HR_INI</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_hr_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_FIM</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_fim</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_HR_FIM</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_hr_fim</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_SITUAC</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_situac</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">TP_DESCR</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prtppr.tp_descr</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR01B</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Prordit.oi_ordem, Prordit.oi_seqprd, Prordit.oi_prod, Prordit.oi_nivel, Prordit.oi_classe, Prordit.oi_sequen, Prordit.oi_proces, Prordit.oi_equip, Prordit.oi_opers, Prordit.oi_produto, Prordit.oi_quant, Prordit.oi_quantp, Prordit.oi_decs, Prordit.oi_unidad, Prordit.oi_lote, Prordit.oi_moeda, Prordit.oi_custo, Prordit.oi_custop, Prordit.oi_tipo, Prordit.oi_props, Prordit.oi_espec, Prproces.pr_descr AS pp_descr, Prproces.pr_props AS pp_props, Prequip.eq_descr, Prequip.eq_props, Propers.og_descr, Propers.og_props, Esprod_b.pr_descr, Esprod_b.pr_descrpr, Esprod_b.pr_funcao, SPACE(10) AS pr_lote, Esprod_a.pr_descr AS oi_descr, SUBSTR(ALLTRIM(SUBSTR(Prordit.oi_sequen,2,4))+"  ",1,4)+SUBSTR(Prordit.oi_sequen,1,1)+SUBSTR(Prordit.oi_sequen,7) AS oi_sequen2 FROM  dpr!prordit  INNER JOIN des!esprod Esprod_a  ON  Prordit.oi_prod = Esprod_a.pr_codigo  INNER JOIN des!esprod Esprod_b  ON  Prordit.oi_produto = Esprod_b.pr_codigo  INNER JOIN dpr!prproces  ON  Prordit.oi_proces = Prproces.pr_codigo  INNER JOIN dpr!propers  ON  Prordit.oi_opers = Propers.og_codigo  INNER JOIN dpr!prequip  ON  Prordit.oi_equip = Prequip.eq_codigo WHERE  Prordit.oi_ordem = ( ?SQLOrdem ) ORDER BY Prordit.oi_seqprd, Prordit.oi_nivel DESC, 33<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_SEQPRD</TD>
+<TD VALIGN="CENTER">C(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_seqprd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_PROD</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_prod</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_NIVEL</TD>
+<TD VALIGN="CENTER">C(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_nivel</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_CLASSE</TD>
+<TD VALIGN="CENTER">C(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_classe</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_SEQUEN</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_sequen</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_PROCES</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_proces</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_EQUIP</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_equip</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_OPERS</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_opers</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_PRODUTO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_produto</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_quant</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANTP</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_quantp</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_DECS</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_decs</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_UNIDAD</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_unidad</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_LOTE</TD>
+<TD VALIGN="CENTER">C(15)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_lote</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_MOEDA</TD>
+<TD VALIGN="CENTER">C(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_moeda</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_CUSTO</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_custo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_CUSTOP</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_custop</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_TIPO</TD>
+<TD VALIGN="CENTER">C(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_PROPS</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_props</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_ESPEC</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_espec</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PP_DESCR</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prproces.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PP_PROPS</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prproces.pr_props</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">EQ_DESCR</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prequip.eq_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">EQ_PROPS</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prequip.eq_props</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OG_DESCR</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!propers.og_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OG_PROPS</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!propers.og_props</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCRPR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descrpr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_FUNCAO</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_funcao</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_LOTE</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_SEQUEN2</TD>
+<TD VALIGN="CENTER">C(7)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR02A</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Prordem.or_tipo, Prordem.or_ordem, Prordem.or_dt_ini, Prordem.or_dt_fim, Prordem.or_situac, Esprod.pr_descr, Prordprd.op_quant, Prordprd.op_unidad, Prordprd.op_lote, Prordprd.op_fabr, Prordprd.op_valid FROM  dpr!prordem  INNER JOIN dpr!prordprd  ON  Prordem.or_codigo = Prordprd.op_ordem  INNER JOIN des!esprod  ON  Prordprd.op_prod = Esprod.pr_codigo WHERE (  Prordem.or_dt_ini BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Prordem.or_situac IN (IIF(?SQL1,1,0),IIF(?SQL2,2,0),IIF(?SQL3,3,0),IIF(?SQL4,4,0),IIF(?SQL5,5,0)) ) AND   Exists (SELECT .T. FROM des!escelcom WHERE esprod.pr_celula = escelcom.cc_celula and (isnull(escelcom.cc_comp) OR escelcom.cc_comp = ( ?SQLComputador ) OR escelcom.cc_comp = ( ?SQLUsuario ))) ORDER BY Prordem.or_tipo, Prordem.or_ordem<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_TIPO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_INI</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_FIM</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_fim</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_SITUAC</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_situac</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_quant</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_UNIDAD</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_unidad</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_LOTE</TD>
+<TD VALIGN="CENTER">C(15)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_lote</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_FABR</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_fabr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_VALID</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_valid</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR02B</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Prordem.or_tipo, Prordem.or_ordem, Prordem.or_dt_ini, Prordem.or_dt_fim, Prordem.or_situac, Esprod.pr_descr, Prordprd.op_quant, Prordprd.op_unidad, Prordprd.op_lote, Prordprd.op_fabr, Prordprd.op_valid FROM  dpr!prordem  INNER JOIN dpr!prordprd  ON  Prordem.or_codigo = Prordprd.op_ordem  INNER JOIN des!esprod  ON  Prordprd.op_prod = Esprod.pr_codigo WHERE ( (  Prordem.or_dt_ini BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Prordem.or_situac IN (IIF(?SQL1,1,0),IIF(?SQL2,2,0),IIF(?SQL3,3,0),IIF(?SQL4,4,0),IIF(?SQL5,5,0)) ) AND  Prordprd.op_prod = ( ?SQLProd ) ) AND   Exists (SELECT .T. FROM des!escelcom WHERE esprod.pr_celula = escelcom.cc_celula and (isnull(escelcom.cc_comp) OR escelcom.cc_comp = ( ?SQLComputador ) OR escelcom.cc_comp = ( ?SQLUsuario ))) ORDER BY Prordem.or_tipo, Prordem.or_ordem<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_TIPO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_INI</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_FIM</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_fim</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_SITUAC</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_situac</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_quant</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_UNIDAD</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_unidad</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_LOTE</TD>
+<TD VALIGN="CENTER">C(15)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_lote</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_FABR</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_fabr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_VALID</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_valid</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR02C</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Prordem.or_tipo, Prordem.or_ordem, Prordem.or_dt_ini, Prordem.or_dt_fim, Prordem.or_situac, Esprod.pr_descr, Prordit.oi_quant AS op_quant, Prordit.oi_unidad AS op_unidad, Esunidad.un_descr, 10000000000.000000 AS tt_quant, SPACE(10) AS tt_unidad FROM  dpr!prordem  INNER JOIN dpr!prordit  ON  Prordem.or_codigo = Prordit.oi_ordem AND  Prordit.oi_classe = ( "5" )  INNER JOIN des!esprod  ON  Prordit.oi_prod = Esprod.pr_codigo  INNER JOIN des!esprod Esprod_a  ON  Prordit.oi_produto = Esprod_a.pr_codigo  INNER JOIN des!esunidad  ON  Esunidad.un_codigo = Esprod_a.pr_unid WHERE ( (  Prordem.or_dt_ini BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Prordem.or_situac IN (IIF(?SQL1,1,0),IIF(?SQL2,2,0),IIF(?SQL3,3,0),IIF(?SQL4,4,0),IIF(?SQL5,5,0)) ) AND  Prordit.oi_produto = ( ?SQLProduto ) ) AND   Exists (SELECT .T. FROM des!escelcom WHERE esprod.pr_celula = escelcom.cc_celula and (isnull(escelcom.cc_comp) OR escelcom.cc_comp = ( ?SQLComputador ) OR escelcom.cc_comp = ( ?SQLUsuario ))) ORDER BY Prordem.or_tipo, Prordem.or_ordem<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_TIPO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_INI</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_FIM</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_fim</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_SITUAC</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_situac</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_quant</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_UNIDAD</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_unidad</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">UN_DESCR</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esunidad.un_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">TT_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">000000</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">TT_UNIDAD</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR02D</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Prordem.or_tipo, Prordem.or_ordem, Prordem.or_dt_ini, Prordem.or_dt_fim, Prordem.or_situac, Esprod.pr_descr, Prordprd.op_quant, Prordprd.op_quantf, Prordprd.op_unidad FROM  dpr!prordem  INNER JOIN dpr!prordprd  ON  Prordem.or_codigo = Prordprd.op_ordem  INNER JOIN des!esprod  ON  Prordprd.op_prod = Esprod.pr_codigo WHERE (  Prordem.or_dt_fim BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Prordem.or_situac IN (IIF(?SQL1,1,0),IIF(?SQL2,2,0),IIF(?SQL3,3,0),IIF(?SQL4,4,0),IIF(?SQL5,5,0)) ) AND   Exists (SELECT .T. FROM des!escelcom WHERE esprod.pr_celula = escelcom.cc_celula and (isnull(escelcom.cc_comp) OR escelcom.cc_comp = ( ?SQLComputador ) OR escelcom.cc_comp = ( ?SQLUsuario ))) ORDER BY Prordem.or_tipo, Prordem.or_ordem<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_TIPO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_INI</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_FIM</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_fim</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_SITUAC</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_situac</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_quant</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_QUANTF</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_quantf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_UNIDAD</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_unidad</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR02E</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Prordem.or_tipo, Prordem.or_ordem, Prordem.or_dt_ini, Prordem.or_dt_fim, Prordem.or_situac, Esprod.pr_descr, Prordprd.op_quant, Prordprd.op_quantf, Prordprd.op_unidad FROM  dpr!prordem  INNER JOIN dpr!prordprd  ON  Prordem.or_codigo = Prordprd.op_ordem  INNER JOIN des!esprod  ON  Prordprd.op_prod = Esprod.pr_codigo WHERE ( (  Prordem.or_dt_fim BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Prordem.or_situac IN (IIF(?SQL1,1,0),IIF(?SQL2,2,0),IIF(?SQL3,3,0),IIF(?SQL4,4,0),IIF(?SQL5,5,0)) ) AND  Prordprd.op_prod = ( ?SQLProd ) ) AND   Exists (SELECT .T. FROM des!escelcom WHERE esprod.pr_celula = escelcom.cc_celula and (isnull(escelcom.cc_comp) OR escelcom.cc_comp = ( ?SQLComputador ) OR escelcom.cc_comp = ( ?SQLUsuario ))) ORDER BY Prordem.or_tipo, Prordem.or_ordem<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_TIPO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_INI</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_FIM</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_fim</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_SITUAC</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_situac</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_quant</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_QUANTF</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_quantf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_UNIDAD</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_unidad</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR02F</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Prordem.or_tipo, Prordem.or_ordem, Prordem.or_dt_ini, Prordem.or_dt_fim, Prordem.or_situac, Esprod.pr_descr, Prordit.oi_quant AS op_quant, Prordit.oi_quantp AS op_quantf, Prordit.oi_unidad AS op_unidad, Esunidad.un_descr, 10000000000.000000 AS tt_quant, 10000000000.000000 AS tt_quantp, SPACE(10) AS tt_unidad FROM  dpr!prordem  INNER JOIN dpr!prordit  ON  Prordem.or_codigo = Prordit.oi_ordem  INNER JOIN des!esprod  ON  Prordit.oi_prod = Esprod.pr_codigo  INNER JOIN des!esprod Esprod_a  ON  Prordit.oi_produto = Esprod_a.pr_codigo  INNER JOIN des!esunidad  ON  Esunidad.un_codigo = Esprod_a.pr_unid WHERE ( (  Prordem.or_dt_fim BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Prordem.or_situac IN (IIF(?SQL1,1,0),IIF(?SQL2,2,0),IIF(?SQL3,3,0),IIF(?SQL4,4,0),IIF(?SQL5,5,0)) ) AND  Prordit.oi_produto = ( ?SQLProduto ) ) AND   Exists (SELECT .T. FROM des!escelcom WHERE esprod.pr_celula = escelcom.cc_celula and (isnull(escelcom.cc_comp) OR escelcom.cc_comp = ( ?SQLComputador ) OR escelcom.cc_comp = ( ?SQLUsuario ))) ORDER BY Prordem.or_tipo, Prordem.or_ordem<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_TIPO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_INI</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_FIM</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_fim</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_SITUAC</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_situac</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_quant</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_QUANTF</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_quantp</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_UNIDAD</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_unidad</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">UN_DESCR</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esunidad.un_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">TT_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">000000</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">TT_QUANTP</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">000000</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">TT_UNIDAD</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR03A</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Prordem.or_ordem, Prordem.or_tipo, Prordem.or_dt_ini, Prordem.or_hr_ini, Prordem.or_dt_fim, Prordem.or_hr_fim, Prordit.oi_nivel, Prordit.oi_prod, Prordit.oi_quant, Prordit.oi_quantp, Prordit.oi_decs, Prordit.oi_unidad, Esprod.pr_descr FROM  dpr!prordem  INNER JOIN dpr!prordit  ON  Prordem.or_codigo = Prordit.oi_ordem  INNER JOIN des!esprod  ON  Prordit.oi_prod = Esprod.pr_codigo WHERE  Prordem.or_dt_fim BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Prordit.oi_classe = ( "1" ) ORDER BY Prordem.or_ordem, Prordit.oi_seqprd, Prordit.oi_nivel DESC<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_TIPO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_INI</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_HR_INI</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_hr_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_FIM</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_fim</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_HR_FIM</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_hr_fim</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_NIVEL</TD>
+<TD VALIGN="CENTER">C(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_nivel</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_PROD</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_prod</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_quant</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANTP</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_quantp</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_DECS</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_decs</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_UNIDAD</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_unidad</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR04A</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Esprod.pr_codigo, PADR(IIF(EMPTY(Esprod.pr_descrpr),Esprod.pr_descr,Esprod.pr_descrpr),60) AS pr_descr, Prordem.or_ordem, Prordem.or_tipo, Prordem.or_dt_fim, Prordit.oi_decs, Prordit.oi_unidad, SUM(Prordit.oi_quant) AS oi_quant, SUM(Prordprd.op_quantf) AS oi_quantp FROM  dpr!prordem  INNER JOIN dpr!prordit  ON  Prordem.or_codigo = Prordit.oi_ordem  INNER JOIN dpr!prordprd  ON  Prordprd.op_codigo = Prordit.oi_ordprd  INNER JOIN des!esprod  ON  Prordit.oi_prod = Esprod.pr_codigo WHERE ( ( (  Prordem.or_dt_fim BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Prordem.or_situac = ( 4 ) ) AND  Prordit.oi_ordprd <> SPACE(8) ) AND  Prordit.oi_classe = ( "1" ) ) AND  ( ( ( ( (  Esprod.pr_descr LIKE ( ?SQLSearch1 ) AND  Esprod.pr_descr LIKE ( ?SQLSearch2 ) ) AND  Esprod.pr_descr LIKE ( ?SQLSearch3 ) ) AND  Esprod.pr_descr LIKE ( ?SQLSearch4 ) ) AND  Esprod.pr_descr LIKE ( ?SQLSearch5 ) ) OR  ( ( ( (  Esprod.pr_descrpr LIKE ( ?SQLSearch1 ) AND  Esprod.pr_descrpr LIKE ( ?SQLSearch2 ) ) AND  Esprod.pr_descrpr LIKE ( ?SQLSearch3 ) ) AND  Esprod.pr_descrpr LIKE ( ?SQLSearch4 ) ) AND  Esprod.pr_descrpr LIKE ( ?SQLSearch5 ) ) ) GROUP BY Esprod.pr_codigo, 2, Prordem.or_ordem, Prordem.or_tipo, Prordem.or_dt_fim, Prordit.oi_decs, Prordit.oi_unidad ORDER BY 2, Prordem.or_dt_fim<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_CODIGO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_TIPO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_FIM</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_fim</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_DECS</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_decs</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_UNIDAD</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_unidad</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANTP</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR04B</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Esespec.ep_codigo AS pr_codigo, Esespec.ep_descr AS pr_descr, Prordem.or_ordem, Prordem.or_tipo, Prordem.or_dt_fim, Prordit.oi_decs, Prordit.oi_unidad, SUM(Prordit.oi_quant) AS oi_quant, SUM(Prordprd.op_quantf) AS oi_quantp FROM  dpr!prordem  INNER JOIN dpr!prordit  ON  Prordem.or_codigo = Prordit.oi_ordem  INNER JOIN dpr!prordprd  ON  Prordprd.op_codigo = Prordit.oi_ordprd  INNER JOIN des!esprod  ON  Prordit.oi_prod = Esprod.pr_codigo  INNER JOIN des!esespec  ON  Esespec.ep_codigo = Esprod.pr_espec WHERE ( ( ( ( ( ( (  Prordem.or_dt_fim BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Prordem.or_situac = ( 4 ) ) AND  Prordit.oi_ordprd <> SPACE(8) ) AND  Prordit.oi_classe = ( "1" ) ) AND  Esespec.ep_descr LIKE ( ?SQLSearch1 ) ) AND  Esespec.ep_descr LIKE ( ?SQLSearch2 ) ) AND  Esespec.ep_descr LIKE ( ?SQLSearch3 ) ) AND  Esespec.ep_descr LIKE ( ?SQLSearch4 ) ) AND  Esespec.ep_descr LIKE ( ?SQLSearch5 ) GROUP BY Esespec.ep_codigo, Esespec.ep_descr, Prordem.or_ordem, Prordem.or_tipo, Prordem.or_dt_fim, Prordit.oi_decs, Prordit.oi_unidad, Prordprd.op_quantf ORDER BY Esespec.ep_descr, Prordem.or_dt_fim<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esespec.ep_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esespec.ep_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_TIPO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_FIM</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_fim</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_DECS</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_decs</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_UNIDAD</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_unidad</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANTP</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR05</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Esgrupo.gr_descr, Esprod.pr_descr, Esprod.pr_grupo, Esprod.pr_celula, Esprod.pr_depar, Esprod.pr_marca, Esprod.pr_linha, Esprod.pr_fragr, Esprod.pr_espec, Prprod.pf_propc FROM  des!esprod  INNER JOIN des!esgrupo  ON  Esgrupo.gr_codigo = Esprod.pr_grupo  LEFT OUTER JOIN dpr!prprod  ON  Esprod.pr_codigo = Prprod.pf_prod AND  Prprod.pf_ordem LIKE ( "1%" )  INNER JOIN dpr!prengmat  ON  Prengmat.em_codigo = Prprod.pf_engmat WHERE ( (  Esprod.pr_it_prd  OR  Esprod.pr_it_man  ) AND  Esprod.pr_it_ven  ) AND  Prengmat.em_ativa  ORDER BY Esprod.pr_grupo, Esprod.pr_descr<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esgrupo.gr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_GRUPO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_grupo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_CELULA</TD>
+<TD VALIGN="CENTER">C(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_celula</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DEPAR</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_depar</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_MARCA</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_marca</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_LINHA</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_linha</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_FRAGR</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_fragr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_ESPEC</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_espec</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PF_PROPC</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prprod.pf_propc</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR10A</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Prengmat.em_descr, Prengmat.em_ativa FROM  dpr!prengmat WHERE  Prengmat.em_codigo <> SPACE(8) AND   Exists (SELECT .T. FROM dpr!prengmat engmat LEFT OUTER JOIN dpr!prprod ON engmat.em_codigo = prprod.pf_engmat LEFT OUTER JOIN des!esprod ON prprod.pf_prod = esprod.pr_codigo LEFT OUTER JOIN des!escelcom ON esprod.pr_celula = escelcom.cc_celula WHERE engmat.em_codigo = prengmat.em_codigo and (isnull(escelcom.cc_comp) OR escelcom.cc_comp = ( ?SQLComputador ) OR escelcom.cc_comp = ( ?SQLUsuario ))) ORDER BY Prengmat.em_descr<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">EM_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prengmat.em_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">EM_ATIVA</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prengmat.em_ativa</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR10B</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT DISTINCT Prengmat.em_descr, Prengmat.em_ativa FROM  dpr!prengmat  INNER JOIN dpr!prprod  ON  Prengmat.em_codigo = Prprod.pf_engmat WHERE  Prprod.pf_prod = ( ?SQLProd ) AND   Exists (SELECT .T. FROM dpr!prengmat engmat LEFT OUTER JOIN dpr!prprod ON engmat.em_codigo = prprod.pf_engmat LEFT OUTER JOIN des!esprod ON prprod.pf_prod = esprod.pr_codigo LEFT OUTER JOIN des!escelcom ON esprod.pr_celula = escelcom.cc_celula WHERE engmat.em_codigo = prengmat.em_codigo and (isnull(escelcom.cc_comp) OR escelcom.cc_comp = ( ?SQLComputador ) OR escelcom.cc_comp = ( ?SQLUsuario ))) ORDER BY Prengmat.em_descr<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">EM_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prengmat.em_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">EM_ATIVA</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prengmat.em_ativa</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR10C</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT DISTINCT Prengmat.em_descr, Prengmat.em_ativa FROM  dpr!prengmat  INNER JOIN dpr!prprod  ON  Prengmat.em_codigo = Prprod.pf_engmat WHERE  Prprod.pf_produto = ( ?SQLProduto ) AND   Exists (SELECT .T. FROM dpr!prengmat engmat LEFT OUTER JOIN dpr!prprod ON engmat.em_codigo = prprod.pf_engmat LEFT OUTER JOIN des!esprod ON prprod.pf_prod = esprod.pr_codigo LEFT OUTER JOIN des!escelcom ON esprod.pr_celula = escelcom.cc_celula WHERE engmat.em_codigo = prengmat.em_codigo and (isnull(escelcom.cc_comp) OR escelcom.cc_comp = ( ?SQLComputador ) OR escelcom.cc_comp = ( ?SQLUsuario ))) ORDER BY Prengmat.em_descr<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">EM_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prengmat.em_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">EM_ATIVA</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prengmat.em_ativa</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR10D</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT DISTINCT Prengmat.em_descr, Prengmat.em_ativa FROM  dpr!prengmat  INNER JOIN dpr!prprod  ON  Prengmat.em_codigo = Prprod.pf_engmat WHERE (  Prprod.pf_prod = ( ?SQLProd ) AND  Prprod.pf_produto = ( ?SQLProduto ) ) AND   Exists (SELECT .T. FROM dpr!prengmat engmat LEFT OUTER JOIN dpr!prprod ON engmat.em_codigo = prprod.pf_engmat LEFT OUTER JOIN des!esprod ON prprod.pf_prod = esprod.pr_codigo LEFT OUTER JOIN des!escelcom ON esprod.pr_celula = escelcom.cc_celula WHERE engmat.em_codigo = prengmat.em_codigo and (isnull(escelcom.cc_comp) OR escelcom.cc_comp = ( ?SQLComputador ) OR escelcom.cc_comp = ( ?SQLUsuario ))) ORDER BY Prengmat.em_descr<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">EM_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prengmat.em_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">EM_ATIVA</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prengmat.em_ativa</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR20A</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Esprod.pr_descr, Prordem.or_ordem, Prordem.or_dt_ini, Prordem.or_hr_ini, Prordprd.op_quantf, Prordprd.op_unidad, Prordprd.op_lote, Prordprd.op_op_pes, Prordprd.op_op_prod, Prordprd.op_aprov, Prordprd.op_aspecto, Prordprd.op_ativo, Prordprd.op_cor, Prordprd.op_odor, Prordprd.op_ph, Prordprd.op_teor, Prordprd.op_viscos FROM  dpr!prordem  INNER JOIN dpr!prordprd  ON  Prordem.or_codigo = Prordprd.op_ordem  INNER JOIN des!esprod  ON  Prordprd.op_prod = Esprod.pr_codigo WHERE ( (  Prordem.or_dt_ini BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Prordem.or_tipo = ( "OR" ) ) AND  Prordem.or_situac IN (3,4) ) AND   Exists (SELECT .T. FROM des!escelcom WHERE esprod.pr_celula = escelcom.cc_celula and (isnull(escelcom.cc_comp) OR escelcom.cc_comp = ( ?SQLComputador ) OR escelcom.cc_comp = ( ?SQLUsuario ))) ORDER BY Esprod.pr_descr, Prordem.or_dt_ini, Prordem.or_hr_ini<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_INI</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_HR_INI</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_hr_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_QUANTF</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_quantf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_UNIDAD</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_unidad</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_LOTE</TD>
+<TD VALIGN="CENTER">C(15)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_lote</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_OP_PES</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_op_pes</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_OP_PROD</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_op_prod</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_APROV</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_aprov</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_ASPECTO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_aspecto</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_ATIVO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_ativo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_COR</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_cor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_ODOR</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_odor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_PH</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_ph</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_TEOR</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_teor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_VISCOS</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_viscos</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR20B</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Esprod.pr_descr, Prordem.or_ordem, Prordem.or_dt_ini, Prordem.or_hr_ini, Prordprd.op_quantf, Prordprd.op_unidad, Prordprd.op_lote, Prordprd.op_op_pes, Prordprd.op_op_prod, Prordprd.op_aprov, Prordprd.op_aspecto, Prordprd.op_ativo, Prordprd.op_cor, Prordprd.op_odor, Prordprd.op_ph, Prordprd.op_teor, Prordprd.op_viscos FROM  dpr!prordem  INNER JOIN dpr!prordprd  ON  Prordem.or_codigo = Prordprd.op_ordem  INNER JOIN des!esprod  ON  Prordprd.op_prod = Esprod.pr_codigo WHERE ( (  Prordem.or_dt_ini BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Prordprd.op_prod = ( ?SQLProd ) ) AND  Prordem.or_tipo = ( "OR" ) ) AND  Prordem.or_situac IN (3,4) ORDER BY Esprod.pr_descr, Prordem.or_dt_ini, Prordem.or_hr_ini<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_INI</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_HR_INI</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_hr_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_QUANTF</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_quantf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_UNIDAD</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_unidad</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_LOTE</TD>
+<TD VALIGN="CENTER">C(15)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_lote</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_OP_PES</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_op_pes</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_OP_PROD</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_op_prod</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_APROV</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_aprov</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_ASPECTO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_aspecto</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_ATIVO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_ativo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_COR</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_cor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_ODOR</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_odor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_PH</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_ph</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_TEOR</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_teor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_VISCOS</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_viscos</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR21</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Prordem.or_ordem, Prordem.or_dt_fim, Prordem.or_hr_fim, Prengmat.em_resp, Esprod.pr_descr, Prordit.oi_ordem, Prordit.oi_seqprd, Prordit.oi_ordprd, Prordit.oi_prod, Prordit.oi_nivel, Prordit.oi_classe, Prordit.oi_sequen, Prordit.oi_quant, Prordit.oi_quantp, Prordit.oi_decs, Prordit.oi_unidad, Prordit.oi_props, Prproces.pr_props, Prordprd.op_lote, Prordprd.op_fabr, Prordprd.op_valid, Prordprd.op_op_pes, Prordprd.op_op_prod, Prordprd.op_aprov, Prordprd.op_aspecto, Prordprd.op_ativo, Prordprd.op_brix, Prordprd.op_cor, Prordprd.op_odor, Prordprd.op_ph, Prordprd.op_teor, Prordprd.op_viscos, Stpess.pe_nome, Stpess.pe_email, Stpess.pe_cnpj, Stpess.pe_ie, Stender.ed_lograd, Stender.ed_numero, Stender.ed_compl, Stender.ed_bairro, Stender.ed_cidade, Stestado.es_sigla, Stender.ed_cep, Stender.ed_tel_loc FROM  dpr!prordit  INNER JOIN des!esprod  ON  Prordit.oi_prod = Esprod.pr_codigo  INNER JOIN dpr!prengmat  ON  Prordit.oi_engmat = Prengmat.em_codigo  INNER JOIN dpr!prordem  ON  Prordem.or_codigo = Prordit.oi_ordem  INNER JOIN dpr!prtppr  ON  Prtppr.tp_codigo = Prordem.or_tppr  INNER JOIN dcv!cvclifor  ON  Prtppr.tp_forn = Cvclifor.cf_codigo  INNER JOIN dst!stpess  ON  Cvclifor.cf_pess = Stpess.pe_codigo  INNER JOIN dst!stender  ON  Stender.ed_codigo = Stpess.pe_ender  INNER JOIN dst!stestado  ON  Stestado.es_codigo = Stender.ed_estado  INNER JOIN dpr!prordprd  ON  Prordprd.op_codigo = Prordit.oi_ordprd  INNER JOIN dpr!prproces  ON  Prordit.oi_proces = Prproces.pr_codigo WHERE  Prordit.oi_ordem = ( ?SQLOrdem ) AND  (  Prordit.oi_classe = ( "2" ) AND  ( (  Prordit.oi_props LIKE ( "%Imprimir analise=Sim%" ) OR  Prproces.pr_props LIKE ( "%Imprimir analise=Sim%" ) ) OR  Prordit.oi_ordprd <> SPACE(8) ) ) ORDER BY Prordit.oi_seqprd, Prordit.oi_nivel DESC, Prordit.oi_sequen<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_FIM</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_fim</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_HR_FIM</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_hr_fim</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">EM_RESP</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prengmat.em_resp</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_SEQPRD</TD>
+<TD VALIGN="CENTER">C(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_seqprd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_ORDPRD</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_ordprd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_PROD</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_prod</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_NIVEL</TD>
+<TD VALIGN="CENTER">C(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_nivel</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_CLASSE</TD>
+<TD VALIGN="CENTER">C(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_classe</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_SEQUEN</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_sequen</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_quant</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANTP</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_quantp</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_DECS</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_decs</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_UNIDAD</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_unidad</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_PROPS</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_props</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_PROPS</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prproces.pr_props</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_LOTE</TD>
+<TD VALIGN="CENTER">C(15)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_lote</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_FABR</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_fabr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_VALID</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_valid</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_OP_PES</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_op_pes</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_OP_PROD</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_op_prod</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_APROV</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_aprov</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_ASPECTO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_aspecto</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_ATIVO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_ativo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_BRIX</TD>
+<TD VALIGN="CENTER">C(9)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_brix</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_COR</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_cor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_ODOR</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_odor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_PH</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_ph</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_TEOR</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_teor</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OP_VISCOS</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordprd.op_viscos</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_EMAIL</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_email</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_CNPJ</TD>
+<TD VALIGN="CENTER">C(15)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_cnpj</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_IE</TD>
+<TD VALIGN="CENTER">C(18)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_ie</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_LOGRAD</TD>
+<TD VALIGN="CENTER">C(52)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_lograd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_NUMERO</TD>
+<TD VALIGN="CENTER">C(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_numero</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_COMPL</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_compl</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_BAIRRO</TD>
+<TD VALIGN="CENTER">C(25)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_bairro</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_CIDADE</TD>
+<TD VALIGN="CENTER">C(25)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_cidade</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_SIGLA</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stestado.es_sigla</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_CEP</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_cep</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_TEL_LOC</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_tel_loc</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR30</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Esprod.pr_codigo, Esprod.pr_descr, Esprod.pr_unid, Esprod.pr_decs, SUM(Esestoq.es_qt_atu) AS es_qt_atu, SUM(Esestoq.es_qt_min) AS es_qt_min FROM  des!esestoq  INNER JOIN des!esprod  ON  Esestoq.es_prod = Esprod.pr_codigo  INNER JOIN des!eslocal  ON  Eslocal.lc_codigo = Esestoq.es_local WHERE  Esprod.pr_celula = ( ?SQLCelula ) AND  Esprod.pr_it_prd  GROUP BY Esprod.pr_codigo, Esprod.pr_descr, Esprod.pr_unid, Esprod.pr_decs ORDER BY Esprod.pr_descr<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_CODIGO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">""</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">""</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_UNID</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">""</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_unid</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DECS</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">0</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_decs</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_QT_ATU</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">0</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esestoq.es_qt_atu</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_QT_MIN</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">0</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esestoq.es_qt_min</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR40A</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Esgrupo.gr_descr, Esprod.pr_codigo, Esprod.pr_descr, Esprod.pr_unid, Prordem.or_tipo, Prordem.or_ordem, Prordem.or_dt_ini, SUM(Prordit.oi_quant*IIF(oi_classe#"1",0,1)) AS cc_quant, SUM(ROUND((Prordit.oi_custo-IIF(oi_classe="1",0,Prordit.oi_custo))*IIF(Prordit.oi_moeda="R$",1,Prordit.oi_cotac),6)) AS cc_total, SUM(Prordit.oi_custo-IIF(oi_classe="3",0,Prordit.oi_custo)) AS cc_energia, SUM(Prordit.oi_custo-IIF(oi_classe="4",0,Prordit.oi_custo)) AS cc_maoobra, SUM(ROUND((Prordit.oi_custo-IIF(oi_classe="5",0,Prordit.oi_custo))*IIF(Prordit.oi_moeda="R$",1,Prordit.oi_cotac),6)) AS cc_cmv, SUM(Prordit.oi_quant*IIF(oi_classe#"1",0,Esprod.pr_ggf)) AS cc_ggf, SUM(Prordit.oi_quant*IIF(oi_classe#"1",0,Esprod.pr_fixo)) AS cc_fixo, SUM(Prordit.oi_quantp*IIF(oi_classe#"1",0,1)) AS rl_quant, SUM(ROUND((Prordit.oi_custop-IIF(oi_classe="1",0,Prordit.oi_custop))*IIF(Prordit.oi_moeda="R$",1,Prordit.oi_cotac),6)) AS rl_total, SUM(Prordit.oi_custop-IIF(oi_classe="3",0,Prordit.oi_custop)) AS rl_energia, SUM(Prordit.oi_custop-IIF(oi_classe="4",0,Prordit.oi_custop)) AS rl_maoobra, SUM(ROUND((Prordit.oi_custop-IIF(oi_classe="5",0,Prordit.oi_custop))*IIF(Prordit.oi_moeda="R$",1,Prordit.oi_cotac),6)) AS rl_cmv, SUM(Prordit.oi_quantp*IIF(oi_classe#"1",0,Esprod.pr_ggf)) AS rl_ggf, SUM(Prordit.oi_quantp*IIF(oi_classe#"1",0,Esprod.pr_fixo)) AS rl_fixo FROM  dpr!prordem  INNER JOIN dpr!prordit  ON  Prordem.or_codigo = Prordit.oi_ordem  INNER JOIN des!esprod  ON  Prordit.oi_prod = Esprod.pr_codigo  INNER JOIN des!esgrupo  ON  Esgrupo.gr_codigo = Esprod.pr_grupo  LEFT OUTER JOIN dfn!fnmoecot  ON  Esprod.pr_moeda = Fnmoecot.mt_moeda AND  Prordem.or_dt_ini = Fnmoecot.mt_data WHERE  Prordem.or_dt_ini BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Prordem.or_situac = ( 4 ) GROUP BY Esgrupo.gr_descr, Esprod.pr_codigo, Esprod.pr_descr, Esprod.pr_unid, Prordem.or_tipo, Prordem.or_ordem, Prordem.or_dt_ini ORDER BY Esgrupo.gr_descr, Esprod.pr_descr, Prordem.or_tipo, Prordem.or_ordem<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esgrupo.gr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_CODIGO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_UNID</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_unid</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_TIPO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_INI</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_QUANT</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_TOTAL</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_ENERGIA</TD>
+<TD VALIGN="CENTER">N(19,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_MAOOBRA</TD>
+<TD VALIGN="CENTER">N(19,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_CMV</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_GGF</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_FIXO</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_QUANT</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_TOTAL</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_ENERGIA</TD>
+<TD VALIGN="CENTER">N(19,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_MAOOBRA</TD>
+<TD VALIGN="CENTER">N(19,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_CMV</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_GGF</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_FIXO</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR40B</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Esgrupo.gr_descr, Esprod.pr_codigo, Esprod.pr_descr, Esprod.pr_unid, Prordem.or_tipo, Prordem.or_ordem, Prordem.or_dt_ini, SUM(Prordit.oi_quant*IIF(oi_classe#"1",0,1)) AS cc_quant, SUM(ROUND((Prordit.oi_custo-IIF(oi_classe="1",0,Prordit.oi_custo))*IIF(Prordit.oi_moeda="R$",1,Prordit.oi_cotac),6)) AS cc_total, SUM(Prordit.oi_custo-IIF(oi_classe="3",0,Prordit.oi_custo)) AS cc_energia, SUM(Prordit.oi_custo-IIF(oi_classe="4",0,Prordit.oi_custo)) AS cc_maoobra, SUM(ROUND((Prordit.oi_custo-IIF(oi_classe="5",0,Prordit.oi_custo))*IIF(Prordit.oi_moeda="R$",1,Prordit.oi_cotac),6)) AS cc_cmv, SUM(Prordit.oi_quant*IIF(oi_classe#"1",0,Esprod.pr_ggf)) AS cc_ggf, SUM(Prordit.oi_quant*IIF(oi_classe#"1",0,Esprod.pr_fixo)) AS cc_fixo, SUM(Prordit.oi_quantp*IIF(oi_classe#"1",0,1)) AS rl_quant, SUM(ROUND((Prordit.oi_custop-IIF(oi_classe="1",0,Prordit.oi_custop))*IIF(Prordit.oi_moeda="R$",1,Prordit.oi_cotac),6)) AS rl_total, SUM(Prordit.oi_custop-IIF(oi_classe="3",0,Prordit.oi_custop)) AS rl_energia, SUM(Prordit.oi_custop-IIF(oi_classe="4",0,Prordit.oi_custop)) AS rl_maoobra, SUM(ROUND((Prordit.oi_custop-IIF(oi_classe="5",0,Prordit.oi_custop))*IIF(Prordit.oi_moeda="R$",1,Prordit.oi_cotac),6)) AS rl_cmv, SUM(Prordit.oi_quantp*IIF(oi_classe#"1",0,Esprod.pr_ggf)) AS rl_ggf, SUM(Prordit.oi_quantp*IIF(oi_classe#"1",0,Esprod.pr_fixo)) AS rl_fixo FROM  dpr!prordem  INNER JOIN dpr!prordit  ON  Prordem.or_codigo = Prordit.oi_ordem  INNER JOIN des!esprod  ON  Prordit.oi_prod = Esprod.pr_codigo  INNER JOIN des!esgrupo  ON  Esgrupo.gr_codigo = Esprod.pr_grupo  LEFT OUTER JOIN dfn!fnmoecot  ON  Esprod.pr_moeda = Fnmoecot.mt_moeda AND  Prordem.or_dt_ini = Fnmoecot.mt_data WHERE ( ( ( ( (  Prordem.or_dt_ini BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Prordem.or_situac = ( 4 ) ) AND  Esprod.pr_descr LIKE ( ?SQLSearch1 ) ) AND  Esprod.pr_descr LIKE ( ?SQLSearch2 ) ) AND  Esprod.pr_descr LIKE ( ?SQLSearch3 ) ) AND  Esprod.pr_descr LIKE ( ?SQLSearch4 ) ) AND  Esprod.pr_descr LIKE ( ?SQLSearch5 ) GROUP BY Esgrupo.gr_descr, Esprod.pr_codigo, Esprod.pr_descr, Esprod.pr_unid, Prordem.or_tipo, Prordem.or_ordem, Prordem.or_dt_ini ORDER BY Esgrupo.gr_descr, Esprod.pr_descr, Prordem.or_tipo, Prordem.or_ordem<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esgrupo.gr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_CODIGO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_UNID</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_unid</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_TIPO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_INI</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_QUANT</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_TOTAL</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_ENERGIA</TD>
+<TD VALIGN="CENTER">N(19,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_MAOOBRA</TD>
+<TD VALIGN="CENTER">N(19,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_CMV</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_GGF</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_FIXO</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_QUANT</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_TOTAL</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_ENERGIA</TD>
+<TD VALIGN="CENTER">N(19,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_MAOOBRA</TD>
+<TD VALIGN="CENTER">N(19,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_CMV</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_GGF</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_FIXO</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR40C</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Esgrupo.gr_descr, Esprod.pr_codigo, Esprod.pr_descr, Esprod.pr_unid, Prordem.or_tipo, Prordem.or_ordem, Prordem.or_dt_ini, SUM(Prordit.oi_quant*IIF(oi_classe#"1",0,1)) AS cc_quant, SUM(ROUND((Prordit.oi_custo-IIF(oi_classe="1",0,Prordit.oi_custo))*IIF(Prordit.oi_moeda="R$",1,Prordit.oi_cotac),6)) AS cc_total, SUM(Prordit.oi_custo-IIF(oi_classe="3",0,Prordit.oi_custo)) AS cc_energia, SUM(Prordit.oi_custo-IIF(oi_classe="4",0,Prordit.oi_custo)) AS cc_maoobra, SUM(ROUND((Prordit.oi_custo-IIF(oi_classe="5",0,Prordit.oi_custo))*IIF(Prordit.oi_moeda="R$",1,Prordit.oi_cotac),6)) AS cc_cmv, SUM(Prordit.oi_quant*IIF(oi_classe#"1",0,Esprod.pr_ggf)) AS cc_ggf, SUM(Prordit.oi_quant*IIF(oi_classe#"1",0,Esprod.pr_fixo)) AS cc_fixo, SUM(Prordit.oi_quantp*IIF(oi_classe#"1",0,1)) AS rl_quant, SUM(ROUND((Prordit.oi_custop-IIF(oi_classe="1",0,Prordit.oi_custop))*IIF(Prordit.oi_moeda="R$",1,Prordit.oi_cotac),6)) AS rl_total, SUM(Prordit.oi_custop-IIF(oi_classe="3",0,Prordit.oi_custop)) AS rl_energia, SUM(Prordit.oi_custop-IIF(oi_classe="4",0,Prordit.oi_custop)) AS rl_maoobra, SUM(ROUND((Prordit.oi_custop-IIF(oi_classe="5",0,Prordit.oi_custop))*IIF(Prordit.oi_moeda="R$",1,Prordit.oi_cotac),6)) AS rl_cmv, SUM(Prordit.oi_quantp*IIF(oi_classe#"1",0,Esprod.pr_ggf)) AS rl_ggf, SUM(Prordit.oi_quantp*IIF(oi_classe#"1",0,Esprod.pr_fixo)) AS rl_fixo FROM  dpr!prordem  INNER JOIN dpr!prordit  ON  Prordem.or_codigo = Prordit.oi_ordem  INNER JOIN des!esprod  ON  Prordit.oi_prod = Esprod.pr_codigo  INNER JOIN des!esgrupo  ON  Esgrupo.gr_codigo = Esprod.pr_grupo  LEFT OUTER JOIN dfn!fnmoecot  ON  Esprod.pr_moeda = Fnmoecot.mt_moeda AND  Prordem.or_dt_ini = Fnmoecot.mt_data WHERE (  Prordem.or_dt_ini BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Prordem.or_situac = ( 4 ) ) AND  Prordit.oi_ordprd <> space(8) GROUP BY Esgrupo.gr_descr, Esprod.pr_codigo, Esprod.pr_descr, Esprod.pr_unid, Prordem.or_tipo, Prordem.or_ordem, Prordem.or_dt_ini ORDER BY Esgrupo.gr_descr, Esprod.pr_descr, Prordem.or_tipo, Prordem.or_ordem<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esgrupo.gr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_CODIGO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_UNID</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_unid</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_TIPO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_INI</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_QUANT</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_TOTAL</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_ENERGIA</TD>
+<TD VALIGN="CENTER">N(19,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_MAOOBRA</TD>
+<TD VALIGN="CENTER">N(19,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_CMV</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_GGF</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_FIXO</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_QUANT</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_TOTAL</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_ENERGIA</TD>
+<TD VALIGN="CENTER">N(19,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_MAOOBRA</TD>
+<TD VALIGN="CENTER">N(19,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_CMV</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_GGF</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_FIXO</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR40D</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Esgrupo.gr_descr, Esprod.pr_codigo, Esprod.pr_descr, Esprod.pr_unid, Prordem.or_tipo, Prordem.or_ordem, Prordem.or_dt_ini, SUM(Prordit.oi_quant*IIF(oi_classe#"1",0,1)) AS cc_quant, SUM(ROUND((Prordit.oi_custo-IIF(oi_classe="1",0,Prordit.oi_custo))*IIF(Prordit.oi_moeda="R$",1,Prordit.oi_cotac),6)) AS cc_total, SUM(Prordit.oi_custo-IIF(oi_classe="3",0,Prordit.oi_custo)) AS cc_energia, SUM(Prordit.oi_custo-IIF(oi_classe="4",0,Prordit.oi_custo)) AS cc_maoobra, SUM(ROUND((Prordit.oi_custo-IIF(oi_classe="5",0,Prordit.oi_custo))*IIF(Prordit.oi_moeda="R$",1,Prordit.oi_cotac),6)) AS cc_cmv, SUM(Prordit.oi_quant*IIF(oi_classe#"1",0,Esprod.pr_ggf)) AS cc_ggf, SUM(Prordit.oi_quant*IIF(oi_classe#"1",0,Esprod.pr_fixo)) AS cc_fixo, SUM(Prordit.oi_quantp*IIF(oi_classe#"1",0,1)) AS rl_quant, SUM(ROUND((Prordit.oi_custop-IIF(oi_classe="1",0,Prordit.oi_custop))*IIF(Prordit.oi_moeda="R$",1,Prordit.oi_cotac),6)) AS rl_total, SUM(Prordit.oi_custop-IIF(oi_classe="3",0,Prordit.oi_custop)) AS rl_energia, SUM(Prordit.oi_custop-IIF(oi_classe="4",0,Prordit.oi_custop)) AS rl_maoobra, SUM(ROUND((Prordit.oi_custop-IIF(oi_classe="5",0,Prordit.oi_custop))*IIF(Prordit.oi_moeda="R$",1,Prordit.oi_cotac),6)) AS rl_cmv, SUM(Prordit.oi_quantp*IIF(oi_classe#"1",0,Esprod.pr_ggf)) AS rl_ggf, SUM(Prordit.oi_quantp*IIF(oi_classe#"1",0,Esprod.pr_fixo)) AS rl_fixo FROM  dpr!prordem  INNER JOIN dpr!prordit  ON  Prordem.or_codigo = Prordit.oi_ordem  INNER JOIN des!esprod  ON  Prordit.oi_prod = Esprod.pr_codigo  INNER JOIN des!esgrupo  ON  Esgrupo.gr_codigo = Esprod.pr_grupo  LEFT OUTER JOIN dfn!fnmoecot  ON  Esprod.pr_moeda = Fnmoecot.mt_moeda AND  Prordem.or_dt_ini = Fnmoecot.mt_data WHERE ( ( ( ( ( (  Prordem.or_dt_ini BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Prordem.or_situac = ( 4 ) ) AND  Prordit.oi_ordprd <> space(10) ) AND  Esprod.pr_descr LIKE ( ?SQLSearch1 ) ) AND  Esprod.pr_descr LIKE ( ?SQLSearch2 ) ) AND  Esprod.pr_descr LIKE ( ?SQLSearch3 ) ) AND  Esprod.pr_descr LIKE ( ?SQLSearch4 ) ) AND  Esprod.pr_descr LIKE ( ?SQLSearch5 ) GROUP BY Esgrupo.gr_descr, Esprod.pr_codigo, Esprod.pr_descr, Esprod.pr_unid, Prordem.or_tipo, Prordem.or_ordem, Prordem.or_dt_ini ORDER BY Esgrupo.gr_descr, Esprod.pr_descr, Prordem.or_tipo, Prordem.or_ordem<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esgrupo.gr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_CODIGO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_UNID</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_unid</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_TIPO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_INI</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_QUANT</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_TOTAL</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_ENERGIA</TD>
+<TD VALIGN="CENTER">N(19,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_MAOOBRA</TD>
+<TD VALIGN="CENTER">N(19,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_CMV</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_GGF</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">CC_FIXO</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_QUANT</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_TOTAL</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_ENERGIA</TD>
+<TD VALIGN="CENTER">N(19,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_MAOOBRA</TD>
+<TD VALIGN="CENTER">N(19,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_CMV</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_GGF</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">RL_FIXO</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR41A</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Esgrupo.gr_descr, Esprod.pr_codigo, Esprod.pr_descr, Esprod.pr_unid, Esprod.pr_ggf, Esprod.pr_fixo, Prordem.or_tipo, Prordem.or_ordem, Prordem.or_dt_ini, Prordit.oi_prod, Prordit.oi_produto, Prordit.oi_classe, Prordit.oi_quant, Prordit.oi_quantp, Prordit.oi_custo, Prordit.oi_custop, Prordit.oi_moeda, Prordit.oi_cotac FROM  dpr!prordem  INNER JOIN dpr!prordit  ON  Prordem.or_codigo = Prordit.oi_ordem  INNER JOIN des!esprod  ON  Prordit.oi_prod = Esprod.pr_codigo AND  (  Prordit.oi_custo <> ( 0 ) OR  Prordit.oi_custop <> ( 0 ) )  INNER JOIN des!esgrupo  ON  Esgrupo.gr_codigo = Esprod.pr_grupo  LEFT OUTER JOIN dfn!fnmoecot  ON  Esprod.pr_moeda = Fnmoecot.mt_moeda AND  Prordem.or_dt_ini = Fnmoecot.mt_data WHERE  Prordem.or_dt_ini BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Prordem.or_situac = ( 4 ) ORDER BY Prordem.or_tipo, Prordem.or_ordem<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esgrupo.gr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_CODIGO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_UNID</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_unid</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_GGF</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_ggf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_FIXO</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_fixo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_TIPO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_INI</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_PROD</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_prod</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_PRODUTO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_produto</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_CLASSE</TD>
+<TD VALIGN="CENTER">C(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_classe</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_quant</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANTP</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_quantp</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_CUSTO</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_custo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_CUSTOP</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_custop</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_MOEDA</TD>
+<TD VALIGN="CENTER">C(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_moeda</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_COTAC</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_cotac</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR41B</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Esgrupo.gr_descr, Esprod.pr_codigo, Esprod.pr_descr, Esprod.pr_unid, Esprod.pr_ggf, Esprod.pr_fixo, Prordem.or_tipo, Prordem.or_ordem, Prordem.or_dt_ini, Prordit.oi_prod, Prordit.oi_produto, Prordit.oi_classe, Prordit.oi_quant, Prordit.oi_quantp, Prordit.oi_custo, Prordit.oi_custop, Prordit.oi_moeda, Prordit.oi_cotac FROM  dpr!prordem  INNER JOIN dpr!prordit  ON  Prordem.or_codigo = Prordit.oi_ordem  INNER JOIN des!esprod  ON  Prordit.oi_prod = Esprod.pr_codigo AND  (  Prordit.oi_custo <> ( 0 ) OR  Prordit.oi_custop <> ( 0 ) )  INNER JOIN des!esgrupo  ON  Esgrupo.gr_codigo = Esprod.pr_grupo  LEFT OUTER JOIN dfn!fnmoecot  ON  Esprod.pr_moeda = Fnmoecot.mt_moeda AND  Prordem.or_dt_ini = Fnmoecot.mt_data WHERE ( ( ( ( (  Prordem.or_dt_ini BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Prordem.or_situac = ( 4 ) ) AND  Esprod.pr_descr LIKE ( ?SQLSearch1 ) ) AND  Esprod.pr_descr LIKE ( ?SQLSearch2 ) ) AND  Esprod.pr_descr LIKE ( ?SQLSearch3 ) ) AND  Esprod.pr_descr LIKE ( ?SQLSearch4 ) ) AND  Esprod.pr_descr LIKE ( ?SQLSearch5 ) ORDER BY Prordem.or_tipo, Prordem.or_ordem<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esgrupo.gr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_CODIGO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_UNID</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_unid</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_GGF</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_ggf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_FIXO</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_fixo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_TIPO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_INI</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_PROD</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_prod</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_PRODUTO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_produto</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_CLASSE</TD>
+<TD VALIGN="CENTER">C(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_classe</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_quant</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANTP</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_quantp</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_CUSTO</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_custo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_CUSTOP</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_custop</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_MOEDA</TD>
+<TD VALIGN="CENTER">C(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_moeda</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_COTAC</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_cotac</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR50A</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Cvpedit.pi_prod, Esprod.pr_grupo, Estabprc.pc_preco, SUM(Cvpedit.pi_quant) AS pi_quant, 9999999999.999998 AS pr_quant, 9999999999.999998 AS ee_quant, 9999999999.999998 AS es_quant, 999.999999 AS pi_perc, 99999999.9 AS pi_dias, SPACE(60) AS gr_descr1, SPACE(60) AS gr_descr2, SPACE(60) AS gr_descr3, SPACE(60) AS gr_descr4, SPACE(60) AS gr_descr5, SPACE(60) AS gr_descr6 FROM  dcv!cvpedido  INNER JOIN dcv!cvpedit  ON  Cvpedido.pe_codigo = Cvpedit.pi_pedido AND  NOT (Cvpedit.pi_troca )  INNER JOIN des!esprod  ON  Cvpedit.pi_prod = Esprod.pr_codigo  INNER JOIN des!estabprd  ON  Esprod.pr_codigo = Estabprd.to_prod  INNER JOIN des!estabpr  ON  Estabpr.tp_codigo = Estabprd.to_tabpr AND  Estabpr.tp_padrao   INNER JOIN des!estabper  ON  Estabpr.tp_codigo = Estabper.te_tabpr  INNER JOIN des!estabprc  ON  Estabper.te_codigo = Estabprc.pc_tabper AND  Estabprd.to_codigo = Estabprc.pc_tabprd  INNER JOIN dcv!cvtpcv  ON  Cvtpcv.tp_codigo = Cvpedido.pe_tpcv WHERE ( ( ( ( (  Cvpedido.pe_datent BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Cvpedido.pe_loja = ( ?SQLStore ) ) AND  Cvpedido.pe_tipo = ( "PV" ) ) AND  Esprod.pr_celula = ( ?SQLCelula ) ) AND  NOT (Esprod.pr_inativ ) ) AND  Cvtpcv.tp_tpven = ( 1 ) ) AND  NOT (Cvpedit.pi_troca ) GROUP BY Cvpedit.pi_prod, Esprod.pr_grupo, Estabprc.pc_preco ORDER BY Esprod.pr_grupo, Cvpedit.pi_prod<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_PROD</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvpedit.pi_prod</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_GRUPO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_grupo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PC_PRECO</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!estabprc.pc_preco</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_QUANT</TD>
+<TD VALIGN="CENTER">N(17,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">999998</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">EE_QUANT</TD>
+<TD VALIGN="CENTER">N(17,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_QUANT</TD>
+<TD VALIGN="CENTER">N(17,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">9999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_PERC</TD>
+<TD VALIGN="CENTER">N(10,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">999999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_DIAS</TD>
+<TD VALIGN="CENTER">N(10,1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">999</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_DESCR1</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_DESCR2</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_DESCR3</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_DESCR4</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_DESCR5</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_DESCR6</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR50B</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Esestoq.es_prod, Esprod.pr_grupo, SUM(Esestoq.es_qt_atu) AS es_quant, Esprod.pr_celula FROM  des!esprod  INNER JOIN des!esestoq  ON  Esprod.pr_codigo = Esestoq.es_prod WHERE  NOT (Esprod.pr_inativ ) AND  Esprod.pr_it_prd  GROUP BY Esestoq.es_prod, Esprod.pr_grupo, Esprod.pr_celula ORDER BY Esprod.pr_grupo, Esestoq.es_prod<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_PROD</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esestoq.es_prod</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_GRUPO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_grupo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_CELULA</TD>
+<TD VALIGN="CENTER">C(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_celula</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR50C</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Esestoq.es_prod, SUM(Esestemp.ee_quant-Esestemp.ee_quantr) AS ee_quant, Esestemp.ee_tipo FROM  des!esestemp  INNER JOIN des!esestoq  ON  Esestemp.ee_estoq = Esestoq.es_codigo WHERE  Esestemp.ee_situac = ( 1 ) GROUP BY Esestoq.es_prod, Esestemp.ee_tipo<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_PROD</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esestoq.es_prod</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">EE_QUANT</TD>
+<TD VALIGN="CENTER">N(19,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">EE_TIPO</TD>
+<TD VALIGN="CENTER">C(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esestemp.ee_tipo</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR50D</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT TOP 1 Cvpedit.pi_prod, Cvpedido.pe_data FROM  dcv!cvpedit  INNER JOIN dcv!cvpedido  ON  Cvpedit.pi_pedido = Cvpedido.pe_codigo WHERE  Cvpedit.pi_prod = ( ?SQLProd ) AND  NOT (Cvpedit.pi_troca ) ORDER BY Cvpedido.pe_data<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PI_PROD</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvpedit.pi_prod</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_DATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dcv!cvpedido.pe_data</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR51A</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Prordem.or_codigo, Prordem.or_ordem, Prordem.or_tppr, Prordem.or_dt_ini, Prordem.or_hr_ini, Prordem.or_dt_fim, Prordem.or_hr_fim, Prordem.or_situac, Prtppr.tp_descr FROM  dpr!prordem  INNER JOIN dpr!prtppr  ON  Prtppr.tp_codigo = Prordem.or_tppr WHERE  Prordem.or_ordem = ( ?SQLCode ) AND  Prordem.or_tipo = ( "OM" )<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_TPPR</TD>
+<TD VALIGN="CENTER">C(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_tppr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_INI</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_HR_INI</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_hr_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_FIM</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_fim</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_HR_FIM</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_hr_fim</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_SITUAC</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_situac</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">TP_DESCR</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prtppr.tp_descr</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR51B</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Prordit.oi_ordem, Prordit.oi_seqprd, Prordit.oi_prod, Prordit.oi_nivel, Prordit.oi_classe, Prordit.oi_sequen, Prordit.oi_proces, Prordit.oi_equip, Prordit.oi_opers, Prordit.oi_produto, Prordit.oi_quant, Prordit.oi_quantp, Prordit.oi_decs, Prordit.oi_unidad, Prordit.oi_lote, Prordit.oi_moeda, Prordit.oi_custo, Prordit.oi_custop, Prordit.oi_tipo, Prordit.oi_props, Prordit.oi_espec, Prproces.pr_descr AS pp_descr, Prproces.pr_props AS pp_props, Prequip.eq_descr, Prequip.eq_props, Propers.og_descr, Propers.og_props, Esprod_b.pr_descr, Esprod_b.pr_descrpr, Esprod_b.pr_funcao, SPACE(10) AS pr_lote, Esprod_a.pr_descr AS oi_descr, SUBSTR(ALLTRIM(SUBSTR(Prordit.oi_sequen,2,4))+"  ",1,4)+SUBSTR(Prordit.oi_sequen,1,1)+SUBSTR(Prordit.oi_sequen,7) AS oi_sequen2 FROM  dpr!prordit  INNER JOIN des!esprod Esprod_a  ON  Prordit.oi_prod = Esprod_a.pr_codigo  INNER JOIN des!esprod Esprod_b  ON  Prordit.oi_produto = Esprod_b.pr_codigo  INNER JOIN dpr!prproces  ON  Prordit.oi_proces = Prproces.pr_codigo  INNER JOIN dpr!propers  ON  Prordit.oi_opers = Propers.og_codigo  INNER JOIN dpr!prequip  ON  Prordit.oi_equip = Prequip.eq_codigo WHERE  Prordit.oi_ordem = ( ?SQLOrdem ) ORDER BY Prordit.oi_seqprd, Prordit.oi_nivel DESC, 33<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_SEQPRD</TD>
+<TD VALIGN="CENTER">C(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_seqprd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_PROD</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_prod</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_NIVEL</TD>
+<TD VALIGN="CENTER">C(3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_nivel</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_CLASSE</TD>
+<TD VALIGN="CENTER">C(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_classe</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_SEQUEN</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_sequen</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_PROCES</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_proces</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_EQUIP</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_equip</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_OPERS</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_opers</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_PRODUTO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_produto</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_quant</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANTP</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_quantp</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_DECS</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_decs</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_UNIDAD</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_unidad</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_LOTE</TD>
+<TD VALIGN="CENTER">C(15)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_lote</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_MOEDA</TD>
+<TD VALIGN="CENTER">C(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_moeda</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_CUSTO</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_custo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_CUSTOP</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_custop</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_TIPO</TD>
+<TD VALIGN="CENTER">C(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_PROPS</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_props</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_ESPEC</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_espec</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PP_DESCR</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prproces.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PP_PROPS</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prproces.pr_props</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">EQ_DESCR</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prequip.eq_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">EQ_PROPS</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prequip.eq_props</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OG_DESCR</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!propers.og_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OG_PROPS</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!propers.og_props</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCRPR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descrpr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_FUNCAO</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_funcao</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_LOTE</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_SEQUEN2</TD>
+<TD VALIGN="CENTER">C(7)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PROR80</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Prordem.or_ordem, Esprod.pr_descr AS pf_descr, Esprod_a.pr_descr AS pm_descr, Esgrupo.gr_codigo, Esgrupo.gr_descr, Prordit.oi_prod, Prordit.oi_produto, Prordit.oi_quant, Prordit.oi_quantp, Prordit.oi_decs, Prordit.oi_unidad, ABS(ABS(oi_quant-oi_quantp)/oi_quant*100) AS oi_difer FROM  dpr!prordem  INNER JOIN dpr!prordit  ON  Prordem.or_codigo = Prordit.oi_ordem  INNER JOIN des!esprod  ON  Prordit.oi_prod = Esprod.pr_codigo  INNER JOIN des!esprod Esprod_a  ON  Prordit.oi_produto = Esprod_a.pr_codigo  INNER JOIN des!esgrupo  ON  Esprod_a.pr_grupo = Esgrupo.gr_codigo WHERE ( ( ( (  Prordem.or_dt_ini BETWEEN ?SQLDtini AND ?SQLDtFim AND  Prordem.or_situac = ( 4 ) ) AND  Prordit.oi_classe = ( "5" ) ) AND  Prordit.oi_quant <> Prordit.oi_quantp ) AND  Prordit.oi_quant <> ( 0 ) ) AND   Exists (SELECT .T. FROM des!esestoq WHERE oi_produto = es_prod) ORDER BY Prordem.or_ordem<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PF_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PM_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esgrupo.gr_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esgrupo.gr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_PROD</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_prod</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_PRODUTO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_produto</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_quant</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANTP</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_quantp</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_DECS</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_decs</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_UNIDAD</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_unidad</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_DIFER</TD>
+<TD VALIGN="CENTER">N(20,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PRPR01</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Prequip.eq_codigo, Prequip.eq_descr, Prordem.or_tipo, Prordem.or_ordem, Prordem.or_dt_ini, Esprod.pr_descr, Prordpcp.pc_pcp, Prordpcp.pc_previs, Prordit_a.oi_lote, Prordit_a.oi_quant, Prordit_a.oi_decs, Prordit_a.oi_unidad FROM  dpr!prordem  INNER JOIN dpr!prordit  ON  Prordem.or_codigo = Prordit.oi_ordem  INNER JOIN dpr!prordpcp  ON  Prordit.oi_codigo = Prordpcp.pc_ordit  INNER JOIN dpr!prequip  ON  Prordit.oi_equip = Prequip.eq_codigo  INNER JOIN dpr!prordit Prordit_a  ON (  Prordem.or_codigo = Prordit_a.oi_ordem AND  Prordit.oi_seqprd = Prordit_a.oi_seqprd ) AND  Prordit_a.oi_sequen LIKE ( "1%" )  INNER JOIN des!esprod  ON  Prordit.oi_prod = Esprod.pr_codigo WHERE (  Prordem.or_dt_ini >= DATE()-30 AND  Prordem.or_situac = ( 3 ) ) AND  Prordpcp.pc_pcp > ( 0 ) ORDER BY Prequip.eq_descr, Prordpcp.pc_pcp<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">EQ_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prequip.eq_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">EQ_DESCR</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prequip.eq_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_TIPO</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_ORDEM</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_ordem</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OR_DT_INI</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordem.or_dt_ini</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PC_PCP</TD>
+<TD VALIGN="CENTER">N(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordpcp.pc_pcp</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PC_PREVIS</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordpcp.pc_previs</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_LOTE</TD>
+<TD VALIGN="CENTER">C(15)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_lote</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_quant</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_DECS</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_decs</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_UNIDAD</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_unidad</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PRPR02A</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Prordpcp.pc_previs, Esgrupo.gr_descr, Esgrupo.gr_codigo, Esprod.pr_descr, Prordit_a.oi_produto, SUM(Prordit_a.oi_quant) AS oi_quant, SUM(Prordit_a.oi_quantp) AS oi_quantp, Prordit_a.oi_unidad, Prordit_a.oi_decs, Prordit_a.oi_densid, Esprod.pr_unid FROM  dpr!prordem  INNER JOIN dpr!prordit  ON  Prordem.or_codigo = Prordit.oi_ordem  INNER JOIN dpr!prordpcp  ON  Prordit.oi_codigo = Prordpcp.pc_ordit  INNER JOIN dpr!prordit Prordit_a  ON (  Prordem.or_codigo = Prordit_a.oi_ordem AND  Prordit.oi_seqprd = Prordit_a.oi_seqprd ) AND  Prordit_a.oi_classe = ( "5" )  INNER JOIN des!esprod  ON  Prordit_a.oi_produto = Esprod.pr_codigo  INNER JOIN des!esgrupo  ON  Esgrupo.gr_codigo = Esprod.pr_grupo WHERE (  Prordem.or_dt_ini >= DATE()-30 AND  Prordem.or_situac = ( 3 ) ) AND  Prordpcp.pc_pcp > ( 0 ) GROUP BY Prordpcp.pc_previs, Esgrupo.gr_descr, Esgrupo.gr_codigo, Esprod.pr_descr, Prordit_a.oi_produto, Prordit_a.oi_unidad, Prordit_a.oi_decs, Prordit_a.oi_densid, Esprod.pr_unid ORDER BY Prordpcp.pc_previs, Esgrupo.gr_descr, Esprod.pr_descr<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Sim<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PC_PREVIS</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordpcp.pc_previs</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esgrupo.gr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">GR_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esgrupo.gr_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_DESCR</TD>
+<TD VALIGN="CENTER">C(60)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_PRODUTO</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_produto</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_quant</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANTP</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_quantp</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_UNIDAD</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_unidad</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_DECS</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_decs</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_DENSID</TD>
+<TD VALIGN="CENTER">N(12,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dpr!prordit.oi_densid</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PR_UNID</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esprod.pr_unid</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PRPR02B</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Esestoq.es_prod, SUM(Esestoq.es_qt_atu) AS es_qt_atu FROM  des!esestoq WHERE  Esestoq.es_local IN (select distinct tl_local from dpr!prtploc) GROUP BY Esestoq.es_prod<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Sim<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_PROD</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esestoq.es_prod</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_QT_ATU</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PRPR02C</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Esestoq.es_prod, SUM(Esestoq.es_qt_atu) AS es_qt_atu FROM  des!esestoq WHERE  Esestoq.es_local NOT IN (select distinct tl_local from dpr!prtploc) GROUP BY Esestoq.es_prod<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Sim<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_PROD</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esestoq.es_prod</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_QT_ATU</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PRPR20</B></FONT>
+<FONT FACE="Arial"> (Campos: 38)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT IIF(ISNULL(Prordop.oo_operad),Prordtmp.ot_operad,Prordop.oo_operad) AS oo_operad, Esespec.ep_descr, SUM(Prordit.oi_quant) AS oi_quant, SUM(Prordit.oi_quantp) AS oi_quantp, SUM(Prordtmp.ot_fim-Prordtmp.ot_inicio) AS suminter_seconds FROM  dpr!prordtmp  LEFT OUTER JOIN dpr!prordop  ON  Prordtmp.ot_codigo = Prordop.oo_ordtmp  INNER JOIN dpr!prordit  ON  Prordtmp.ot_ordit = Prordit.oi_codigo AND  Prordit.oi_classe = ( "1" )  INNER JOIN des!esprod  ON  Prordit.oi_prod = Esprod.pr_codigo  INNER JOIN des!esespec  ON  Esespec.ep_codigo = Esprod.pr_espec WHERE  Prordtmp.ot_inicio BETWEEN ?SQLDtIni AND ?SQLDtFim GROUP BY 1, Esespec.ep_descr ORDER BY 1, Esespec.ep_descr<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OO_OPERAD</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">EP_DESCR</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">des!esespec.ep_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANT</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OI_QUANTP</TD>
+<TD VALIGN="CENTER">N(18,6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">SUMINTER_SECONDS</TD>
+<TD VALIGN="CENTER">N(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER"></TD>
+</TR>
+</TABLE>
+<BR><BR>
+</BODY>
+</HTML>

@@ -1,0 +1,1353 @@
+
+<TABLE CELLSPACING=0 BORDER=1 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+<P ALIGN="CENTER"><B><FONT FACE="Arial" COLOR="#0000ff">VISUALIZAÇÕES NO BANCO DE DADOS - D:\AMR\AMR\DBFS\RST.DBC</P></B></FONT>
+</TD></TR>
+</TABLE>
+<BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+ENDEREÇO</B></FONT>
+<FONT FACE="Arial"> (Campos: 13)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Stender.ed_codigo, Stender.ed_lograd, Stender.ed_numero, Stender.ed_compl, Stender.ed_bairro, Stender.ed_cidade, Stender.ed_estado, Stender.ed_cep, Stender.ed_tel_loc, Stender.ed_tel_rec, Stender.ed_fax, Stender.ed_mu_ibge, Stender.ed_mv_ibge, Stender.ed_es_ibge, Stestado.es_sigla, Stestado.es_ident, Stestado.es_icms, Stzona.zn_descr FROM  dst!stestado  INNER JOIN dst!stender  ON  Stestado.es_codigo = Stender.ed_estado  INNER JOIN dst!stzona  ON  Stzona.zn_codigo = Stender.ed_zona WHERE  Stender.ed_codigo = ( ?SQLCode )<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stender.ed_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_LOGRAD</TD>
+<TD VALIGN="CENTER">C(52)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stender.ed_lograd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_NUMERO</TD>
+<TD VALIGN="CENTER">C(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stender.ed_numero</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_COMPL</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stender.ed_compl</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_BAIRRO</TD>
+<TD VALIGN="CENTER">C(25)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stender.ed_bairro</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_CIDADE</TD>
+<TD VALIGN="CENTER">C(25)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stender.ed_cidade</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_ESTADO</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stender.ed_estado</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_CEP</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stender.ed_cep</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_TEL_LOC</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stender.ed_tel_loc</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_TEL_REC</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_tel_rec</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_FAX</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_fax</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_MU_IBGE</TD>
+<TD VALIGN="CENTER">C(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_mu_ibge</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_MV_IBGE</TD>
+<TD VALIGN="CENTER">C(7)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_mv_ibge</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_ES_IBGE</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_es_ibge</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_SIGLA</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stestado.es_sigla</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_IDENT</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stestado.es_ident</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_ICMS</TD>
+<TD VALIGN="CENTER">N(7,3)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stestado.es_icms</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ZN_DESCR</TD>
+<TD VALIGN="CENTER">C(25)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stzona.zn_descr</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+ESTADOS</B></FONT>
+<FONT FACE="Arial"> (Campos: 13)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Stestado.es_codigo, Stestado.es_nome, Stestado.es_sigla FROM dst!stestado<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_CODIGO</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stestado.es_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_NOME</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stestado.es_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_SIGLA</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stestado.es_sigla</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+PESSOA</B></FONT>
+<FONT FACE="Arial"> (Campos: 13)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Stpess.pe_codigo, Stpess.pe_nome, Stpess.pe_snome, Stpess.pe_nomecp, Stpess.pe_apelid, Stpess.pe_ender, Stpess.pe_enderc, Stpess.pe_endere, Stpess.pe_pai, Stpess.pe_mae, Stpess.pe_sexo, Stpess.pe_estciv, Stpess.pe_tel_cel, Stpess.pe_email, Stpess.pe_na_dat, Stpess.pe_na_loc, Stpess.pe_na_est, Stpess.pe_rg_num, Stpess.pe_rg_emi, Stpess.pe_rg_dte, Stpess.pe_cpf, Stpess.pe_cnpj, Stpess.pe_ie, Stpess.pe_cn_car, Stpess.pe_cn_com, Stpess.pe_cn_dis, Stpess.pe_cn_cuf, Stpess.pe_cn_reg, Stpess.pe_cn_liv, Stpess.pe_cn_flh, Stpess.pe_cn_dta, Stpess.pe_profis, Stpess.pe_pr_emp, Stpess.pe_pr_mail, Stpess.pe_pr_car, Stpess.pe_pr_end, Stpess.pe_pr_dep, Stpess.pe_pr_adm, Stpess.pe_pr_sal, Stpess.pe_rm, Stpess.pe_vivo, Stpess.pe_fn_esc, Stpess.pe_fn_ano, Stpess.pe_md_esc, Stpess.pe_md_ano, Stpess.pe_bi_tip, Stpess.pe_bi_sit, Stpess.pe_bi_uret, Stpess.pe_foto FROM  dst!stpess WHERE  Stpess.pe_codigo = ( ?SQLCode )<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_CODIGO</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_codigo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_SNOME</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_snome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOMECP</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nomecp</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_APELID</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_apelid</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_ENDER</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_ender</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_ENDERC</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_enderc</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_ENDERE</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_endere</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_PAI</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_pai</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_MAE</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_mae</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_SEXO</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_sexo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_ESTCIV</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_estciv</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_TEL_CEL</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_tel_cel</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_EMAIL</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_email</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NA_DAT</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_na_dat</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NA_LOC</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_na_loc</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NA_EST</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_na_est</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_RG_NUM</TD>
+<TD VALIGN="CENTER">C(15)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_rg_num</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_RG_EMI</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_rg_emi</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_RG_DTE</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_rg_dte</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_CPF</TD>
+<TD VALIGN="CENTER">C(15)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_cpf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_CNPJ</TD>
+<TD VALIGN="CENTER">C(15)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_cnpj</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_IE</TD>
+<TD VALIGN="CENTER">C(18)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_ie</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_CN_CAR</TD>
+<TD VALIGN="CENTER">C(70)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_cn_car</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_CN_COM</TD>
+<TD VALIGN="CENTER">C(22)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_cn_com</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_CN_DIS</TD>
+<TD VALIGN="CENTER">C(22)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_cn_dis</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_CN_CUF</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_cn_cuf</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_CN_REG</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_cn_reg</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_CN_LIV</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_cn_liv</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_CN_FLH</TD>
+<TD VALIGN="CENTER">C(5)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_cn_flh</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_CN_DTA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_cn_dta</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_PROFIS</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_profis</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_PR_EMP</TD>
+<TD VALIGN="CENTER">C(45)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_pr_emp</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_PR_MAIL</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_pr_mail</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_PR_CAR</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_pr_car</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_PR_END</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_pr_end</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_PR_DEP</TD>
+<TD VALIGN="CENTER">C(20)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_pr_dep</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_PR_ADM</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_pr_adm</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_PR_SAL</TD>
+<TD VALIGN="CENTER">N(12,2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_pr_sal</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_RM</TD>
+<TD VALIGN="CENTER">C(9)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_rm</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_VIVO</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_vivo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_FN_ESC</TD>
+<TD VALIGN="CENTER">C(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_fn_esc</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_FN_ANO</TD>
+<TD VALIGN="CENTER">C(7)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_fn_ano</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_MD_ESC</TD>
+<TD VALIGN="CENTER">C(4)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_md_esc</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_MD_ANO</TD>
+<TD VALIGN="CENTER">C(7)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_md_ano</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_BI_TIP</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_bi_tip</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_BI_SIT</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_bi_sit</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_BI_URET</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_bi_uret</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_FOTO</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_foto</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+STGR01</B></FONT>
+<FONT FACE="Arial"> (Campos: 13)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Stpess.pe_nome FROM dst!stpess WHERE  Stpess.pe_codigo <> space(8) ORDER BY Stpess.pe_nome<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+STGR02</B></FONT>
+<FONT FACE="Arial"> (Campos: 13)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Stender.ed_lograd, Stender.ed_numero, Stender.ed_compl, Stender.ed_bairro, Stender.ed_cidade, Stestado.es_sigla, Stpais.pa_nome, Stender.ed_cep, Stender.ed_tel_loc, Stender.ed_tel_rec FROM  dst!stender  INNER JOIN dst!stestado  ON  Stender.ed_estado = Stestado.es_codigo  INNER JOIN dst!stpais  ON  Stestado.es_pais = Stpais.pa_codigo WHERE  Stender.ed_codigo <> SPACE(8)<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_LOGRAD</TD>
+<TD VALIGN="CENTER">C(40)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_lograd</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_NUMERO</TD>
+<TD VALIGN="CENTER">C(6)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_numero</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_COMPL</TD>
+<TD VALIGN="CENTER">C(10)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_compl</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_BAIRRO</TD>
+<TD VALIGN="CENTER">C(25)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_bairro</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_CIDADE</TD>
+<TD VALIGN="CENTER">C(25)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_cidade</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_SIGLA</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stestado.es_sigla</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PA_NOME</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpais.pa_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_CEP</TD>
+<TD VALIGN="CENTER">C(8)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_cep</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_TEL_LOC</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_tel_loc</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ED_TEL_REC</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stender.ed_tel_rec</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+STGR03</B></FONT>
+<FONT FACE="Arial"> (Campos: 13)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Stpais.pa_nome, Stestado.es_nome, Stestado.es_sigla FROM  dst!stestado  INNER JOIN dst!stpais  ON  Stestado.es_pais = Stpais.pa_codigo WHERE  Stestado.es_codigo <> space(5) ORDER BY Stpais.pa_nome, Stestado.es_nome<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PA_NOME</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stpais.pa_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_NOME</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stestado.es_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">ES_SIGLA</TD>
+<TD VALIGN="CENTER">C(2)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stestado.es_sigla</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+STGR04</B></FONT>
+<FONT FACE="Arial"> (Campos: 13)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Stpais.pa_nome, Stpais.pa_masc, Stpais.pa_fem FROM  dst!stpais WHERE  Stpais.pa_codigo <> space(3) ORDER BY Stpais.pa_nome<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PA_NOME</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpais.pa_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PA_MASC</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpais.pa_masc</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PA_FEM</TD>
+<TD VALIGN="CENTER">C(30)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpais.pa_fem</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+STGR05A</B></FONT>
+<FONT FACE="Arial"> (Campos: 13)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Stpess.pe_nome, Stocorr.oc_data, Stocorr.oc_descr, Stocorr.oc_tipo, Stocorr.oc_baixa, Stocorr.oc_ocorr, Stocorr.oc_soluc FROM  dst!stpess  INNER JOIN dst!stocorr  ON  Stpess.pe_codigo = Stocorr.oc_pess WHERE  Stpess.pe_codigo = ( ?SQLPess ) AND  Stocorr.oc_data BETWEEN ?SQLDtIni AND ?SQLDtFim ORDER BY Stpess.pe_nome, Stocorr.oc_data DESC<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_DATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_data</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_DESCR</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_TIPO</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_BAIXA</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_baixa</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_OCORR</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_ocorr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_SOLUC</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_soluc</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+STGR05B</B></FONT>
+<FONT FACE="Arial"> (Campos: 13)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Stpess.pe_nome, Stocorr.oc_data, Stocorr.oc_descr, Stocorr.oc_tipo, Stocorr.oc_baixa, Stocorr.oc_ocorr, Stocorr.oc_soluc FROM  dst!stpess  INNER JOIN dst!stocorr  ON  Stpess.pe_codigo = Stocorr.oc_pess WHERE  Stpess.pe_codigo = ( ?SQLPess ) AND  (  Stocorr.oc_data BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Stocorr.oc_baixa = ( .T. ) ) ORDER BY Stpess.pe_nome, Stocorr.oc_data DESC<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_DATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_data</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_DESCR</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_TIPO</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_BAIXA</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_baixa</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_OCORR</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_ocorr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_SOLUC</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_soluc</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+STGR05C</B></FONT>
+<FONT FACE="Arial"> (Campos: 13)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Stpess.pe_nome, Stocorr.oc_data, Stocorr.oc_descr, Stocorr.oc_tipo, Stocorr.oc_baixa, Stocorr.oc_ocorr, Stocorr.oc_soluc FROM  dst!stpess  INNER JOIN dst!stocorr  ON  Stpess.pe_codigo = Stocorr.oc_pess WHERE  Stpess.pe_codigo = ( ?SQLPess ) AND  (  Stocorr.oc_data BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Stocorr.oc_baixa = ( .F. ) ) ORDER BY Stpess.pe_nome, Stocorr.oc_data DESC<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_DATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_data</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_DESCR</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_TIPO</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_BAIXA</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_baixa</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_OCORR</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_ocorr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_SOLUC</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_soluc</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+STGR05D</B></FONT>
+<FONT FACE="Arial"> (Campos: 13)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Stpess.pe_nome, Stocorr.oc_data, Stocorr.oc_descr, Stocorr.oc_tipo, Stocorr.oc_baixa, Stocorr.oc_ocorr, Stocorr.oc_soluc FROM  dst!stpess  INNER JOIN dst!stocorr  ON  Stpess.pe_codigo = Stocorr.oc_pess WHERE  Stocorr.oc_data BETWEEN ?SQLDtIni AND ?SQLDtFim ORDER BY Stpess.pe_nome, Stocorr.oc_data DESC<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_DATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_data</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_DESCR</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_TIPO</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_BAIXA</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_baixa</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_OCORR</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_ocorr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_SOLUC</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_soluc</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+STGR05E</B></FONT>
+<FONT FACE="Arial"> (Campos: 13)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Stpess.pe_nome, Stocorr.oc_data, Stocorr.oc_descr, Stocorr.oc_tipo, Stocorr.oc_baixa, Stocorr.oc_ocorr, Stocorr.oc_soluc FROM  dst!stpess  INNER JOIN dst!stocorr  ON  Stpess.pe_codigo = Stocorr.oc_pess WHERE  Stocorr.oc_data BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Stocorr.oc_baixa = ( .T. ) ORDER BY Stpess.pe_nome, Stocorr.oc_data DESC<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_DATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_data</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_DESCR</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_TIPO</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_BAIXA</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_baixa</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_OCORR</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_ocorr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_SOLUC</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_soluc</TD>
+</TR>
+</TABLE>
+<BR><BR>
+<FONT FACE="Arial" COLOR="#ff0000"><B>Visualização:
+STGR05F</B></FONT>
+<FONT FACE="Arial"> (Campos: 13)</FONT>
+<BR><BR>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR><TD VALIGN="CENTER">
+Tipo de visualização: Local<BR><BR>
+Comando SQL:<BR>SELECT Stpess.pe_nome, Stocorr.oc_data, Stocorr.oc_descr, Stocorr.oc_tipo, Stocorr.oc_baixa, Stocorr.oc_ocorr, Stocorr.oc_soluc FROM  dst!stpess  INNER JOIN dst!stocorr  ON  Stpess.pe_codigo = Stocorr.oc_pess WHERE  Stocorr.oc_data BETWEEN ?SQLDtIni AND ?SQLDtFim AND  Stocorr.oc_baixa = ( .F. ) ORDER BY Stpess.pe_nome, Stocorr.oc_data DESC<BR><BR>
+Tamanho da busca: 100<BR>
+Número máximo de registros: -1<BR>
+Enviar atualizações: Não<BR>
+</TD></TR>
+</TABLE>
+<TABLE BORDER CELLSPACING=0 CELLPADDING=1 WIDTH=950>
+<TR ALIGN="CENTER">
+<TD VALIGN="CENTER"><B>Nome do campo</B></TD>
+<TD VALIGN="CENTER"><B>Tipo</B></TD>
+<TD VALIGN="CENTER"><B>Padrão</B></TD>
+<TD VALIGN="CENTER"><B>Chave</B></TD>
+<TD VALIGN="CENTER"><B>Atualizar</B></TD>
+<TD VALIGN="CENTER"><B>Nome da atualização</B></TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">PE_NOME</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stpess.pe_nome</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_DATA</TD>
+<TD VALIGN="CENTER">D</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_data</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_DESCR</TD>
+<TD VALIGN="CENTER">C(50)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_descr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_TIPO</TD>
+<TD VALIGN="CENTER">N(1)</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_tipo</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_BAIXA</TD>
+<TD VALIGN="CENTER">L</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Sim</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_baixa</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_OCORR</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_ocorr</TD>
+</TR>
+<TR ALIGN="CENTER">
+<TD ALIGN="LEFT" VALIGN="CENTER">OC_SOLUC</TD>
+<TD VALIGN="CENTER">M</TD>
+<TD VALIGN="CENTER">-</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">Não</TD>
+<TD VALIGN="CENTER">dst!stocorr.oc_soluc</TD>
+</TR>
+</TABLE>
+<BR><BR>
+</BODY>
+</HTML>
