@@ -151,6 +151,52 @@ export interface FinanceAmountMetric {
   amount: number
 }
 
+export interface FinanceAuditMetric {
+  rows: number
+  amount: number
+  startDate: string | null
+  endDate: string | null
+}
+
+export interface FinanceDashboardAudit {
+  referenceDate: string
+  cash: {
+    source: string
+    rule: string
+    accountRows: number
+    movementRows: number
+    startDate: string | null
+    endDate: string | null
+    amount: number
+  }
+  payables: {
+    rawOpen: FinanceAuditMetric
+    operational30Days: FinanceAuditMetric
+    currentYearOpen: FinanceAuditMetric
+    futureOutOfHorizon: FinanceAuditMetric
+    missingDueDate: FinanceAuditMetric
+    futureAnomalies2030Plus: FinanceAuditMetric
+  }
+  receivables: {
+    rawOpen: FinanceAuditMetric
+    overdueTotal: FinanceAuditMetric
+    overdueOperational365Days: FinanceAuditMetric
+    overdueLegacy365Plus: FinanceAuditMetric
+    expected30Days: FinanceAuditMetric
+  }
+  dre: {
+    dreReferenceMonth: string | null
+    latestInvoiceMonthFromCVFATURA: string | null
+    isFallbackMonth: boolean
+    isStaleComparedToInvoices: boolean
+  }
+  externalComparison: {
+    referenceUrl: string
+    runtimeDependency: boolean
+    note: string
+  }
+}
+
 export interface FinanceCashSummary {
   sourceDate: string | null
   currentCash: number
@@ -166,6 +212,19 @@ export interface FinanceFlowMetric {
   inflow: number
   outflow: number
   net: number
+}
+
+export type FinancePeriodMode = 'month' | 'quarter' | 'year'
+
+export interface FinanceDashboardPeriod {
+  mode: FinancePeriodMode
+  label: string
+  startDate: string
+  endDate: string
+  cashFlow: FinanceFlowMetric
+  payablesDue: FinanceAmountMetric
+  receivablesDue: FinanceAmountMetric
+  received: FinanceAmountMetric
 }
 
 export interface FinanceProjectionPoint {
@@ -212,6 +271,7 @@ export interface FinanceDreSummary {
 export interface FinanceDashboardResponse {
   company: string
   referenceDate: string
+  period: FinanceDashboardPeriod
   cash: FinanceCashSummary
   cashFlow: FinanceFlowMetric[]
   projections: FinanceProjectionPoint[]
@@ -247,6 +307,7 @@ export interface FinanceDashboardResponse {
     amount: number | null
   }>
   dataQualityNotes: string[]
+  audit: FinanceDashboardAudit
 }
 
 export interface ReportAssistantResponse {

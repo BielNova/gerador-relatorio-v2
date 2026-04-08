@@ -12,7 +12,7 @@ MVP interno para visualizar indicadores BI do Arquimedes com API FastAPI, fronte
 ## Funcionalidades
 
 - `Dashboard`: rota inicial com mapa geral separado por area: Comercial, Financeiro, Estoque, Fiscal, Producao, RH/Folha, Contabil, Academico, Base Compartilhada, Servicos/Projetos e Confeccao.
-- `Financeiro`: dashboard separado por caixa, fluxo de caixa, contas a pagar, contas a receber, DRE simplificado, despesas, receitas, inadimplencia, projecoes, indicadores e alertas.
+- `Financeiro`: dashboard auditavel por saldo bancario, fluxo de caixa, contas a pagar, contas a receber, DRE simplificado, despesas, receitas, inadimplencia, projecoes, indicadores, alertas e conferencia de dados.
 - `Contas a Receber`: detalhe operacional dentro do financeiro, com boletos em aberto, vencidos, proximos 30 dias, top inadimplentes e export Excel.
 - `Fiscal em foco`: primeiro modulo detalhado, com indicadores de produto, NCM, aliquotas e pendencias cadastrais.
 - `Produtos Acabados`: lista produto, descricao, grupo, NCM e aliquotas ICMS/IPI/PIS/COFINS pela classificacao fiscal do produto.
@@ -53,7 +53,7 @@ Endpoints principais:
 - `GET /api/companies`
 - `GET /api/dashboard/overview?company=emp0001`
 - `GET /api/dashboard/fiscal?company=emp0001`
-- `GET /api/finance/dashboard?company=emp0001`
+- `GET /api/finance/dashboard?company=emp0001&referenceDate=2026-04-07&period=month`
 - `GET /api/finance/receivables?company=emp0001`
 - `GET /api/finance/receivables/export.xlsx?company=emp0001`
 - `GET /api/reports/products-finished?company=emp0001`
@@ -64,10 +64,19 @@ Endpoints principais:
 
 Regras atuais do dashboard financeiro:
 
-- Caixa e projecao: `FNFCLANC`.
-- Contas a pagar: `FNTITUL` com `TI_TIPO = 'P'` e `TI_PAGTO` vazio.
-- Contas a receber: `FNBOLETO` com `BO_PG_ST = 1`.
-- DRE: `FNDRE`; se o mes atual estiver zerado, usa o ultimo mes com movimento e marca `isFallbackMonth=true`.
+- Data de referencia: `SELECT CURRENT_DATE` do Postgres; pode ser fixada com `referenceDate=YYYY-MM-DD` para auditoria.
+- Periodo de observacao: `period=month`, `period=quarter` ou `period=year`; a tela mostra primeiro a data de referencia e depois o modo `Este mes`, `Este trimestre` ou `Este ano`.
+- Saldo bancario atual: `FNCBMOV + FNCBLANC + FNCTBCO`, somando `CM_VL_ENTR - CM_VL_SAID` em contas ativas ate a data de referencia.
+- Fluxo e projecao: `FNFCLANC`, separado do saldo bancario realizado.
+- Contas a pagar: `FNTITUL` com `TI_TIPO = 'P'` e `TI_PAGTO` vazio; vencimentos `>= 2030` e vencimentos vazios ficam separados em `audit`.
+- Contas a receber: `FNBOLETO` com `BO_PG_ST = 1`; inadimplencia total e legado `>365 dias` ficam separados em `audit`.
+- DRE: `FNDRE`; se `CVFATURA` tiver faturamento posterior ao mes da DRE, o dashboard exibe alerta de base desatualizada.
+
+Conferencia externa opcional, sem dependencia no runtime:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\compare_finance_dashboard.py --company emp0001 --reference-date 2026-04-07
+```
 
 Prompts ja suportados pela IA assistida:
 

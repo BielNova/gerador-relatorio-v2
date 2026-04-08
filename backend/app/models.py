@@ -165,6 +165,62 @@ class FinanceAmountMetric(BaseModel):
     amount: float
 
 
+class FinanceAuditMetric(BaseModel):
+    rows: int
+    amount: float
+    startDate: date | None
+    endDate: date | None
+
+
+class FinanceCashAudit(BaseModel):
+    source: str
+    rule: str
+    accountRows: int
+    movementRows: int
+    startDate: date | None
+    endDate: date | None
+    amount: float
+
+
+class FinancePayablesAudit(BaseModel):
+    rawOpen: FinanceAuditMetric
+    operational30Days: FinanceAuditMetric
+    currentYearOpen: FinanceAuditMetric
+    futureOutOfHorizon: FinanceAuditMetric
+    missingDueDate: FinanceAuditMetric
+    futureAnomalies2030Plus: FinanceAuditMetric
+
+
+class FinanceReceivablesAudit(BaseModel):
+    rawOpen: FinanceAuditMetric
+    overdueTotal: FinanceAuditMetric
+    overdueOperational365Days: FinanceAuditMetric
+    overdueLegacy365Plus: FinanceAuditMetric
+    expected30Days: FinanceAuditMetric
+
+
+class FinanceDreAudit(BaseModel):
+    dreReferenceMonth: str | None
+    latestInvoiceMonthFromCVFATURA: str | None
+    isFallbackMonth: bool
+    isStaleComparedToInvoices: bool
+
+
+class FinanceExternalComparison(BaseModel):
+    referenceUrl: str
+    runtimeDependency: bool
+    note: str
+
+
+class FinanceDashboardAudit(BaseModel):
+    referenceDate: date
+    cash: FinanceCashAudit
+    payables: FinancePayablesAudit
+    receivables: FinanceReceivablesAudit
+    dre: FinanceDreAudit
+    externalComparison: FinanceExternalComparison
+
+
 class FinanceCashSummary(BaseModel):
     sourceDate: date | None
     currentCash: float
@@ -180,6 +236,17 @@ class FinanceFlowMetric(BaseModel):
     inflow: float
     outflow: float
     net: float
+
+
+class FinanceDashboardPeriod(BaseModel):
+    mode: str
+    label: str
+    startDate: date
+    endDate: date
+    cashFlow: FinanceFlowMetric
+    payablesDue: FinanceAmountMetric
+    receivablesDue: FinanceAmountMetric
+    received: FinanceAmountMetric
 
 
 class FinanceProjectionPoint(BaseModel):
@@ -259,6 +326,7 @@ class FinanceAlert(BaseModel):
 class FinanceDashboardResponse(BaseModel):
     company: str
     referenceDate: date
+    period: FinanceDashboardPeriod
     cash: FinanceCashSummary
     cashFlow: list[FinanceFlowMetric]
     projections: list[FinanceProjectionPoint]
@@ -269,6 +337,7 @@ class FinanceDashboardResponse(BaseModel):
     topDebtors: list[FinanceTopDebtor]
     alerts: list[FinanceAlert]
     dataQualityNotes: list[str]
+    audit: FinanceDashboardAudit
 
 
 class ReportAssistantRequest(BaseModel):

@@ -73,11 +73,19 @@ def fiscal_dashboard(
 
 @app.get("/api/finance/dashboard", response_model=FinanceDashboardResponse)
 def finance_dashboard(
-    company: str = Query(..., description="Schema da empresa, como emp0001.")
+    company: str = Query(..., description="Schema da empresa, como emp0001."),
+    referenceDate: date | None = Query(None, description="Data de referencia em YYYY-MM-DD."),
+    period: str = Query("month", description="Periodo de observacao: month, quarter ou year."),
 ) -> FinanceDashboardResponse:
     try:
-        return service.get_finance_dashboard(company)
+        return service.get_finance_dashboard(
+            company,
+            reference_date=referenceDate,
+            period_mode=period,
+        )
     except InvalidCompanyError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
 
 

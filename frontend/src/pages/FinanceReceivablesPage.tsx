@@ -12,10 +12,11 @@ import { EmptyState } from '../components/EmptyState'
 import { LoadingBlock } from '../components/LoadingBlock'
 import { MetricCard } from '../components/MetricCard'
 import { useCompanyContext } from '../context/CompanyContext'
-import { useReportRequest } from '../hooks/useReportRequest'
 import type {
   FinanceCategoryMetric,
+  FinanceAuditMetric,
   FinanceDashboardResponse,
+  FinancePeriodMode,
   FinanceProjectionPoint,
   FinanceReceivableRow,
   FinanceReceivablesResponse,
@@ -72,6 +73,12 @@ const columns: TableColumn<FinanceReceivableRow>[] = [
   }),
 ]
 
+const periodOptions: Array<{ value: FinancePeriodMode; label: string }> = [
+  { value: 'month', label: 'Este mes' },
+  { value: 'quarter', label: 'Este trimestre' },
+  { value: 'year', label: 'Este ano' },
+]
+
 export function FinanceReceivablesPage() {
   const { selectedCompany } = useCompanyContext()
   const [searchParams] = useSearchParams()
@@ -79,18 +86,18 @@ export function FinanceReceivablesPage() {
   const initialOnlyOverdue =
     searchParams.get('overdue') === '1' || searchParams.get('onlyOverdue') === 'true'
   const initialDueEnd = searchParams.get('dueEnd') ?? buildDefaultDueEnd()
-  const dashboardRequest = useReportRequest(selectedCompany, fetchFinanceDashboard)
+  const initialReferenceDate = searchParams.get('referenceDate') ?? buildDefaultReferenceDate()
+  const initialPeriodMode = parsePeriodMode(searchParams.get('period'))
 
   return (
     <FinanceReceivablesContent
-      key={`${selectedCompany ?? 'none'}:${initialSearch}:${initialOnlyOverdue}:${initialDueEnd}`}
+      key={`${selectedCompany ?? 'none'}:${initialSearch}:${initialOnlyOverdue}:${initialDueEnd}:${initialReferenceDate}:${initialPeriodMode}`}
       selectedCompany={selectedCompany}
       initialSearch={initialSearch}
       initialOnlyOverdue={initialOnlyOverdue}
       initialDueEnd={initialDueEnd}
-      dashboard={dashboardRequest.data}
-      dashboardError={dashboardRequest.error}
-      dashboardLoading={dashboardRequest.isLoading}
+      initialReferenceDate={initialReferenceDate}
+      initialPeriodMode={initialPeriodMode}
     />
   )
 }
@@ -100,9 +107,8 @@ interface FinanceReceivablesContentProps {
   initialSearch: string
   initialOnlyOverdue: boolean
   initialDueEnd: string
-  dashboard: FinanceDashboardResponse | null
-  dashboardError: string | null
-  dashboardLoading: boolean
+  initialReferenceDate: string
+  initialPeriodMode: FinancePeriodMode
 }
 
 function FinanceReceivablesContent({
@@ -110,18 +116,45 @@ function FinanceReceivablesContent({
   initialSearch,
   initialOnlyOverdue,
   initialDueEnd,
-  dashboard,
-  dashboardError,
-  dashboardLoading,
+  initialReferenceDate,
+  initialPeriodMode,
 }: FinanceReceivablesContentProps) {
   const [, setSearchParams] = useSearchParams()
   const [search, setSearch] = useState(initialSearch)
   const [onlyOverdue, setOnlyOverdue] = useState(initialOnlyOverdue)
   const [dueEnd, setDueEnd] = useState(initialDueEnd)
+  const [referenceDate, setReferenceDate] = useState(initialReferenceDate)
+  const [periodMode, setPeriodMode] = useState<FinancePeriodMode>(initialPeriodMode)
+  const [dashboard, setDashboard] = useState<FinanceDashboardResponse | null>(null)
+  const [dashboardError, setDashboardError] = useState<string | null>(null)
+  const [dashboardLoading, setDashboardLoading] = useState(false)
   const [data, setData] = useState<FinanceReceivablesResponse | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const deferredSearch = useDeferredValue(search)
+
+  const loadDashboard = useEffectEvent(async () => {
+    if (!selectedCompany) {
+      setDashboard(null)
+      setDashboardError(null)
+      return
+    }
+
+    setDashboardLoading(true)
+    setDashboardError(null)
+    try {
+      const response = await fetchFinanceDashboard(selectedCompany, {
+        referenceDate,
+        period: periodMode,
+      })
+      setDashboard(response)
+    } catch (err) {
+      setDashboard(null)
+      setDashboardError(err instanceof Error ? err.message : 'Erro ao carregar dashboard financeiro.')
+    } finally {
+      setDashboardLoading(false)
+    }
+  })
 
   const loadReceivables = useEffectEvent(async () => {
     if (!selectedCompany) {
@@ -148,10 +181,20 @@ function FinanceReceivablesContent({
   })
 
   useEffect(() => {
+    void loadDashboard()
+  }, [selectedCompany, referenceDate, periodMode])
+
+  useEffect(() => {
     void loadReceivables()
   }, [selectedCompany, deferredSearch, onlyOverdue, dueEnd])
 
-  function updateUrl(nextSearch: string, nextOnlyOverdue: boolean, nextDueEnd: string) {
+  function updateUrl(
+    nextSearch: string,
+    nextOnlyOverdue: boolean,
+    nextDueEnd: string,
+    nextReferenceDate: string,
+    nextPeriodMode: FinancePeriodMode,
+  ) {
     startTransition(() => {
       const params: Record<string, string> = {}
       if (nextSearch.trim()) {
@@ -163,23 +206,37 @@ function FinanceReceivablesContent({
       if (nextDueEnd) {
         params.dueEnd = nextDueEnd
       }
+      if (nextReferenceDate) {
+        params.referenceDate = nextReferenceDate
+      }
+      params.period = nextPeriodMode
       setSearchParams(params, { replace: true })
     })
   }
 
   function handleSearchChange(value: string) {
     setSearch(value)
-    updateUrl(value, onlyOverdue, dueEnd)
+    updateUrl(value, onlyOverdue, dueEnd, referenceDate, periodMode)
   }
 
   function handleOnlyOverdueChange(value: boolean) {
     setOnlyOverdue(value)
-    updateUrl(search, value, dueEnd)
+    updateUrl(search, value, dueEnd, referenceDate, periodMode)
   }
 
   function handleDueEndChange(value: string) {
     setDueEnd(value)
-    updateUrl(search, onlyOverdue, value)
+    updateUrl(search, onlyOverdue, value, referenceDate, periodMode)
+  }
+
+  function handleReferenceDateChange(value: string) {
+    setReferenceDate(value)
+    updateUrl(search, onlyOverdue, dueEnd, value, periodMode)
+  }
+
+  function handlePeriodModeChange(value: FinancePeriodMode) {
+    setPeriodMode(value)
+    updateUrl(search, onlyOverdue, dueEnd, referenceDate, value)
   }
 
   function handleExport() {
@@ -214,6 +271,34 @@ function FinanceReceivablesContent({
             <span className="badge">Referencia: {formatDate(dashboard?.referenceDate)}</span>
           </div>
         </header>
+
+        <div className="filters-grid finance-dashboard-controls">
+          <div className="field-stack">
+            <label htmlFor="finance-reference-date">Data de referencia</label>
+            <input
+              id="finance-reference-date"
+              type="date"
+              value={referenceDate}
+              onChange={(event) => handleReferenceDateChange(event.target.value)}
+            />
+          </div>
+
+          <div className="field-stack finance-period-field">
+            <span>Modo de observacao</span>
+            <div className="period-toggle" aria-label="Modo de observacao por periodo">
+              {periodOptions.map((option) => (
+                <button
+                  key={option.value}
+                  type="button"
+                  className={option.value === periodMode ? 'active' : ''}
+                  onClick={() => handlePeriodModeChange(option.value)}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
 
         {dashboardLoading ? <LoadingBlock title="Carregando dashboard financeiro" /> : null}
         {dashboardError ? (
@@ -359,27 +444,69 @@ function FinanceDashboardPanels({ dashboard, onSelectCustomer }: FinanceDashboar
   const dreFallbackNote = dashboard.dre.isFallbackMonth
     ? 'Ultimo mes com DRE movimentado; mes atual ainda esta zerado na base.'
     : 'Mes atual da base DRE.'
+  const dreStaleNote = dashboard.audit.dre.isStaleComparedToInvoices
+    ? ` CVFATURA tem faturamento ate ${formatAuditMonth(dashboard.audit.dre.latestInvoiceMonthFromCVFATURA)}.`
+    : ''
 
   return (
     <div className="finance-dashboard-grid">
       <section className="finance-block finance-block-wide">
         <div className="section-heading">
-          <h3>Caixa atual</h3>
-          <p>Fonte: FNFCLANC, saldo em {formatDate(dashboard.cash.sourceDate)}.</p>
+          <h3>Observacao por periodo</h3>
+          <p>
+            {dashboard.period.label}: {formatDate(dashboard.period.startDate)} ate{' '}
+            {formatDate(dashboard.period.endDate)}.
+          </p>
         </div>
         <div className="metrics-grid compact">
-          <MetricCard label="Saldo atual" value={formatCurrency(dashboard.cash.currentCash)} tone="accent" />
           <MetricCard
-            label="Saldo total consolidado"
+            label="Fluxo liquido"
+            value={formatCurrency(dashboard.period.cashFlow.net)}
+            tone={dashboard.period.cashFlow.net < 0 ? 'danger' : 'accent'}
+            note={`Entradas ${formatCurrency(dashboard.period.cashFlow.inflow)} / saidas ${formatCurrency(
+              dashboard.period.cashFlow.outflow,
+            )}`}
+          />
+          <MetricCard
+            label="Pagar no periodo"
+            value={formatCurrency(dashboard.period.payablesDue.amount)}
+            tone={dashboard.period.payablesDue.amount > 0 ? 'secondary' : 'default'}
+            note={`${formatInteger(dashboard.period.payablesDue.rows)} titulos em aberto`}
+          />
+          <MetricCard
+            label="Receber no periodo"
+            value={formatCurrency(dashboard.period.receivablesDue.amount)}
+            tone="accent"
+            note={`${formatInteger(dashboard.period.receivablesDue.rows)} boletos em aberto`}
+          />
+          <MetricCard
+            label="Recebido no periodo"
+            value={formatCurrency(dashboard.period.received.amount)}
+            note={`${formatInteger(dashboard.period.received.rows)} recebimentos`}
+          />
+        </div>
+      </section>
+
+      <section className="finance-block finance-block-wide">
+        <div className="section-heading">
+          <h3>Saldo bancario atual</h3>
+          <p>
+            Fonte: {dashboard.audit.cash.source}, movimentos ate {formatDate(dashboard.cash.sourceDate)}.
+          </p>
+        </div>
+        <div className="metrics-grid compact">
+          <MetricCard label="Saldo bancario" value={formatCurrency(dashboard.cash.currentCash)} tone="accent" />
+          <MetricCard
+            label="Saldo consolidado operacional"
             value={formatCurrency(dashboard.cash.consolidatedBalance)}
             tone={dashboard.cash.consolidatedBalance < 0 ? 'danger' : 'secondary'}
-            note="Caixa + receber em aberto - pagar em aberto."
+            note="Banco + receber bruto - pagar aberto do ano corrente."
           />
           <MetricCard
             label="Disponivel"
             value={formatCurrency(dashboard.cash.availableCash)}
             tone={dashboard.cash.availableCash < 0 ? 'danger' : 'default'}
-            note="Saldo atual menos comprometido em 30 dias."
+            note="Saldo bancario menos comprometido em 30 dias."
           />
           <MetricCard
             label="Comprometido"
@@ -419,14 +546,9 @@ function FinanceDashboardPanels({ dashboard, onSelectCustomer }: FinanceDashboar
       <section className="finance-block finance-block-wide">
         <div className="section-heading">
           <h3>Contas a pagar</h3>
-          <p>Em aberto, vencidas, hoje e proximas janelas.</p>
+          <p>Cards operacionais por vencimento. Total bruto e anomalias ficam na conferencia.</p>
         </div>
         <div className="metrics-grid compact">
-          <MetricCard
-            label="Em aberto"
-            value={formatCurrency(dashboard.payables.open.amount)}
-            note={`${formatInteger(dashboard.payables.open.rows)} titulos`}
-          />
           <MetricCard
             label="Vencidas"
             value={formatCurrency(dashboard.payables.overdue.amount)}
@@ -438,6 +560,16 @@ function FinanceDashboardPanels({ dashboard, onSelectCustomer }: FinanceDashboar
             value={formatCurrency(dashboard.payables.dueToday.amount)}
             tone={dashboard.payables.dueToday.rows ? 'secondary' : 'default'}
             note={`${formatInteger(dashboard.payables.dueToday.rows)} titulos`}
+          />
+          <MetricCard
+            label="Proximos 7 dias"
+            value={formatCurrency(dashboard.payables.next7Days.amount)}
+            note={`${formatInteger(dashboard.payables.next7Days.rows)} titulos`}
+          />
+          <MetricCard
+            label="Proximos 15 dias"
+            value={formatCurrency(dashboard.payables.next15Days.amount)}
+            note={`${formatInteger(dashboard.payables.next15Days.rows)} titulos`}
           />
           <MetricCard
             label="Proximos 30 dias"
@@ -473,7 +605,7 @@ function FinanceDashboardPanels({ dashboard, onSelectCustomer }: FinanceDashboar
             label="Atrasadas"
             value={formatCurrency(dashboard.receivables.overdue.amount)}
             tone={dashboard.receivables.overdue.rows ? 'danger' : 'default'}
-            note={`${formatInteger(dashboard.receivables.overdue.rows)} boletos`}
+            note={`${formatInteger(dashboard.receivables.overdue.rows)} boletos no total bruto`}
           />
           <MetricCard
             label="Recebidas no dia"
@@ -523,7 +655,7 @@ function FinanceDashboardPanels({ dashboard, onSelectCustomer }: FinanceDashboar
         <div className="section-heading">
           <h3>Resultado simplificado</h3>
           <p>
-            DRE de {dreMonth}. {dreFallbackNote}
+            DRE de {dreMonth}. {dreFallbackNote}{dreStaleNote}
           </p>
         </div>
         <div className="metrics-grid compact">
@@ -606,6 +738,8 @@ function FinanceDashboardPanels({ dashboard, onSelectCustomer }: FinanceDashboar
         </div>
       </section>
 
+      <FinanceAuditPanel dashboard={dashboard} />
+
       <section className="finance-block finance-block-wide">
         <div className="section-heading">
           <h3>Regras de leitura</h3>
@@ -638,6 +772,122 @@ function ProjectionList({ projections }: { projections: FinanceProjectionPoint[]
         </div>
       ))}
     </div>
+  )
+}
+
+function FinanceAuditPanel({ dashboard }: { dashboard: FinanceDashboardResponse }) {
+  const { audit } = dashboard
+  return (
+    <section className="finance-block finance-block-wide">
+      <div className="section-heading">
+        <h3>Conferencia de Dados</h3>
+        <p>
+          Numeros rastreaveis ao banco em {formatDate(audit.referenceDate)}. O dashboard externo e
+          apenas referencia manual, sem dependencia em runtime.
+        </p>
+      </div>
+
+      <div className="audit-grid">
+        <article className="audit-card accent">
+          <span>Caixa / banco</span>
+          <strong>{formatCurrency(audit.cash.amount)}</strong>
+          <small>
+            {audit.cash.source}. {formatInteger(audit.cash.accountRows)} contas ativas,
+            {' '}{formatInteger(audit.cash.movementRows)} movimentos.
+          </small>
+          <small>{formatDateRange(audit.cash.startDate, audit.cash.endDate)}</small>
+          <small>{audit.cash.rule}</small>
+        </article>
+
+        <AuditMetricCard
+          title="Pagar bruto aberto"
+          metric={audit.payables.rawOpen}
+          note="Todos os titulos P sem pagamento."
+        />
+        <AuditMetricCard
+          title="Pagar operacional 30 dias"
+          metric={audit.payables.operational30Days}
+          note="Vencidas, hoje e proximos 30 dias."
+        />
+        <AuditMetricCard
+          title="Pagar ano corrente"
+          metric={audit.payables.currentYearOpen}
+          note="Titulos abertos vencendo no ano da referencia."
+        />
+        <AuditMetricCard
+          title="Fora do horizonte"
+          metric={audit.payables.futureOutOfHorizon}
+          note="Vencimentos apos 30 dias e antes de 2030."
+        />
+        <AuditMetricCard
+          title="Anomalias pagar >= 2030"
+          metric={audit.payables.futureAnomalies2030Plus}
+          note="Separadas dos KPIs principais."
+        />
+        <AuditMetricCard
+          title="Pagar sem vencimento"
+          metric={audit.payables.missingDueDate}
+          note="Titulos abertos sem data de vencimento."
+        />
+        <AuditMetricCard
+          title="Receber bruto aberto"
+          metric={audit.receivables.rawOpen}
+          note="Todos os boletos com BO_PG_ST = 1."
+        />
+        <AuditMetricCard
+          title="Inadimplencia total"
+          metric={audit.receivables.overdueTotal}
+          note="Boletos abertos vencidos."
+        />
+        <AuditMetricCard
+          title="Inadimplencia operacional"
+          metric={audit.receivables.overdueOperational365Days}
+          note="Atrasos dos ultimos 365 dias."
+        />
+        <AuditMetricCard
+          title="Inadimplencia legado"
+          metric={audit.receivables.overdueLegacy365Plus}
+          note="Atrasos com mais de 365 dias."
+        />
+        <AuditMetricCard
+          title="Receber 30 dias"
+          metric={audit.receivables.expected30Days}
+          note="Previsao em aberto nos proximos 30 dias."
+        />
+
+        <article className={`audit-card ${audit.dre.isStaleComparedToInvoices ? 'warning' : ''}`}>
+          <span>DRE</span>
+          <strong>{formatAuditMonth(audit.dre.dreReferenceMonth)}</strong>
+          <small>Mes usado no resultado simplificado.</small>
+          <small>CVFATURA ate {formatAuditMonth(audit.dre.latestInvoiceMonthFromCVFATURA)}.</small>
+          <small>
+            {audit.dre.isStaleComparedToInvoices
+              ? 'DRE desatualizada em relacao ao faturamento.'
+              : 'DRE alinhada ao faturamento disponivel.'}
+          </small>
+        </article>
+      </div>
+    </section>
+  )
+}
+
+function AuditMetricCard({
+  title,
+  metric,
+  note,
+}: {
+  title: string
+  metric: FinanceAuditMetric
+  note: string
+}) {
+  return (
+    <article className="audit-card">
+      <span>{title}</span>
+      <strong>{formatCurrency(metric.amount)}</strong>
+      <small>{formatInteger(metric.rows)} registros</small>
+      <small>{formatDateRange(metric.startDate, metric.endDate)}</small>
+      <small>{note}</small>
+    </article>
   )
 }
 
@@ -695,8 +945,34 @@ function buildDefaultDueEnd(): string {
   return date.toISOString().slice(0, 10)
 }
 
+function buildDefaultReferenceDate(): string {
+  return new Date().toISOString().slice(0, 10)
+}
+
+function parsePeriodMode(value: string | null): FinancePeriodMode {
+  if (value === 'quarter' || value === 'year') {
+    return value
+  }
+  return 'month'
+}
+
 function formatMonthLabel(year: number, month: number): string {
   return `${String(month).padStart(2, '0')}/${year}`
+}
+
+function formatAuditMonth(value: string | null | undefined): string {
+  if (!value) {
+    return '-'
+  }
+  const [year, month] = value.split('-')
+  return month && year ? `${month}/${year}` : value
+}
+
+function formatDateRange(startDate: string | null, endDate: string | null): string {
+  if (!startDate && !endDate) {
+    return 'Sem intervalo de data.'
+  }
+  return `${formatDate(startDate)} ate ${formatDate(endDate)}`
 }
 
 function formatPercentValue(value: number | null | undefined): string {

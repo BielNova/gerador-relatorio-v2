@@ -2,6 +2,7 @@ import type {
   CompanyOverviewResponse,
   CompanyOption,
   FinanceDashboardResponse,
+  FinancePeriodMode,
   FinanceReceivablesResponse,
   FiscalDashboardResponse,
   NcmTaxRateResponse,
@@ -50,9 +51,19 @@ export function fetchFiscalDashboard(company: string): Promise<FiscalDashboardRe
   )
 }
 
-export function fetchFinanceDashboard(company: string): Promise<FinanceDashboardResponse> {
+export function fetchFinanceDashboard(
+  company: string,
+  filters: {
+    referenceDate?: string
+    period?: FinancePeriodMode
+  } = {},
+): Promise<FinanceDashboardResponse> {
   return readJson<FinanceDashboardResponse>(
-    `/api/finance/dashboard?company=${encodeURIComponent(company)}`,
+    buildApiPath('/api/finance/dashboard', {
+      company,
+      referenceDate: filters.referenceDate ?? '',
+      period: filters.period ?? 'month',
+    }),
   )
 }
 

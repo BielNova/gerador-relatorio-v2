@@ -249,11 +249,28 @@ function mockApi() {
       return jsonResponse({
         company,
         referenceDate: '2026-04-07',
+        period: {
+          mode: url.searchParams.get('period') ?? 'month',
+          label: 'Este mes',
+          startDate: '2026-04-01',
+          endDate: '2026-04-07',
+          cashFlow: {
+            label: 'Este mes',
+            startDate: '2026-04-01',
+            endDate: '2026-04-07',
+            inflow: 267269.56,
+            outflow: 364358.24,
+            net: -97088.68,
+          },
+          payablesDue: { rows: 248, amount: 951348.84 },
+          receivablesDue: { rows: 422, amount: 917650.01 },
+          received: { rows: 0, amount: 0 },
+        },
         cash: {
-          sourceDate: '2026-04-07',
-          currentCash: -164807.07,
-          consolidatedBalance: -6036877.88,
-          availableCash: -3426539.96,
+          sourceDate: '2026-03-25',
+          currentCash: -346343.59,
+          consolidatedBalance: -691079.33,
+          availableCash: -3608076.48,
           committedCash: 3261732.89,
         },
         cashFlow: [
@@ -382,7 +399,46 @@ function mockApi() {
             amount: 821165.79,
           },
         ],
-        dataQualityNotes: ['Caixa e projecao usam FNFCLANC.FL_SALDO.'],
+        dataQualityNotes: ['Saldo bancario usa FNCBMOV + FNCBLANC + FNCTBCO.'],
+        audit: {
+          referenceDate: '2026-04-07',
+          cash: {
+            source: 'FNCBMOV + FNCBLANC + FNCTBCO',
+            rule: 'Soma cm_vl_entr - cm_vl_said com cl_data <= referencia e bc_situac = true.',
+            accountRows: 10,
+            movementRows: 90121,
+            startDate: '2000-02-03',
+            endDate: '2026-03-25',
+            amount: -346343.59,
+          },
+          payables: {
+            rawOpen: { rows: 2202, amount: 11051306.87, startDate: '2025-12-04', endDate: '4202-07-13' },
+            operational30Days: { rows: 722, amount: 3261732.89, startDate: '2025-12-04', endDate: '2026-05-07' },
+            currentYearOpen: { rows: 1109, amount: 5523971.8, startDate: '2026-02-06', endDate: '2026-12-25' },
+            futureOutOfHorizon: { rows: 904, amount: 6950394.53, startDate: '2026-05-08', endDate: '2029-12-16' },
+            missingDueDate: { rows: 8, amount: 208.76, startDate: null, endDate: null },
+            futureAnomalies2030Plus: { rows: 568, amount: 838970.69, startDate: '2030-01-02', endDate: '4202-07-13' },
+          },
+          receivables: {
+            rawOpen: { rows: 3871, amount: 5179236.06, startDate: '2011-07-01', endDate: '2026-12-26' },
+            overdueTotal: { rows: 2064, amount: 2276509.14, startDate: '2011-07-01', endDate: '2026-04-06' },
+            overdueOperational365Days: { rows: 1014, amount: 1602140.35, startDate: '2025-04-17', endDate: '2026-04-06' },
+            overdueLegacy365Plus: { rows: 1050, amount: 674368.79, startDate: '2011-07-01', endDate: '2025-04-03' },
+            expected30Days: { rows: 1357, amount: 1985076.73, startDate: '2026-04-08', endDate: '2026-05-07' },
+          },
+          dre: {
+            dreReferenceMonth: '2026-02',
+            latestInvoiceMonthFromCVFATURA: '2026-03',
+            isFallbackMonth: true,
+            isStaleComparedToInvoices: true,
+          },
+          externalComparison: {
+            referenceUrl:
+              'https://fabrica.valencaquimica.com.br/dashboards/api/financeiro?periodo=mes&empresa=0001',
+            runtimeDependency: false,
+            note: 'Usado apenas para conferencia manual; o app nao depende desse endpoint.',
+          },
+        },
       })
     }
 
@@ -390,6 +446,23 @@ function mockApi() {
       return jsonResponse({
         company,
         referenceDate: '2026-04-07',
+        period: {
+          mode: url.searchParams.get('period') ?? 'month',
+          label: 'Este mes',
+          startDate: '2026-04-01',
+          endDate: '2026-04-07',
+          cashFlow: {
+            label: 'Este mes',
+            startDate: '2026-04-01',
+            endDate: '2026-04-07',
+            inflow: 0,
+            outflow: 0,
+            net: 0,
+          },
+          payablesDue: { rows: 0, amount: 0 },
+          receivablesDue: { rows: 0, amount: 0 },
+          received: { rows: 0, amount: 0 },
+        },
         cash: {
           sourceDate: null,
           currentCash: 0,
@@ -442,6 +515,45 @@ function mockApi() {
         topDebtors: [],
         alerts: [],
         dataQualityNotes: [],
+        audit: {
+          referenceDate: '2026-04-07',
+          cash: {
+            source: 'FNCBMOV + FNCBLANC + FNCTBCO',
+            rule: 'Soma cm_vl_entr - cm_vl_said com cl_data <= referencia e bc_situac = true.',
+            accountRows: 0,
+            movementRows: 0,
+            startDate: null,
+            endDate: null,
+            amount: 0,
+          },
+          payables: {
+            rawOpen: { rows: 0, amount: 0, startDate: null, endDate: null },
+            operational30Days: { rows: 0, amount: 0, startDate: null, endDate: null },
+            currentYearOpen: { rows: 0, amount: 0, startDate: null, endDate: null },
+            futureOutOfHorizon: { rows: 0, amount: 0, startDate: null, endDate: null },
+            missingDueDate: { rows: 0, amount: 0, startDate: null, endDate: null },
+            futureAnomalies2030Plus: { rows: 0, amount: 0, startDate: null, endDate: null },
+          },
+          receivables: {
+            rawOpen: { rows: 0, amount: 0, startDate: null, endDate: null },
+            overdueTotal: { rows: 0, amount: 0, startDate: null, endDate: null },
+            overdueOperational365Days: { rows: 0, amount: 0, startDate: null, endDate: null },
+            overdueLegacy365Plus: { rows: 0, amount: 0, startDate: null, endDate: null },
+            expected30Days: { rows: 0, amount: 0, startDate: null, endDate: null },
+          },
+          dre: {
+            dreReferenceMonth: null,
+            latestInvoiceMonthFromCVFATURA: null,
+            isFallbackMonth: false,
+            isStaleComparedToInvoices: false,
+          },
+          externalComparison: {
+            referenceUrl:
+              'https://fabrica.valencaquimica.com.br/dashboards/api/financeiro?periodo=mes&empresa=0001',
+            runtimeDependency: false,
+            note: 'Usado apenas para conferencia manual; o app nao depende desse endpoint.',
+          },
+        },
       })
     }
 
@@ -634,10 +746,17 @@ describe('Arquimedes BI app', () => {
     expect(
       await screen.findByRole('heading', { name: 'Dashboard Financeiro' }),
     ).toBeInTheDocument()
-    expect(await screen.findByText('Caixa atual')).toBeInTheDocument()
+    expect(await screen.findByText('Saldo bancario atual')).toBeInTheDocument()
+    expect(screen.getByLabelText('Data de referencia')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Este trimestre' })).toBeInTheDocument()
+    expect(await screen.findByText('Observacao por periodo')).toBeInTheDocument()
+    expect(await screen.findByText('Conferencia de Dados')).toBeInTheDocument()
     expect(await screen.findByText('Resultado simplificado')).toBeInTheDocument()
     expect(await screen.findByText('CONSUMIDOR')).toBeInTheDocument()
     expect(await screen.findByText('Top inadimplentes no filtro')).toBeInTheDocument()
+
+    await user.click(screen.getByRole('button', { name: 'Este ano' }))
+    await waitFor(() => expect(window.location.search).toContain('period=year'))
 
     await user.click(screen.getByRole('checkbox', { name: 'Somente vencidos' }))
 

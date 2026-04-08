@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from collections import Counter, defaultdict
+from dataclasses import dataclass
 from datetime import date, timedelta
 from unicodedata import combining, normalize
 
@@ -18,19 +19,27 @@ from .models import (
     CompanyOverviewSummary,
     FinanceAlert,
     FinanceAmountMetric,
+    FinanceAuditMetric,
     FinanceCashSummary,
+    FinanceCashAudit,
     FinanceCategoryMetric,
+    FinanceDashboardAudit,
+    FinanceDashboardPeriod,
     FinanceDashboardResponse,
     FinanceDreEvolutionPoint,
+    FinanceDreAudit,
     FinanceDreSummary,
+    FinanceExternalComparison,
     FinanceFlowMetric,
     FinanceIndicatorsSummary,
+    FinancePayablesAudit,
     FinancePayablesSummary,
     FinanceProjectionPoint,
     FinanceReceivableFilters,
     FinanceReceivableRow,
     FinanceReceivableSummary,
     FinanceReceivablesResponse,
+    FinanceReceivablesAudit,
     FinanceReceivablesDashboardSummary,
     FinanceTopDebtor,
     FiscalDashboardGroupIssue,
@@ -47,6 +56,14 @@ from .models import (
 
 class InvalidCompanyError(ValueError):
     pass
+
+
+@dataclass(frozen=True)
+class FinancePeriodWindow:
+    mode: str
+    label: str
+    start_date: date
+    end_date: date
 
 
 class FiscalReportService:
@@ -159,23 +176,34 @@ class FiscalReportService:
             for table_name in table_names
         )
 
-    def get_finance_dashboard(self, company: str) -> FinanceDashboardResponse:
+    def get_finance_dashboard(
+        self,
+        company: str,
+        reference_date: date | None = None,
+        period_mode: str = "month",
+    ) -> FinanceDashboardResponse:
         schema = self.validate_company(company)
-        today = date.today()
-        month_start = date(today.year, today.month, 1)
 
         with self._connect() as conn:
             with conn.cursor() as cur:
-                cash_date, current_cash = self._get_finance_cash_snapshot(cur, schema, today)
+                today = reference_date or self._get_database_current_date(cur)
+                period = build_finance_period(today, period_mode)
+                cash_audit = self._get_finance_bank_cash_audit(cur, schema, today)
+                current_cash = cash_audit.amount
                 payables = self._get_finance_payables_summary(cur, schema, today)
+                payables_audit = self._get_finance_payables_audit(cur, schema, today)
                 receivables = self._get_finance_receivables_dashboard_summary(cur, schema, today)
-                cash_flow = self._get_finance_cash_flow(cur, schema, today, month_start)
+                receivables_audit = self._get_finance_receivables_audit(cur, schema, today)
+                period_summary = self._get_finance_period_summary(cur, schema, period)
+                cash_flow = self._get_finance_cash_flow(cur, schema, today, period_summary)
                 projections = self._get_finance_projections(cur, schema, today, current_cash)
                 dre = self._get_finance_dre_summary(cur, schema, today)
-                paid_ticket_rows = self._count_paid_receivables_for_month(
+                dre_audit = self._get_finance_dre_audit(cur, schema, today, dre)
+                paid_ticket_rows = self._count_paid_receivables_for_period(
                     cur,
                     schema,
-                    date(dre.year, dre.month, 1),
+                    period.start_date,
+                    period.end_date,
                 )
                 top_debtors = build_top_debtors(
                     self._get_finance_receivable_rows(
@@ -192,22 +220,21 @@ class FiscalReportService:
             2,
         )
         available_cash = round(current_cash - committed_cash, 2)
-        consolidated_balance = round(
-            current_cash + receivables.open.amount - payables.open.amount,
-            2,
-        )
+        consolidated_balance = round(current_cash + receivables.open.amount - payables_audit.currentYearOpen.amount, 2)
         indicators = self._build_finance_indicators(dre, paid_ticket_rows)
         alerts = self._build_finance_alerts(
             payables=payables,
             dre=dre,
             projections=projections,
+            dre_audit=dre_audit,
         )
 
         return FinanceDashboardResponse(
             company=schema,
             referenceDate=today,
+            period=period_summary,
             cash=FinanceCashSummary(
-                sourceDate=cash_date,
+                sourceDate=cash_audit.endDate,
                 currentCash=current_cash,
                 consolidatedBalance=consolidated_balance,
                 availableCash=available_cash,
@@ -222,37 +249,74 @@ class FiscalReportService:
             topDebtors=top_debtors,
             alerts=alerts,
             dataQualityNotes=[
-                "Caixa e projecao usam FNFCLANC.FL_SALDO e entradas/saidas do fluxo de caixa.",
-                "Contas a pagar em aberto usam FNTITUL.TI_TIPO = 'P' e TI_PAGTO vazio.",
+                "Saldo bancario atual usa movimentos FNCBMOV + FNCBLANC de contas ativas em FNCTBCO.",
+                "Fluxo e projecao usam FNFCLANC.FL_SALDO e entradas/saidas do fluxo de caixa.",
+                "Contas a pagar principais usam vencidas, hoje e proximos 30 dias; total bruto fica na conferencia.",
                 "Contas a receber em aberto usam FNBOLETO.BO_PG_ST = 1.",
-                "DRE usa FNDRE; se o mes atual estiver zerado, o dashboard usa o ultimo mes com movimento.",
+                "DRE usa FNDRE e mostra alerta quando CVFATURA tem faturamento mais recente.",
                 "Custos sao uma classificacao inicial: grupos DRE com 'OPERACIONAIS' entram como custo; os demais grupos de saida entram como despesa.",
             ],
+            audit=FinanceDashboardAudit(
+                referenceDate=today,
+                cash=cash_audit,
+                payables=payables_audit,
+                receivables=receivables_audit,
+                dre=dre_audit,
+                externalComparison=FinanceExternalComparison(
+                    referenceUrl=(
+                        "https://fabrica.valencaquimica.com.br/dashboards/api/"
+                        "financeiro?periodo=mes&empresa=0001"
+                    ),
+                    runtimeDependency=False,
+                    note="Usado apenas para conferencia manual; o app nao depende desse endpoint.",
+                ),
+            ),
         )
 
-    def _get_finance_cash_snapshot(
+    def _get_database_current_date(self, cur: psycopg.Cursor) -> date:
+        cur.execute("SELECT CURRENT_DATE")
+        return cur.fetchone()[0]
+
+    def _get_finance_bank_cash_audit(
         self,
         cur: psycopg.Cursor,
         schema: str,
         today: date,
-    ) -> tuple[date | None, float]:
+    ) -> FinanceCashAudit:
         cur.execute(
             sql.SQL(
                 """
-                SELECT fl_data, fl_saldo
-                FROM {}.fnfclanc
-                WHERE fl_data <= %s
-                ORDER BY fl_data DESC
-                LIMIT 1
+                SELECT
+                  COUNT(DISTINCT b.bc_codigo) AS account_rows,
+                  COUNT(m.cm_codigo) AS movement_rows,
+                  MIN(l.cl_data) FILTER (WHERE m.cm_codigo IS NOT NULL) AS start_date,
+                  MAX(l.cl_data) FILTER (WHERE m.cm_codigo IS NOT NULL) AS end_date,
+                  COALESCE(SUM(COALESCE(m.cm_vl_entr, 0) - COALESCE(m.cm_vl_said, 0)), 0) AS amount
+                FROM {}.fnctbco AS b
+                LEFT JOIN {}.fncblanc AS l
+                  ON l.cl_ctbco = b.bc_codigo
+                 AND l.cl_data <= %s
+                LEFT JOIN {}.fncbmov AS m
+                  ON m.cm_cblanc = l.cl_codigo
+                WHERE COALESCE(b.bc_situac, FALSE) = TRUE
                 """
-            ).format(sql.Identifier(schema)),
+            ).format(
+                sql.Identifier(schema),
+                sql.Identifier(schema),
+                sql.Identifier(schema),
+            ),
             (today,),
         )
-        row = cur.fetchone()
-        if row is None:
-            return None, 0.0
-        source_date, balance = row
-        return source_date, as_money(balance)
+        account_rows, movement_rows, start_date, end_date, amount = cur.fetchone()
+        return FinanceCashAudit(
+            source="FNCBMOV + FNCBLANC + FNCTBCO",
+            rule="Soma cm_vl_entr - cm_vl_said com cl_data <= referencia e bc_situac = true.",
+            accountRows=int(account_rows),
+            movementRows=int(movement_rows),
+            startDate=start_date,
+            endDate=end_date,
+            amount=as_money(amount),
+        )
 
     def _get_finance_payables_summary(
         self,
@@ -359,6 +423,47 @@ class FiscalReportService:
             next15Days=FinanceAmountMetric(rows=int(next_15_rows), amount=as_money(next_15_amount)),
             next30Days=FinanceAmountMetric(rows=int(next_30_rows), amount=as_money(next_30_amount)),
             byCategory=self._get_finance_payables_by_category(cur, schema, today, next_30),
+        )
+
+    def _get_finance_payables_audit(
+        self,
+        cur: psycopg.Cursor,
+        schema: str,
+        today: date,
+    ) -> FinancePayablesAudit:
+        next_30 = today + timedelta(days=30)
+        year_start = date(today.year, 1, 1)
+        year_end = date(today.year, 12, 31)
+        anomaly_start = date(2030, 1, 1)
+
+        def metric(where_clause: str, params: tuple[object, ...] = ()) -> FinanceAuditMetric:
+            cur.execute(
+                sql.SQL(
+                    f"""
+                    SELECT COUNT(*), COALESCE(SUM(t.ti_valor), 0), MIN(t.ti_vcto), MAX(t.ti_vcto)
+                    FROM {{}}.fntitul AS t
+                    WHERE t.ti_tipo = 'P'
+                      AND TRIM(COALESCE(t.ti_pagto, '')) = ''
+                      AND {where_clause}
+                    """
+                ).format(sql.Identifier(schema)),
+                params,
+            )
+            return finance_audit_metric_from_row(cur.fetchone())
+
+        return FinancePayablesAudit(
+            rawOpen=metric("TRUE"),
+            operational30Days=metric(
+                "(t.ti_vcto < %s OR (t.ti_vcto >= %s AND t.ti_vcto <= %s))",
+                (today, today, next_30),
+            ),
+            currentYearOpen=metric("t.ti_vcto BETWEEN %s AND %s", (year_start, year_end)),
+            futureOutOfHorizon=metric(
+                "t.ti_vcto > %s AND t.ti_vcto < %s",
+                (next_30, anomaly_start),
+            ),
+            missingDueDate=metric("t.ti_vcto IS NULL"),
+            futureAnomalies2030Plus=metric("t.ti_vcto >= %s", (anomaly_start,)),
         )
 
     def _get_finance_payables_by_category(
@@ -477,12 +582,46 @@ class FiscalReportService:
             expected30Days=FinanceAmountMetric(rows=int(expected_30_rows), amount=as_money(expected_30_amount)),
         )
 
+    def _get_finance_receivables_audit(
+        self,
+        cur: psycopg.Cursor,
+        schema: str,
+        today: date,
+    ) -> FinanceReceivablesAudit:
+        next_30 = today + timedelta(days=30)
+        operational_start = today - timedelta(days=365)
+
+        def metric(where_clause: str, params: tuple[object, ...] = ()) -> FinanceAuditMetric:
+            cur.execute(
+                sql.SQL(
+                    f"""
+                    SELECT COUNT(*), COALESCE(SUM(b.bo_valor), 0), MIN(b.bo_vcto), MAX(b.bo_vcto)
+                    FROM {{}}.fnboleto AS b
+                    WHERE b.bo_pg_st = 1
+                      AND {where_clause}
+                    """
+                ).format(sql.Identifier(schema)),
+                params,
+            )
+            return finance_audit_metric_from_row(cur.fetchone())
+
+        return FinanceReceivablesAudit(
+            rawOpen=metric("TRUE"),
+            overdueTotal=metric("b.bo_vcto < %s", (today,)),
+            overdueOperational365Days=metric(
+                "b.bo_vcto >= %s AND b.bo_vcto < %s",
+                (operational_start, today),
+            ),
+            overdueLegacy365Plus=metric("b.bo_vcto < %s", (operational_start,)),
+            expected30Days=metric("b.bo_vcto > %s AND b.bo_vcto <= %s", (today, next_30)),
+        )
+
     def _get_finance_cash_flow(
         self,
         cur: psycopg.Cursor,
         schema: str,
         today: date,
-        month_start: date,
+        period_summary: FinanceDashboardPeriod,
     ) -> list[FinanceFlowMetric]:
         return [
             self._get_finance_cash_flow_metric(cur, schema, "Hoje", today, today),
@@ -493,8 +632,110 @@ class FiscalReportService:
                 today,
                 today + timedelta(days=7),
             ),
-            self._get_finance_cash_flow_metric(cur, schema, "Mes atual", month_start, today),
+            period_summary.cashFlow,
         ]
+
+    def _get_finance_period_summary(
+        self,
+        cur: psycopg.Cursor,
+        schema: str,
+        period: FinancePeriodWindow,
+    ) -> FinanceDashboardPeriod:
+        cash_flow = self._get_finance_cash_flow_metric(
+            cur,
+            schema,
+            period.label,
+            period.start_date,
+            period.end_date,
+        )
+        return FinanceDashboardPeriod(
+            mode=period.mode,
+            label=period.label,
+            startDate=period.start_date,
+            endDate=period.end_date,
+            cashFlow=cash_flow,
+            payablesDue=self._get_finance_period_payables_due(
+                cur,
+                schema,
+                period.start_date,
+                period.end_date,
+            ),
+            receivablesDue=self._get_finance_period_receivables_due(
+                cur,
+                schema,
+                period.start_date,
+                period.end_date,
+            ),
+            received=self._get_finance_period_received(
+                cur,
+                schema,
+                period.start_date,
+                period.end_date,
+            ),
+        )
+
+    def _get_finance_period_payables_due(
+        self,
+        cur: psycopg.Cursor,
+        schema: str,
+        start_date: date,
+        end_date: date,
+    ) -> FinanceAmountMetric:
+        cur.execute(
+            sql.SQL(
+                """
+                SELECT COUNT(*), COALESCE(SUM(ti_valor), 0)
+                FROM {}.fntitul
+                WHERE ti_tipo = 'P'
+                  AND TRIM(COALESCE(ti_pagto, '')) = ''
+                  AND ti_vcto BETWEEN %s AND %s
+                """
+            ).format(sql.Identifier(schema)),
+            (start_date, end_date),
+        )
+        rows, amount = cur.fetchone()
+        return FinanceAmountMetric(rows=int(rows), amount=as_money(amount))
+
+    def _get_finance_period_receivables_due(
+        self,
+        cur: psycopg.Cursor,
+        schema: str,
+        start_date: date,
+        end_date: date,
+    ) -> FinanceAmountMetric:
+        cur.execute(
+            sql.SQL(
+                """
+                SELECT COUNT(*), COALESCE(SUM(bo_valor), 0)
+                FROM {}.fnboleto
+                WHERE bo_pg_st = 1
+                  AND bo_vcto BETWEEN %s AND %s
+                """
+            ).format(sql.Identifier(schema)),
+            (start_date, end_date),
+        )
+        rows, amount = cur.fetchone()
+        return FinanceAmountMetric(rows=int(rows), amount=as_money(amount))
+
+    def _get_finance_period_received(
+        self,
+        cur: psycopg.Cursor,
+        schema: str,
+        start_date: date,
+        end_date: date,
+    ) -> FinanceAmountMetric:
+        cur.execute(
+            sql.SQL(
+                """
+                SELECT COUNT(*), COALESCE(SUM(bo_pg_vlr), 0)
+                FROM {}.fnboleto
+                WHERE bo_pg_dt BETWEEN %s AND %s
+                """
+            ).format(sql.Identifier(schema)),
+            (start_date, end_date),
+        )
+        rows, amount = cur.fetchone()
+        return FinanceAmountMetric(rows=int(rows), amount=as_money(amount))
 
     def _get_finance_cash_flow_metric(
         self,
@@ -713,13 +954,48 @@ class FiscalReportService:
             revenueEvolution=build_dre_evolution(month_data, reference_key),
         )
 
-    def _count_paid_receivables_for_month(
+    def _get_finance_dre_audit(
         self,
         cur: psycopg.Cursor,
         schema: str,
-        month_start: date,
+        today: date,
+        dre: FinanceDreSummary,
+    ) -> FinanceDreAudit:
+        cur.execute(
+            sql.SQL(
+                """
+                SELECT MAX(ft_data)
+                FROM {}.cvfatura
+                WHERE ft_data <= %s
+                  AND TRIM(COALESCE(ft_tipo, '')) = 'FT'
+                  AND COALESCE(ft_valort, ft_valor, 0) <> 0
+                """
+            ).format(sql.Identifier(schema)),
+            (today,),
+        )
+        latest_invoice_date = cur.fetchone()[0]
+        latest_invoice_key = (
+            (latest_invoice_date.year, latest_invoice_date.month)
+            if latest_invoice_date is not None
+            else None
+        )
+        dre_key = (dre.year, dre.month)
+        return FinanceDreAudit(
+            dreReferenceMonth=format_month_key(dre_key),
+            latestInvoiceMonthFromCVFATURA=(
+                format_month_key(latest_invoice_key) if latest_invoice_key else None
+            ),
+            isFallbackMonth=dre.isFallbackMonth,
+            isStaleComparedToInvoices=latest_invoice_key is not None and latest_invoice_key > dre_key,
+        )
+
+    def _count_paid_receivables_for_period(
+        self,
+        cur: psycopg.Cursor,
+        schema: str,
+        start_date: date,
+        end_date: date,
     ) -> int:
-        month_end = next_month_start(month_start) - timedelta(days=1)
         cur.execute(
             sql.SQL(
                 """
@@ -728,7 +1004,7 @@ class FiscalReportService:
                 WHERE bo_pg_dt BETWEEN %s AND %s
                 """
             ).format(sql.Identifier(schema)),
-            (month_start, month_end),
+            (start_date, end_date),
         )
         return int(cur.fetchone()[0])
 
@@ -763,6 +1039,7 @@ class FiscalReportService:
         payables: FinancePayablesSummary,
         dre: FinanceDreSummary,
         projections: list[FinanceProjectionPoint],
+        dre_audit: FinanceDreAudit,
     ) -> list[FinanceAlert]:
         alerts: list[FinanceAlert] = []
         if payables.overdue.rows > 0:
@@ -809,6 +1086,18 @@ class FiscalReportService:
                 )
             )
 
+        if dre_audit.isStaleComparedToInvoices:
+            alerts.append(
+                FinanceAlert(
+                    level="warning",
+                    title="DRE desatualizada na base",
+                    detail=(
+                        f"DRE em {dre_audit.dreReferenceMonth}; "
+                        f"CVFATURA tem faturamento ate {dre_audit.latestInvoiceMonthFromCVFATURA}."
+                    ),
+                )
+            )
+
         if not alerts:
             alerts.append(
                 FinanceAlert(
@@ -827,12 +1116,12 @@ class FiscalReportService:
         due_end: date | None = None,
     ) -> FinanceReceivablesResponse:
         schema = self.validate_company(company)
-        today = date.today()
-        effective_due_end = due_end or today + timedelta(days=30)
-        month_start = date(today.year, today.month, 1)
 
         with self._connect() as conn:
             with conn.cursor() as cur:
+                today = self._get_database_current_date(cur)
+                effective_due_end = due_end or today + timedelta(days=30)
+                month_start = date(today.year, today.month, 1)
                 summary = self._get_finance_receivables_summary(
                     cur=cur,
                     schema=schema,
@@ -1263,8 +1552,49 @@ def normalize_search(value: str | None) -> str:
     return without_accents.lower().strip()
 
 
+def build_finance_period(reference_date: date, period_mode: str) -> FinancePeriodWindow:
+    mode = normalize_search(period_mode) or "month"
+    if mode == "month":
+        return FinancePeriodWindow(
+            mode="month",
+            label="Este mes",
+            start_date=date(reference_date.year, reference_date.month, 1),
+            end_date=reference_date,
+        )
+    if mode == "quarter":
+        quarter_start_month = ((reference_date.month - 1) // 3) * 3 + 1
+        return FinancePeriodWindow(
+            mode="quarter",
+            label="Este trimestre",
+            start_date=date(reference_date.year, quarter_start_month, 1),
+            end_date=reference_date,
+        )
+    if mode == "year":
+        return FinancePeriodWindow(
+            mode="year",
+            label="Este ano",
+            start_date=date(reference_date.year, 1, 1),
+            end_date=reference_date,
+        )
+    raise ValueError("Periodo financeiro invalido. Use month, quarter ou year.")
+
+
 def as_money(value: object) -> float:
     return round(normalize_decimal(value) or 0, 2)
+
+
+def finance_audit_metric_from_row(row: tuple[object, object, object, object]) -> FinanceAuditMetric:
+    rows, amount, start_date, end_date = row
+    return FinanceAuditMetric(
+        rows=int(rows),
+        amount=as_money(amount),
+        startDate=start_date,
+        endDate=end_date,
+    )
+
+
+def format_month_key(key: tuple[int, int]) -> str:
+    return f"{key[0]:04d}-{key[1]:02d}"
 
 
 def percentage(value: float, total: float) -> float | None:

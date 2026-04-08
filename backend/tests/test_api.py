@@ -212,17 +212,37 @@ def test_finance_receivables_report_matches_current_database_snapshot() -> None:
 
 
 def test_finance_dashboard_matches_current_database_snapshot() -> None:
-    response = client.get("/api/finance/dashboard", params={"company": "emp0001"})
+    response = client.get(
+        "/api/finance/dashboard",
+        params={"company": "emp0001", "referenceDate": "2026-04-07"},
+    )
 
     assert response.status_code == 200
     payload = response.json()
     assert payload["company"] == "emp0001"
     assert payload["referenceDate"] == "2026-04-07"
+    assert payload["period"] == {
+        "mode": "month",
+        "label": "Este mes",
+        "startDate": "2026-04-01",
+        "endDate": "2026-04-07",
+        "cashFlow": {
+            "label": "Este mes",
+            "startDate": "2026-04-01",
+            "endDate": "2026-04-07",
+            "inflow": 306737.13,
+            "outflow": 419742.66,
+            "net": -113005.53,
+        },
+        "payablesDue": {"rows": 132, "amount": 437857.11},
+        "receivablesDue": {"rows": 249, "amount": 315170.47},
+        "received": {"rows": 0, "amount": 0.0},
+    }
     assert payload["cash"] == {
-        "sourceDate": "2026-04-07",
-        "currentCash": -164807.07,
-        "consolidatedBalance": -6036877.88,
-        "availableCash": -3426539.96,
+        "sourceDate": "2026-03-25",
+        "currentCash": -346343.59,
+        "consolidatedBalance": -691079.33,
+        "availableCash": -3608076.48,
         "committedCash": 3261732.89,
     }
     assert payload["payables"]["open"] == {"rows": 2202, "amount": 11051306.87}
@@ -238,6 +258,60 @@ def test_finance_dashboard_matches_current_database_snapshot() -> None:
     assert payload["indicators"]["profitabilityPercent"] == -8.42
     assert payload["topDebtors"][0]["personName"] == "C.M.C. PRODUTOS QUIMICOS LTDA"
     assert payload["alerts"][0]["title"] == "Contas vencidas"
+    assert payload["audit"]["cash"]["source"] == "FNCBMOV + FNCBLANC + FNCTBCO"
+    assert payload["audit"]["cash"]["amount"] == -346343.59
+    assert payload["audit"]["payables"]["rawOpen"] == {
+        "rows": 2202,
+        "amount": 11051306.87,
+        "startDate": "2025-12-04",
+        "endDate": "4202-07-13",
+    }
+    assert payload["audit"]["payables"]["currentYearOpen"]["rows"] == 1109
+    assert payload["audit"]["payables"]["currentYearOpen"]["amount"] == 5523971.8
+    assert payload["audit"]["payables"]["futureAnomalies2030Plus"]["rows"] == 568
+    assert payload["audit"]["payables"]["futureAnomalies2030Plus"]["amount"] == 838970.69
+    assert payload["audit"]["payables"]["missingDueDate"] == {
+        "rows": 8,
+        "amount": 208.76,
+        "startDate": None,
+        "endDate": None,
+    }
+    assert payload["audit"]["receivables"]["rawOpen"]["rows"] == 3871
+    assert payload["audit"]["receivables"]["rawOpen"]["amount"] == 5179236.06
+    assert payload["audit"]["receivables"]["expected30Days"]["amount"] == 1985076.73
+    assert payload["audit"]["dre"] == {
+        "dreReferenceMonth": "2026-02",
+        "latestInvoiceMonthFromCVFATURA": "2026-03",
+        "isFallbackMonth": True,
+        "isStaleComparedToInvoices": True,
+    }
+    assert any(alert["title"] == "DRE desatualizada na base" for alert in payload["alerts"])
+
+
+def test_finance_dashboard_period_modes() -> None:
+    response = client.get(
+        "/api/finance/dashboard",
+        params={"company": "emp0001", "referenceDate": "2026-04-07", "period": "year"},
+    )
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["period"]["mode"] == "year"
+    assert payload["period"]["label"] == "Este ano"
+    assert payload["period"]["startDate"] == "2026-01-01"
+    assert payload["period"]["endDate"] == "2026-04-07"
+    assert payload["period"]["cashFlow"]["net"] == -818098.72
+    assert payload["period"]["received"] == {"rows": 4357, "amount": 5665248.78}
+
+
+def test_finance_dashboard_rejects_invalid_period() -> None:
+    response = client.get(
+        "/api/finance/dashboard",
+        params={"company": "emp0001", "period": "semester"},
+    )
+
+    assert response.status_code == 400
+    assert "Periodo financeiro invalido" in response.json()["detail"]
 
 
 def test_finance_dashboard_rejects_invalid_company() -> None:
