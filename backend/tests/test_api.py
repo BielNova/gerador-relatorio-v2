@@ -197,7 +197,10 @@ def test_fiscal_dashboard_rejects_invalid_company() -> None:
 
 
 def test_finance_receivables_report_matches_current_database_snapshot() -> None:
-    response = client.get("/api/finance/receivables", params={"company": "emp0001"})
+    response = client.get(
+        "/api/finance/receivables",
+        params={"company": "emp0001", "referenceDate": "2026-04-07"},
+    )
 
     assert response.status_code == 200
     payload = response.json()
@@ -223,20 +226,20 @@ def test_finance_dashboard_matches_current_database_snapshot() -> None:
     assert payload["referenceDate"] == "2026-04-07"
     assert payload["period"] == {
         "mode": "month",
-        "label": "Este mes",
-        "startDate": "2026-04-01",
+        "label": "Ultimos 30 dias",
+        "startDate": "2026-03-09",
         "endDate": "2026-04-07",
         "cashFlow": {
-            "label": "Este mes",
-            "startDate": "2026-04-01",
+            "label": "Ultimos 30 dias",
+            "startDate": "2026-03-09",
             "endDate": "2026-04-07",
-            "inflow": 306737.13,
-            "outflow": 419742.66,
-            "net": -113005.53,
+            "inflow": 1934433.54,
+            "outflow": 2488014.39,
+            "net": -553580.85,
         },
-        "payablesDue": {"rows": 132, "amount": 437857.11},
-        "receivablesDue": {"rows": 249, "amount": 315170.47},
-        "received": {"rows": 0, "amount": 0.0},
+        "payablesDue": {"rows": 242, "amount": 912436.32},
+        "receivablesDue": {"rows": 705, "amount": 1066054.58},
+        "received": {"rows": 1001, "amount": 1215494.19},
     }
     assert payload["cash"] == {
         "sourceDate": "2026-03-25",
@@ -250,6 +253,15 @@ def test_finance_dashboard_matches_current_database_snapshot() -> None:
     assert payload["payables"]["dueToday"] == {"rows": 57, "amount": 130183.05}
     assert payload["receivables"]["open"] == {"rows": 3871, "amount": 5179236.06}
     assert payload["receivables"]["overdue"] == {"rows": 2064, "amount": 2276509.14}
+    assert payload["receivables"]["operationalOverdue365Days"] == {"rows": 1014, "amount": 1602140.35}
+    assert payload["receivables"]["legacyOverdue365Plus"] == {"rows": 1050, "amount": 674368.79}
+    assert payload["receivables"]["aging"][0] == {
+        "label": "A vencer",
+        "rows": 1807,
+        "amount": 2902726.92,
+        "minDaysOverdue": None,
+        "maxDaysOverdue": 0,
+    }
     assert payload["dre"]["year"] == 2026
     assert payload["dre"]["month"] == 2
     assert payload["dre"]["isFallbackMonth"] is True
@@ -281,7 +293,9 @@ def test_finance_dashboard_matches_current_database_snapshot() -> None:
     assert payload["audit"]["receivables"]["expected30Days"]["amount"] == 1985076.73
     assert payload["audit"]["dre"] == {
         "dreReferenceMonth": "2026-02",
+        "dreRevenueTotal": 1929985.75,
         "latestInvoiceMonthFromCVFATURA": "2026-03",
+        "latestInvoiceRevenueTotal": 4690700.24,
         "isFallbackMonth": True,
         "isStaleComparedToInvoices": True,
     }
@@ -297,11 +311,11 @@ def test_finance_dashboard_period_modes() -> None:
     assert response.status_code == 200
     payload = response.json()
     assert payload["period"]["mode"] == "year"
-    assert payload["period"]["label"] == "Este ano"
-    assert payload["period"]["startDate"] == "2026-01-01"
+    assert payload["period"]["label"] == "Ultimos 365 dias"
+    assert payload["period"]["startDate"] == "2025-04-08"
     assert payload["period"]["endDate"] == "2026-04-07"
-    assert payload["period"]["cashFlow"]["net"] == -818098.72
-    assert payload["period"]["received"] == {"rows": 4357, "amount": 5665248.78}
+    assert payload["period"]["cashFlow"]["net"] == -830465.05
+    assert payload["period"]["received"] == {"rows": 19311, "amount": 24223601.65}
 
 
 def test_finance_dashboard_rejects_invalid_period() -> None:
@@ -325,6 +339,7 @@ def test_finance_receivables_report_filters_overdue_and_customer() -> None:
         "/api/finance/receivables",
         params={
             "company": "emp0001",
+            "referenceDate": "2026-04-07",
             "onlyOverdue": "true",
             "search": "C.M.C. PRODUTOS",
         },
@@ -347,7 +362,12 @@ def test_finance_receivables_report_rejects_invalid_company() -> None:
 def test_finance_receivables_export_downloads_xlsx() -> None:
     response = client.get(
         "/api/finance/receivables/export.xlsx",
-        params={"company": "emp0001", "onlyOverdue": "true", "search": "C.M.C. PRODUTOS"},
+        params={
+            "company": "emp0001",
+            "referenceDate": "2026-04-07",
+            "onlyOverdue": "true",
+            "search": "C.M.C. PRODUTOS",
+        },
     )
 
     assert response.status_code == 200

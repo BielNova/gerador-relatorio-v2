@@ -79,6 +79,7 @@ export function fetchFinanceReceivables(
     search?: string
     onlyOverdue?: boolean
     dueEnd?: string
+    referenceDate?: string
   } = {},
 ): Promise<FinanceReceivablesResponse> {
   return readJson<FinanceReceivablesResponse>(
@@ -87,6 +88,7 @@ export function fetchFinanceReceivables(
       search: filters.search ?? '',
       onlyOverdue: String(Boolean(filters.onlyOverdue)),
       dueEnd: filters.dueEnd ?? '',
+      referenceDate: filters.referenceDate ?? '',
     }),
   )
 }
@@ -127,6 +129,7 @@ export function buildFinanceReceivablesExportUrl(
     search: string
     onlyOverdue: boolean
     dueEnd: string
+    referenceDate: string
   },
 ): string {
   return buildApiUrl('/api/finance/receivables/export.xlsx', {
@@ -134,6 +137,7 @@ export function buildFinanceReceivablesExportUrl(
     search: filters.search,
     onlyOverdue: String(filters.onlyOverdue),
     dueEnd: filters.dueEnd,
+    referenceDate: filters.referenceDate,
   })
 }
 

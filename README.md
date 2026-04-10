@@ -54,8 +54,8 @@ Endpoints principais:
 - `GET /api/dashboard/overview?company=emp0001`
 - `GET /api/dashboard/fiscal?company=emp0001`
 - `GET /api/finance/dashboard?company=emp0001&referenceDate=2026-04-07&period=month`
-- `GET /api/finance/receivables?company=emp0001`
-- `GET /api/finance/receivables/export.xlsx?company=emp0001`
+- `GET /api/finance/receivables?company=emp0001&referenceDate=2026-04-07`
+- `GET /api/finance/receivables/export.xlsx?company=emp0001&referenceDate=2026-04-07`
 - `GET /api/reports/products-finished?company=emp0001`
 - `GET /api/reports/ncm-tax-rates?company=emp0001`
 - `GET /api/reports/products-finished/export.xlsx?company=emp0001`
@@ -65,12 +65,13 @@ Endpoints principais:
 Regras atuais do dashboard financeiro:
 
 - Data de referencia: `SELECT CURRENT_DATE` do Postgres; pode ser fixada com `referenceDate=YYYY-MM-DD` para auditoria.
-- Periodo de observacao: `period=month`, `period=quarter` ou `period=year`; a tela mostra primeiro a data de referencia e depois o modo `Este mes`, `Este trimestre` ou `Este ano`.
+- Janela de observacao: `period=month`, `period=quarter` ou `period=year`; a tela usa janelas moveis de `30`, `90` e `365` dias ate a data de referencia.
 - Saldo bancario atual: `FNCBMOV + FNCBLANC + FNCTBCO`, somando `CM_VL_ENTR - CM_VL_SAID` em contas ativas ate a data de referencia.
 - Fluxo e projecao: `FNFCLANC`, separado do saldo bancario realizado.
 - Contas a pagar: `FNTITUL` com `TI_TIPO = 'P'` e `TI_PAGTO` vazio; vencimentos `>= 2030` e vencimentos vazios ficam separados em `audit`.
 - Contas a receber: `FNBOLETO` com `BO_PG_ST = 1`; inadimplencia total e legado `>365 dias` ficam separados em `audit`.
-- DRE: `FNDRE`; se `CVFATURA` tiver faturamento posterior ao mes da DRE, o dashboard exibe alerta de base desatualizada.
+- Inadimplencia operacional: recorte de `365 dias`; aging mostra `a vencer`, `1-30`, `31-60`, `61-90`, `91-180`, `181-365` e `>365 dias`.
+- DRE: `FNDRE`; `CVFATURA` entra como referencia de faturamento mais recente e o dashboard exibe alerta quando a DRE fica atras do faturamento.
 
 Conferencia externa opcional, sem dependencia no runtime:
 

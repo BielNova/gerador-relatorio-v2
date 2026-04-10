@@ -165,6 +165,14 @@ class FinanceAmountMetric(BaseModel):
     amount: float
 
 
+class FinanceAgingBucket(BaseModel):
+    label: str
+    rows: int
+    amount: float
+    minDaysOverdue: int | None
+    maxDaysOverdue: int | None
+
+
 class FinanceAuditMetric(BaseModel):
     rows: int
     amount: float
@@ -201,7 +209,9 @@ class FinanceReceivablesAudit(BaseModel):
 
 class FinanceDreAudit(BaseModel):
     dreReferenceMonth: str | None
+    dreRevenueTotal: float
     latestInvoiceMonthFromCVFATURA: str | None
+    latestInvoiceRevenueTotal: float
     isFallbackMonth: bool
     isStaleComparedToInvoices: bool
 
@@ -303,10 +313,13 @@ class FinancePayablesSummary(BaseModel):
 class FinanceReceivablesDashboardSummary(BaseModel):
     open: FinanceAmountMetric
     overdue: FinanceAmountMetric
+    operationalOverdue365Days: FinanceAmountMetric
+    legacyOverdue365Plus: FinanceAmountMetric
     receivedToday: FinanceAmountMetric
     expected7Days: FinanceAmountMetric
     expected15Days: FinanceAmountMetric
     expected30Days: FinanceAmountMetric
+    aging: list[FinanceAgingBucket]
 
 
 class FinanceIndicatorsSummary(BaseModel):

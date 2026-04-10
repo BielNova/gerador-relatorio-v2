@@ -74,9 +74,9 @@ const columns: TableColumn<FinanceReceivableRow>[] = [
 ]
 
 const periodOptions: Array<{ value: FinancePeriodMode; label: string }> = [
-  { value: 'month', label: 'Este mes' },
-  { value: 'quarter', label: 'Este trimestre' },
-  { value: 'year', label: 'Este ano' },
+  { value: 'month', label: 'Ultimos 30 dias' },
+  { value: 'quarter', label: 'Ultimos 90 dias' },
+  { value: 'year', label: 'Ultimos 365 dias' },
 ]
 
 export function FinanceReceivablesPage() {
@@ -170,6 +170,7 @@ function FinanceReceivablesContent({
         search: deferredSearch,
         onlyOverdue,
         dueEnd,
+        referenceDate,
       })
       setData(response)
     } catch (err) {
@@ -248,6 +249,7 @@ function FinanceReceivablesContent({
         search,
         onlyOverdue,
         dueEnd,
+        referenceDate,
       }),
     )
   }
@@ -284,8 +286,8 @@ function FinanceReceivablesContent({
           </div>
 
           <div className="field-stack finance-period-field">
-            <span>Modo de observacao</span>
-            <div className="period-toggle" aria-label="Modo de observacao por periodo">
+            <span>Janela de analise</span>
+            <div className="period-toggle" aria-label="Janela de analise por periodo">
               {periodOptions.map((option) => (
                 <button
                   key={option.value}
@@ -439,13 +441,15 @@ function FinanceDashboardPanels({ dashboard, onSelectCustomer }: FinanceDashboar
   const maxExpense = Math.max(...dashboard.dre.expenseCategories.map((item) => item.amount), 1)
   const maxRevenue = Math.max(...dashboard.dre.revenueEvolution.map((item) => item.revenue), 1)
   const maxPayableCategory = Math.max(...dashboard.payables.byCategory.map((item) => item.amount), 1)
+  const maxAgingAmount = Math.max(...dashboard.receivables.aging.map((item) => item.amount), 1)
   const maxDebtorAmount = Math.max(...dashboard.topDebtors.map((item) => item.overdueAmount), 1)
   const dreMonth = formatMonthLabel(dashboard.dre.year, dashboard.dre.month)
+  const latestBillingMonth = formatAuditMonth(dashboard.audit.dre.latestInvoiceMonthFromCVFATURA)
   const dreFallbackNote = dashboard.dre.isFallbackMonth
     ? 'Ultimo mes com DRE movimentado; mes atual ainda esta zerado na base.'
     : 'Mes atual da base DRE.'
   const dreStaleNote = dashboard.audit.dre.isStaleComparedToInvoices
-    ? ` CVFATURA tem faturamento ate ${formatAuditMonth(dashboard.audit.dre.latestInvoiceMonthFromCVFATURA)}.`
+    ? ` CVFATURA tem faturamento ate ${latestBillingMonth}.`
     : ''
 
   return (
@@ -454,7 +458,7 @@ function FinanceDashboardPanels({ dashboard, onSelectCustomer }: FinanceDashboar
         <div className="section-heading">
           <h3>Observacao por periodo</h3>
           <p>
-            {dashboard.period.label}: {formatDate(dashboard.period.startDate)} ate{' '}
+            {dashboard.period.label} ate a data de referencia: {formatDate(dashboard.period.startDate)} ate{' '}
             {formatDate(dashboard.period.endDate)}.
           </p>
         </div>
@@ -592,20 +596,26 @@ function FinanceDashboardPanels({ dashboard, onSelectCustomer }: FinanceDashboar
       <section className="finance-block finance-block-wide">
         <div className="section-heading">
           <h3>Contas a receber e inadimplencia</h3>
-          <p>Em aberto, atrasadas, recebidas no dia e previsao de recebimentos.</p>
+          <p>Separacao entre receber bruto, atraso operacional, legado historico e previsao.</p>
         </div>
         <div className="metrics-grid compact">
           <MetricCard
-            label="Em aberto"
+            label="Em aberto bruto"
             value={formatCurrency(dashboard.receivables.open.amount)}
             tone="accent"
             note={`${formatInteger(dashboard.receivables.open.rows)} boletos`}
           />
           <MetricCard
-            label="Atrasadas"
-            value={formatCurrency(dashboard.receivables.overdue.amount)}
-            tone={dashboard.receivables.overdue.rows ? 'danger' : 'default'}
-            note={`${formatInteger(dashboard.receivables.overdue.rows)} boletos no total bruto`}
+            label="Inadimplencia operacional"
+            value={formatCurrency(dashboard.receivables.operationalOverdue365Days.amount)}
+            tone={dashboard.receivables.operationalOverdue365Days.rows ? 'danger' : 'default'}
+            note={`${formatInteger(dashboard.receivables.operationalOverdue365Days.rows)} boletos nos ultimos 365 dias`}
+          />
+          <MetricCard
+            label="Inadimplencia legado"
+            value={formatCurrency(dashboard.receivables.legacyOverdue365Plus.amount)}
+            tone={dashboard.receivables.legacyOverdue365Plus.rows ? 'secondary' : 'default'}
+            note={`${formatInteger(dashboard.receivables.legacyOverdue365Plus.rows)} boletos com mais de 365 dias`}
           />
           <MetricCard
             label="Recebidas no dia"
@@ -615,10 +625,17 @@ function FinanceDashboardPanels({ dashboard, onSelectCustomer }: FinanceDashboar
           <MetricCard
             label="% sobre faturamento"
             value={formatPercentValue(
-              percentageFromValues(dashboard.receivables.overdue.amount, dashboard.dre.revenueTotal),
+              percentageFromValues(
+                dashboard.receivables.operationalOverdue365Days.amount,
+                dashboard.audit.dre.latestInvoiceRevenueTotal || dashboard.dre.revenueTotal,
+              ),
             )}
             tone="secondary"
-            note={`Base: ${dreMonth}`}
+            note={
+              dashboard.audit.dre.latestInvoiceRevenueTotal
+                ? `Base: faturamento ${latestBillingMonth}`
+                : `Base: DRE ${dreMonth}`
+            }
           />
         </div>
         <div className="period-grid">
@@ -626,6 +643,16 @@ function FinanceDashboardPanels({ dashboard, onSelectCustomer }: FinanceDashboar
           <PeriodTile label="Previsao 15 dias" metric={dashboard.receivables.expected15Days} />
           <PeriodTile label="Previsao 30 dias" metric={dashboard.receivables.expected30Days} />
         </div>
+
+        <CategoryBars
+          title="Envelhecimento do receber"
+          items={dashboard.receivables.aging.map((item) => ({
+            category: item.label,
+            amount: item.amount,
+            sharePercent: percentageFromValues(item.amount, dashboard.receivables.open.amount) ?? 0,
+          }))}
+          maxAmount={maxAgingAmount}
+        />
 
         <div className="ranking-list">
           {dashboard.topDebtors.map((debtor) => (
@@ -644,7 +671,7 @@ function FinanceDashboardPanels({ dashboard, onSelectCustomer }: FinanceDashboar
                 />
               </div>
               <small>
-                {formatInteger(debtor.overdueRows)} boletos em atraso - codigo {debtor.personCode}
+                {formatInteger(debtor.overdueRows)} boletos em atraso nos ultimos 365 dias - codigo {debtor.personCode}
               </small>
             </button>
           ))}
@@ -660,6 +687,12 @@ function FinanceDashboardPanels({ dashboard, onSelectCustomer }: FinanceDashboar
         </div>
         <div className="metrics-grid compact">
           <MetricCard label="Receita total" value={formatCurrency(dashboard.dre.revenueTotal)} tone="accent" />
+          <MetricCard
+            label="Faturamento CVFATURA"
+            value={formatCurrency(dashboard.audit.dre.latestInvoiceRevenueTotal)}
+            tone="secondary"
+            note={`Ultimo mes com faturamento: ${latestBillingMonth}`}
+          />
           <MetricCard label="Custos" value={formatCurrency(dashboard.dre.costs)} />
           <MetricCard label="Despesas" value={formatCurrency(dashboard.dre.expenses)} />
           <MetricCard
@@ -858,8 +891,11 @@ function FinanceAuditPanel({ dashboard }: { dashboard: FinanceDashboardResponse 
         <article className={`audit-card ${audit.dre.isStaleComparedToInvoices ? 'warning' : ''}`}>
           <span>DRE</span>
           <strong>{formatAuditMonth(audit.dre.dreReferenceMonth)}</strong>
-          <small>Mes usado no resultado simplificado.</small>
-          <small>CVFATURA ate {formatAuditMonth(audit.dre.latestInvoiceMonthFromCVFATURA)}.</small>
+          <small>Receita DRE {formatCurrency(audit.dre.dreRevenueTotal)}.</small>
+          <small>
+            CVFATURA ate {formatAuditMonth(audit.dre.latestInvoiceMonthFromCVFATURA)} com{' '}
+            {formatCurrency(audit.dre.latestInvoiceRevenueTotal)}.
+          </small>
           <small>
             {audit.dre.isStaleComparedToInvoices
               ? 'DRE desatualizada em relacao ao faturamento.'

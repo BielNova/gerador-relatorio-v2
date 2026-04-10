@@ -75,7 +75,10 @@ def fiscal_dashboard(
 def finance_dashboard(
     company: str = Query(..., description="Schema da empresa, como emp0001."),
     referenceDate: date | None = Query(None, description="Data de referencia em YYYY-MM-DD."),
-    period: str = Query("month", description="Periodo de observacao: month, quarter ou year."),
+    period: str = Query(
+        "month",
+        description="Janela de observacao: month=30 dias, quarter=90 dias, year=365 dias.",
+    ),
 ) -> FinanceDashboardResponse:
     try:
         return service.get_finance_dashboard(
@@ -115,6 +118,7 @@ def finance_receivables_report(
     search: str = Query("", description="Busca por boleto, titulo, contrato, cliente ou documento."),
     onlyOverdue: bool = Query(False, description="Listar apenas boletos vencidos em aberto."),
     dueEnd: date | None = Query(None, description="Data final de vencimento em YYYY-MM-DD."),
+    referenceDate: date | None = Query(None, description="Data de referencia em YYYY-MM-DD."),
 ) -> FinanceReceivablesResponse:
     try:
         return service.get_finance_receivables_report(
@@ -122,6 +126,7 @@ def finance_receivables_report(
             search=search,
             only_overdue=onlyOverdue,
             due_end=dueEnd,
+            reference_date=referenceDate,
         )
     except InvalidCompanyError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
@@ -223,6 +228,7 @@ def export_finance_receivables_report(
     search: str = Query("", description="Busca por boleto, titulo, contrato, cliente ou documento."),
     onlyOverdue: bool = Query(False, description="Exportar apenas boletos vencidos em aberto."),
     dueEnd: date | None = Query(None, description="Data final de vencimento em YYYY-MM-DD."),
+    referenceDate: date | None = Query(None, description="Data de referencia em YYYY-MM-DD."),
 ) -> StreamingResponse:
     try:
         report = service.get_finance_receivables_report(
@@ -230,6 +236,7 @@ def export_finance_receivables_report(
             search=search,
             only_overdue=onlyOverdue,
             due_end=dueEnd,
+            reference_date=referenceDate,
         )
     except InvalidCompanyError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc

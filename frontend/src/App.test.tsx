@@ -246,17 +246,28 @@ function mockApi() {
     }
 
     if (url.pathname === '/api/finance/dashboard' && company === 'emp0001') {
+      const period = url.searchParams.get('period') ?? 'month'
+      const periodLabels = {
+        month: 'Ultimos 30 dias',
+        quarter: 'Ultimos 90 dias',
+        year: 'Ultimos 365 dias',
+      } as const
+      const periodStarts = {
+        month: '2026-03-09',
+        quarter: '2026-01-08',
+        year: '2025-04-08',
+      } as const
       return jsonResponse({
         company,
         referenceDate: '2026-04-07',
         period: {
-          mode: url.searchParams.get('period') ?? 'month',
-          label: 'Este mes',
-          startDate: '2026-04-01',
+          mode: period,
+          label: periodLabels[period as keyof typeof periodLabels] ?? 'Ultimos 30 dias',
+          startDate: periodStarts[period as keyof typeof periodStarts] ?? '2026-03-09',
           endDate: '2026-04-07',
           cashFlow: {
-            label: 'Este mes',
-            startDate: '2026-04-01',
+            label: periodLabels[period as keyof typeof periodLabels] ?? 'Ultimos 30 dias',
+            startDate: periodStarts[period as keyof typeof periodStarts] ?? '2026-03-09',
             endDate: '2026-04-07',
             inflow: 267269.56,
             outflow: 364358.24,
@@ -339,10 +350,17 @@ function mockApi() {
         receivables: {
           open: { rows: 3871, amount: 5179236.06 },
           overdue: { rows: 2064, amount: 2276509.14 },
+          operationalOverdue365Days: { rows: 1014, amount: 1602140.35 },
+          legacyOverdue365Plus: { rows: 1050, amount: 674368.79 },
           receivedToday: { rows: 0, amount: 0 },
           expected7Days: { rows: 120, amount: 300000 },
           expected15Days: { rows: 400, amount: 800000 },
           expected30Days: { rows: 1357, amount: 1985076.73 },
+          aging: [
+            { label: 'A vencer', rows: 1807, amount: 2902726.92, minDaysOverdue: null, maxDaysOverdue: 0 },
+            { label: '1 a 30 dias', rows: 677, amount: 1037564.07, minDaysOverdue: 1, maxDaysOverdue: 30 },
+            { label: 'Acima de 365 dias', rows: 1050, amount: 674368.79, minDaysOverdue: 366, maxDaysOverdue: null },
+          ],
         },
         dre: {
           year: 2026,
@@ -428,7 +446,9 @@ function mockApi() {
           },
           dre: {
             dreReferenceMonth: '2026-02',
+            dreRevenueTotal: 1929985.75,
             latestInvoiceMonthFromCVFATURA: '2026-03',
+            latestInvoiceRevenueTotal: 4690700.24,
             isFallbackMonth: true,
             isStaleComparedToInvoices: true,
           },
@@ -443,17 +463,28 @@ function mockApi() {
     }
 
     if (url.pathname === '/api/finance/dashboard') {
+      const period = url.searchParams.get('period') ?? 'month'
+      const periodLabels = {
+        month: 'Ultimos 30 dias',
+        quarter: 'Ultimos 90 dias',
+        year: 'Ultimos 365 dias',
+      } as const
+      const periodStarts = {
+        month: '2026-03-09',
+        quarter: '2026-01-08',
+        year: '2025-04-08',
+      } as const
       return jsonResponse({
         company,
         referenceDate: '2026-04-07',
         period: {
-          mode: url.searchParams.get('period') ?? 'month',
-          label: 'Este mes',
-          startDate: '2026-04-01',
+          mode: period,
+          label: periodLabels[period as keyof typeof periodLabels] ?? 'Ultimos 30 dias',
+          startDate: periodStarts[period as keyof typeof periodStarts] ?? '2026-03-09',
           endDate: '2026-04-07',
           cashFlow: {
-            label: 'Este mes',
-            startDate: '2026-04-01',
+            label: periodLabels[period as keyof typeof periodLabels] ?? 'Ultimos 30 dias',
+            startDate: periodStarts[period as keyof typeof periodStarts] ?? '2026-03-09',
             endDate: '2026-04-07',
             inflow: 0,
             outflow: 0,
@@ -484,10 +515,13 @@ function mockApi() {
         receivables: {
           open: { rows: 0, amount: 0 },
           overdue: { rows: 0, amount: 0 },
+          operationalOverdue365Days: { rows: 0, amount: 0 },
+          legacyOverdue365Plus: { rows: 0, amount: 0 },
           receivedToday: { rows: 0, amount: 0 },
           expected7Days: { rows: 0, amount: 0 },
           expected15Days: { rows: 0, amount: 0 },
           expected30Days: { rows: 0, amount: 0 },
+          aging: [],
         },
         dre: {
           year: 2026,
@@ -543,7 +577,9 @@ function mockApi() {
           },
           dre: {
             dreReferenceMonth: null,
+            dreRevenueTotal: 0,
             latestInvoiceMonthFromCVFATURA: null,
+            latestInvoiceRevenueTotal: 0,
             isFallbackMonth: false,
             isStaleComparedToInvoices: false,
           },
@@ -748,14 +784,14 @@ describe('Arquimedes BI app', () => {
     ).toBeInTheDocument()
     expect(await screen.findByText('Saldo bancario atual')).toBeInTheDocument()
     expect(screen.getByLabelText('Data de referencia')).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Este trimestre' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Ultimos 90 dias' })).toBeInTheDocument()
     expect(await screen.findByText('Observacao por periodo')).toBeInTheDocument()
     expect(await screen.findByText('Conferencia de Dados')).toBeInTheDocument()
     expect(await screen.findByText('Resultado simplificado')).toBeInTheDocument()
     expect(await screen.findByText('CONSUMIDOR')).toBeInTheDocument()
     expect(await screen.findByText('Top inadimplentes no filtro')).toBeInTheDocument()
 
-    await user.click(screen.getByRole('button', { name: 'Este ano' }))
+    await user.click(screen.getByRole('button', { name: 'Ultimos 365 dias' }))
     await waitFor(() => expect(window.location.search).toContain('period=year'))
 
     await user.click(screen.getByRole('checkbox', { name: 'Somente vencidos' }))

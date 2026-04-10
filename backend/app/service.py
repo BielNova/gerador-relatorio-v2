@@ -17,6 +17,7 @@ from .models import (
     CompanyOption,
     CompanyOverviewResponse,
     CompanyOverviewSummary,
+    FinanceAgingBucket,
     FinanceAlert,
     FinanceAmountMetric,
     FinanceAuditMetric,
@@ -187,6 +188,7 @@ class FiscalReportService:
         with self._connect() as conn:
             with conn.cursor() as cur:
                 today = reference_date or self._get_database_current_date(cur)
+                operational_start = today - timedelta(days=365)
                 period = build_finance_period(today, period_mode)
                 cash_audit = self._get_finance_bank_cash_audit(cur, schema, today)
                 current_cash = cash_audit.amount
@@ -206,13 +208,17 @@ class FiscalReportService:
                     period.end_date,
                 )
                 top_debtors = build_top_debtors(
-                    self._get_finance_receivable_rows(
-                        cur=cur,
-                        schema=schema,
-                        today=today,
-                        due_end=today,
-                        only_overdue=True,
-                    )
+                    [
+                        row
+                        for row in self._get_finance_receivable_rows(
+                            cur=cur,
+                            schema=schema,
+                            today=today,
+                            due_end=today,
+                            only_overdue=True,
+                        )
+                        if row.dueDate is not None and row.dueDate >= operational_start
+                    ]
                 )
 
         committed_cash = round(
@@ -252,8 +258,8 @@ class FiscalReportService:
                 "Saldo bancario atual usa movimentos FNCBMOV + FNCBLANC de contas ativas em FNCTBCO.",
                 "Fluxo e projecao usam FNFCLANC.FL_SALDO e entradas/saidas do fluxo de caixa.",
                 "Contas a pagar principais usam vencidas, hoje e proximos 30 dias; total bruto fica na conferencia.",
-                "Contas a receber em aberto usam FNBOLETO.BO_PG_ST = 1.",
-                "DRE usa FNDRE e mostra alerta quando CVFATURA tem faturamento mais recente.",
+                "Contas a receber em aberto usam FNBOLETO.BO_PG_ST = 1; inadimplencia operacional separa ultimos 365 dias do legado.",
+                "DRE usa FNDRE e exibe CVFATURA como referencia de faturamento mais recente.",
                 "Custos sao uma classificacao inicial: grupos DRE com 'OPERACIONAIS' entram como custo; os demais grupos de saida entram como despesa.",
             ],
             audit=FinanceDashboardAudit(
@@ -515,6 +521,7 @@ class FiscalReportService:
         schema: str,
         today: date,
     ) -> FinanceReceivablesDashboardSummary:
+        operational_start = today - timedelta(days=365)
         next_7 = today + timedelta(days=7)
         next_15 = today + timedelta(days=15)
         next_30 = today + timedelta(days=30)
@@ -526,6 +533,10 @@ class FiscalReportService:
                   COALESCE(SUM(b.bo_valor) FILTER (WHERE b.bo_pg_st = 1), 0) AS open_amount,
                   COUNT(*) FILTER (WHERE b.bo_pg_st = 1 AND b.bo_vcto < %s) AS overdue_rows,
                   COALESCE(SUM(b.bo_valor) FILTER (WHERE b.bo_pg_st = 1 AND b.bo_vcto < %s), 0) AS overdue_amount,
+                  COUNT(*) FILTER (WHERE b.bo_pg_st = 1 AND b.bo_vcto >= %s AND b.bo_vcto < %s) AS operational_overdue_rows,
+                  COALESCE(SUM(b.bo_valor) FILTER (WHERE b.bo_pg_st = 1 AND b.bo_vcto >= %s AND b.bo_vcto < %s), 0) AS operational_overdue_amount,
+                  COUNT(*) FILTER (WHERE b.bo_pg_st = 1 AND b.bo_vcto < %s) AS legacy_overdue_rows,
+                  COALESCE(SUM(b.bo_valor) FILTER (WHERE b.bo_pg_st = 1 AND b.bo_vcto < %s), 0) AS legacy_overdue_amount,
                   COUNT(*) FILTER (WHERE b.bo_pg_dt = %s) AS received_today_rows,
                   COALESCE(SUM(b.bo_pg_vlr) FILTER (WHERE b.bo_pg_dt = %s), 0) AS received_today_amount,
                   COUNT(*) FILTER (WHERE b.bo_pg_st = 1 AND b.bo_vcto > %s AND b.bo_vcto <= %s) AS expected_7_rows,
@@ -540,6 +551,12 @@ class FiscalReportService:
             (
                 today,
                 today,
+                operational_start,
+                today,
+                operational_start,
+                today,
+                operational_start,
+                operational_start,
                 today,
                 today,
                 today,
@@ -561,6 +578,10 @@ class FiscalReportService:
             open_amount,
             overdue_rows,
             overdue_amount,
+            operational_overdue_rows,
+            operational_overdue_amount,
+            legacy_overdue_rows,
+            legacy_overdue_amount,
             received_today_rows,
             received_today_amount,
             expected_7_rows,
@@ -573,6 +594,14 @@ class FiscalReportService:
         return FinanceReceivablesDashboardSummary(
             open=FinanceAmountMetric(rows=int(open_rows), amount=as_money(open_amount)),
             overdue=FinanceAmountMetric(rows=int(overdue_rows), amount=as_money(overdue_amount)),
+            operationalOverdue365Days=FinanceAmountMetric(
+                rows=int(operational_overdue_rows),
+                amount=as_money(operational_overdue_amount),
+            ),
+            legacyOverdue365Plus=FinanceAmountMetric(
+                rows=int(legacy_overdue_rows),
+                amount=as_money(legacy_overdue_amount),
+            ),
             receivedToday=FinanceAmountMetric(
                 rows=int(received_today_rows),
                 amount=as_money(received_today_amount),
@@ -580,7 +609,48 @@ class FiscalReportService:
             expected7Days=FinanceAmountMetric(rows=int(expected_7_rows), amount=as_money(expected_7_amount)),
             expected15Days=FinanceAmountMetric(rows=int(expected_15_rows), amount=as_money(expected_15_amount)),
             expected30Days=FinanceAmountMetric(rows=int(expected_30_rows), amount=as_money(expected_30_amount)),
+            aging=self._get_finance_receivables_aging(cur, schema, today),
         )
+
+    def _get_finance_receivables_aging(
+        self,
+        cur: psycopg.Cursor,
+        schema: str,
+        today: date,
+    ) -> list[FinanceAgingBucket]:
+        definitions: list[tuple[str, str, tuple[object, ...], int | None, int | None]] = [
+            ("A vencer", "b.bo_vcto >= %s", (today,), None, 0),
+            ("1 a 30 dias", "b.bo_vcto < %s AND b.bo_vcto >= %s", (today, today - timedelta(days=30)), 1, 30),
+            ("31 a 60 dias", "b.bo_vcto < %s AND b.bo_vcto >= %s", (today - timedelta(days=30), today - timedelta(days=60)), 31, 60),
+            ("61 a 90 dias", "b.bo_vcto < %s AND b.bo_vcto >= %s", (today - timedelta(days=60), today - timedelta(days=90)), 61, 90),
+            ("91 a 180 dias", "b.bo_vcto < %s AND b.bo_vcto >= %s", (today - timedelta(days=90), today - timedelta(days=180)), 91, 180),
+            ("181 a 365 dias", "b.bo_vcto < %s AND b.bo_vcto >= %s", (today - timedelta(days=180), today - timedelta(days=365)), 181, 365),
+            ("Acima de 365 dias", "b.bo_vcto < %s", (today - timedelta(days=365),), 366, None),
+        ]
+        buckets: list[FinanceAgingBucket] = []
+        for label, where_clause, params, min_days, max_days in definitions:
+            cur.execute(
+                sql.SQL(
+                    f"""
+                    SELECT COUNT(*), COALESCE(SUM(b.bo_valor), 0)
+                    FROM {{}}.fnboleto AS b
+                    WHERE b.bo_pg_st = 1
+                      AND {where_clause}
+                    """
+                ).format(sql.Identifier(schema)),
+                params,
+            )
+            rows, amount = cur.fetchone()
+            buckets.append(
+                FinanceAgingBucket(
+                    label=label,
+                    rows=int(rows),
+                    amount=as_money(amount),
+                    minDaysOverdue=min_days,
+                    maxDaysOverdue=max_days,
+                )
+            )
+        return buckets
 
     def _get_finance_receivables_audit(
         self,
@@ -964,16 +1034,27 @@ class FiscalReportService:
         cur.execute(
             sql.SQL(
                 """
-                SELECT MAX(ft_data)
-                FROM {}.cvfatura
-                WHERE ft_data <= %s
-                  AND TRIM(COALESCE(ft_tipo, '')) = 'FT'
-                  AND COALESCE(ft_valort, ft_valor, 0) <> 0
+                WITH latest_month AS (
+                  SELECT MAX(date_trunc('month', ft_data)::date) AS month_start
+                  FROM {}.cvfatura
+                  WHERE ft_data <= %s
+                    AND TRIM(COALESCE(ft_tipo, '')) = 'FT'
+                    AND COALESCE(ft_valort, ft_valor, 0) <> 0
+                )
+                SELECT
+                  MAX(f.ft_data) AS latest_invoice_date,
+                  COALESCE(SUM(COALESCE(f.ft_valort, f.ft_valor, 0)), 0) AS latest_invoice_revenue
+                FROM {}.cvfatura AS f
+                CROSS JOIN latest_month AS lm
+                WHERE lm.month_start IS NOT NULL
+                  AND date_trunc('month', f.ft_data)::date = lm.month_start
+                  AND TRIM(COALESCE(f.ft_tipo, '')) = 'FT'
+                  AND COALESCE(f.ft_valort, f.ft_valor, 0) <> 0
                 """
-            ).format(sql.Identifier(schema)),
+            ).format(sql.Identifier(schema), sql.Identifier(schema)),
             (today,),
         )
-        latest_invoice_date = cur.fetchone()[0]
+        latest_invoice_date, latest_invoice_revenue = cur.fetchone()
         latest_invoice_key = (
             (latest_invoice_date.year, latest_invoice_date.month)
             if latest_invoice_date is not None
@@ -982,9 +1063,11 @@ class FiscalReportService:
         dre_key = (dre.year, dre.month)
         return FinanceDreAudit(
             dreReferenceMonth=format_month_key(dre_key),
+            dreRevenueTotal=dre.revenueTotal,
             latestInvoiceMonthFromCVFATURA=(
                 format_month_key(latest_invoice_key) if latest_invoice_key else None
             ),
+            latestInvoiceRevenueTotal=as_money(latest_invoice_revenue),
             isFallbackMonth=dre.isFallbackMonth,
             isStaleComparedToInvoices=latest_invoice_key is not None and latest_invoice_key > dre_key,
         )
@@ -1114,12 +1197,13 @@ class FiscalReportService:
         search: str = "",
         only_overdue: bool = False,
         due_end: date | None = None,
+        reference_date: date | None = None,
     ) -> FinanceReceivablesResponse:
         schema = self.validate_company(company)
 
         with self._connect() as conn:
             with conn.cursor() as cur:
-                today = self._get_database_current_date(cur)
+                today = reference_date or self._get_database_current_date(cur)
                 effective_due_end = due_end or today + timedelta(days=30)
                 month_start = date(today.year, today.month, 1)
                 summary = self._get_finance_receivables_summary(
@@ -1557,23 +1641,22 @@ def build_finance_period(reference_date: date, period_mode: str) -> FinancePerio
     if mode == "month":
         return FinancePeriodWindow(
             mode="month",
-            label="Este mes",
-            start_date=date(reference_date.year, reference_date.month, 1),
+            label="Ultimos 30 dias",
+            start_date=reference_date - timedelta(days=29),
             end_date=reference_date,
         )
     if mode == "quarter":
-        quarter_start_month = ((reference_date.month - 1) // 3) * 3 + 1
         return FinancePeriodWindow(
             mode="quarter",
-            label="Este trimestre",
-            start_date=date(reference_date.year, quarter_start_month, 1),
+            label="Ultimos 90 dias",
+            start_date=reference_date - timedelta(days=89),
             end_date=reference_date,
         )
     if mode == "year":
         return FinancePeriodWindow(
             mode="year",
-            label="Este ano",
-            start_date=date(reference_date.year, 1, 1),
+            label="Ultimos 365 dias",
+            start_date=reference_date - timedelta(days=364),
             end_date=reference_date,
         )
     raise ValueError("Periodo financeiro invalido. Use month, quarter ou year.")

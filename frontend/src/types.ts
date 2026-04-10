@@ -151,6 +151,14 @@ export interface FinanceAmountMetric {
   amount: number
 }
 
+export interface FinanceAgingBucket {
+  label: string
+  rows: number
+  amount: number
+  minDaysOverdue: number | null
+  maxDaysOverdue: number | null
+}
+
 export interface FinanceAuditMetric {
   rows: number
   amount: number
@@ -186,7 +194,9 @@ export interface FinanceDashboardAudit {
   }
   dre: {
     dreReferenceMonth: string | null
+    dreRevenueTotal: number
     latestInvoiceMonthFromCVFATURA: string | null
+    latestInvoiceRevenueTotal: number
     isFallbackMonth: boolean
     isStaleComparedToInvoices: boolean
   }
@@ -287,10 +297,13 @@ export interface FinanceDashboardResponse {
   receivables: {
     open: FinanceAmountMetric
     overdue: FinanceAmountMetric
+    operationalOverdue365Days: FinanceAmountMetric
+    legacyOverdue365Plus: FinanceAmountMetric
     receivedToday: FinanceAmountMetric
     expected7Days: FinanceAmountMetric
     expected15Days: FinanceAmountMetric
     expected30Days: FinanceAmountMetric
+    aging: FinanceAgingBucket[]
   }
   dre: FinanceDreSummary
   indicators: {
