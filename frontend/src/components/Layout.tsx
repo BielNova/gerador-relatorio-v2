@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from 'react-router-dom'
 
 import { useCompanyContext } from '../context/CompanyContext'
+import { useThemeContext } from '../context/ThemeContext'
 import { LoadingBlock } from './LoadingBlock'
 
 function getNavClassName({ isActive }: { isActive: boolean }) {
@@ -16,6 +17,7 @@ export function Layout() {
     error,
     setSelectedCompany,
   } = useCompanyContext()
+  const { theme, setTheme } = useThemeContext()
 
   if (isLoading) {
     return (
@@ -49,7 +51,7 @@ export function Layout() {
         <div className="shell-header-inner">
           <div className="brand-row">
             <div className="brand-copy">
-              <span className="eyebrow">Arquimedes BI</span>
+              <span className="eyebrow">Valença BI</span>
               <h1 className="brand-title">BI operacional separado por areas.</h1>
               <p className="brand-subtitle">
                 Dashboard geral, modulos por dominio da empresa e relatorios seguros com IA
@@ -88,6 +90,26 @@ export function Layout() {
             </nav>
 
             <div className="toolbar-controls">
+              <div className="field-stack">
+                <span>Tema</span>
+                <div className="theme-toggle" aria-label="Alternar tema">
+                  <button
+                    type="button"
+                    className={theme === 'light' ? 'active' : ''}
+                    onClick={() => setTheme('light')}
+                  >
+                    Claro
+                  </button>
+                  <button
+                    type="button"
+                    className={theme === 'dark' ? 'active' : ''}
+                    onClick={() => setTheme('dark')}
+                  >
+                    Escuro
+                  </button>
+                </div>
+              </div>
+
               <div className="field-stack">
                 <label htmlFor="company-select">Empresa</label>
                 <select

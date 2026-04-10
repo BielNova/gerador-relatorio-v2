@@ -759,6 +759,8 @@ function mockApi() {
 describe('Arquimedes BI app', () => {
   beforeEach(() => {
     window.history.pushState({}, '', '/products')
+    window.localStorage.clear()
+    document.documentElement.dataset.theme = 'light'
     vi.stubGlobal('fetch', mockApi())
   })
 
@@ -772,6 +774,22 @@ describe('Arquimedes BI app', () => {
     expect((await screen.findAllByText('Financeiro')).length).toBeGreaterThan(1)
     expect(await screen.findByText('Estoque e Produto')).toBeInTheDocument()
     expect(await screen.findByText('RH e Folha')).toBeInTheDocument()
+  })
+
+  it('permite alternar entre modo claro e escuro', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(await screen.findByRole('button', { name: 'Escuro' })).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Escuro' }))
+
+    expect(document.documentElement.dataset.theme).toBe('dark')
+    expect(window.localStorage.getItem('arquimedes:theme')).toBe('dark')
+
+    await user.click(screen.getByRole('button', { name: 'Claro' }))
+
+    expect(document.documentElement.dataset.theme).toBe('light')
+    expect(window.localStorage.getItem('arquimedes:theme')).toBe('light')
   })
 
   it('abre o financeiro com contas a receber e filtra vencidos', async () => {
